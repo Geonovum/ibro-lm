@@ -1,3 +1,12 @@
+# IBRO logisch model
+In dit repository werkt Geonovum aan het logische informatiemodel IBRO (Integrale Bronhouderregistratie), in het kader van programma Mercator van de gemeente Rotterdam.
+
+De werkversie van het document is hier te bekijken: https://geonovum.github.io/ibro-lm
+
+Zie ook:
+- het [scope document](https://geonovum.github.io/ibro-scope) voor de IBRO
+- het [conceptueel informatiemodel](https://geonovum.github.io/ibro-cm) van de IBRO
+
 ## ReSpec template instructies
 
 ReSpec is een tool om HTML- en PDF-documenten te genereren op basis van markdowncontent. Deze template helpt je bij het opstellen en publiceren van documenten volgens de Geonovum-standaard.
