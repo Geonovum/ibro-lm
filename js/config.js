@@ -86,6 +86,14 @@ let respecConfig = {
       status: "Definitief",
       publisher: "Geonovum",
       date: "2024-06-13"
+    },
+    IBROCM: {
+      id: "IBRO-CM",
+      title: "Conceptueel Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)",
+      href: "https://docs.geostandaarden.nl/ibro/ibro-cm/",
+      status: "Versie ter vaststelling",
+      publisher: "Geonovum",
+      date: "2025-06-30"
     }
   }
 };
