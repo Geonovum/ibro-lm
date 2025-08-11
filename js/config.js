@@ -60,6 +60,11 @@ let respecConfig = {
         name: "Pano Maria",
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
+      },
+      {
+        name: "Linda van den Brink",
+        company: "Geonovum",
+        companyURL: "https://www.geonovum.nl",
       }
     ],
   // TODO: Vul de github URL in.
@@ -94,6 +99,22 @@ let respecConfig = {
       status: "Versie ter vaststelling",
       publisher: "Geonovum",
       date: "2025-06-30"
-    }
+    },
+    "ISO-19148": 
+      {
+        title:"ISO 19148:2021 Geographic information — Linear referencing",
+        href: "https://www.iso.org/standard/75150.html",
+        status: "Published",
+        publisher: "ISO/TC 211 Geographic information/Geomatics",
+        date: "2021-04",
+      },
+    "EMSO":
+      {
+        title:      "DiS Geo : Eisen aan model samenhangende objectenregistratie",
+        href:       "https://docs.geostandaarden.nl/disgeo/emso/",
+        status:     "Versie ter vaststelling",
+        date:       "2021-06-16",
+        publisher:  "Geonovum",
+      },
   }
 };
