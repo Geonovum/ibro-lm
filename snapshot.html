@@ -3,6 +3,19 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 35.3.0">
 <style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
@@ -1328,6 +1341,22 @@ ul.index code{color:inherit}
       "status": "Versie ter vaststelling",
       "publisher": "Geonovum",
       "date": "2025-06-30"
+    },
+    "ISO-19148": {
+      "title": "ISO 19148:2021 Geographic information — Linear referencing",
+      "href": "https://www.iso.org/standard/75150.html",
+      "status": "Published",
+      "publisher": "ISO/TC 211 Geographic information/Geomatics",
+      "date": "2021-04",
+      "id": "iso-19148"
+    },
+    "EMSO": {
+      "title": "DiS Geo : Eisen aan model samenhangende objectenregistratie",
+      "href": "https://docs.geostandaarden.nl/disgeo/emso/",
+      "status": "Versie ter vaststelling",
+      "date": "2021-06-16",
+      "publisher": "Geonovum",
+      "id": "emso"
     }
   },
   "title": "Logisch Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)",
@@ -1347,6 +1376,11 @@ ul.index code{color:inherit}
       "name": "Pano Maria",
       "company": "Geonovum",
       "companyURL": "https://www.geonovum.nl"
+    },
+    {
+      "name": "Linda van den Brink",
+      "company": "Geonovum",
+      "companyURL": "https://www.geonovum.nl"
     }
   ],
   "github": "https://github.com/Geonovum/ibro-lm",
@@ -1359,7 +1393,7 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">Logisch Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)</h1>
     
@@ -1382,8 +1416,10 @@ ul.index code{color:inherit}
     <span class="p-name fn">Linda van den Brink</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
   </dd>
       
-      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+      <dt>Auteurs:</dt><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Pano Maria</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Linda van den Brink</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
   </dd>
       <dt>Doe mee:</dt><dd>
     <a href="https://github.com/Geonovum/ibro-lm/">GitHub Geonovum/ibro-lm</a>
@@ -1409,7 +1445,7 @@ ul.index code{color:inherit}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft het logische gegevensmodel Integrale Bronregistratie Objecten (IMIBRO).</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronregistratie-objecten"><bdi class="secno">1.1 </bdi>Bronregistratie objecten</a></li><li class="tocline"><a class="tocxref" href="#proeftuin"><bdi class="secno">1.2 </bdi>Proeftuin</a></li><li class="tocline"><a class="tocxref" href="#logisch-gegevensmodel"><bdi class="secno">1.3 </bdi>Logisch gegevensmodel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-logisch-gegevensmodel-ibro"><bdi class="secno">2. </bdi>Overzicht logisch gegevensmodel IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">2.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">2.2 </bdi>Beschrijving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">2.2.1 </bdi>Identificatie</a></li><li class="tocline"><a class="tocxref" href="#status-van-objecten-in-de-registratie"><bdi class="secno">2.2.2 </bdi>Status van objecten in de registratie</a></li><li class="tocline"><a class="tocxref" href="#historie"><bdi class="secno">2.2.3 </bdi>Historie</a></li><li class="tocline"><a class="tocxref" href="#herkomst"><bdi class="secno">2.2.4 </bdi>Herkomst</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">3. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">4. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronregistratie-objecten"><bdi class="secno">1.1 </bdi>Bronregistratie objecten</a></li><li class="tocline"><a class="tocxref" href="#proeftuin"><bdi class="secno">1.2 </bdi>Proeftuin</a></li><li class="tocline"><a class="tocxref" href="#logisch-gegevensmodel"><bdi class="secno">1.3 </bdi>Logisch gegevensmodel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-logisch-gegevensmodel-ibro"><bdi class="secno">2. </bdi>Overzicht logisch gegevensmodel IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">2.1 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">2.2 </bdi>Beschrijving</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">2.2.1 </bdi>Identificatie</a></li><li class="tocline"><a class="tocxref" href="#status-van-objecten-in-de-registratie"><bdi class="secno">2.2.2 </bdi>Status van objecten in de registratie</a></li><li class="tocline"><a class="tocxref" href="#historie-tijdlijnen-van-informatieobjecten"><bdi class="secno">2.2.3 </bdi>Historie - tijdlijnen van informatieobjecten</a></li><li class="tocline"><a class="tocxref" href="#herkomst"><bdi class="secno">2.2.4 </bdi>Herkomst</a></li><li class="tocline"><a class="tocxref" href="#geometrie"><bdi class="secno">2.2.5 </bdi>Geometrie</a></li><li class="tocline"><a class="tocxref" href="#dimensies"><bdi class="secno">2.2.6 </bdi>Dimensies</a></li><li class="tocline"><a class="tocxref" href="#coordinaatreferentiesystemen"><bdi class="secno">2.2.7 </bdi>Coordinaatreferentiesystemen</a></li><li class="tocline"><a class="tocxref" href="#ruimtelijke-relaties-en-topologie"><bdi class="secno">2.2.8 </bdi>Ruimtelijke relaties en topologie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conceptuele-mapping-van-ibro-met-citygml"><bdi class="secno">3. </bdi>Conceptuele mapping van IBRO met CityGML</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#kern"><bdi class="secno">3.1 </bdi>Kern</a></li><li class="tocline"><a class="tocxref" href="#groen"><bdi class="secno">3.2 </bdi>Groen</a></li><li class="tocline"><a class="tocxref" href="#bodem"><bdi class="secno">3.3 </bdi>Bodem</a></li><li class="tocline"><a class="tocxref" href="#water"><bdi class="secno">3.4 </bdi>Water</a></li><li class="tocline"><a class="tocxref" href="#gebouwen"><bdi class="secno">3.5 </bdi>Gebouwen</a></li><li class="tocline"><a class="tocxref" href="#verhardingen"><bdi class="secno">3.6 </bdi>Verhardingen</a></li><li class="tocline"><a class="tocxref" href="#kunstwerken"><bdi class="secno">3.7 </bdi>Kunstwerken</a></li><li class="tocline"><a class="tocxref" href="#overige-constructies"><bdi class="secno">3.8 </bdi>Overige constructies</a></li><li class="tocline"><a class="tocxref" href="#netwerk"><bdi class="secno">3.9 </bdi>Netwerk</a></li><li class="tocline"><a class="tocxref" href="#transportnetwerk"><bdi class="secno">3.10 </bdi>Transportnetwerk</a></li><li class="tocline"><a class="tocxref" href="#wegennetwerk"><bdi class="secno">3.11 </bdi>Wegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#spoorwegennetwerk"><bdi class="secno">3.12 </bdi>Spoorwegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#functionele-ruimten"><bdi class="secno">3.13 </bdi>Functionele ruimten</a></li><li class="tocline"><a class="tocxref" href="#registratieve-ruimten"><bdi class="secno">3.14 </bdi>Registratieve ruimten</a></li><li class="tocline"><a class="tocxref" href="#geografische-ruimten"><bdi class="secno">3.15 </bdi>Geografische ruimten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section class="informative" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
@@ -1428,15 +1464,19 @@ ul.index code{color:inherit}
 </ul>
 </section><section id="logisch-gegevensmodel"><div class="header-wrapper"><h3 id="x1-3-logisch-gegevensmodel"><bdi class="secno">1.3 </bdi>Logisch gegevensmodel</h3><a class="self-link" href="#logisch-gegevensmodel" aria-label="Permalink for Section 1.3"></a></div>
 <p>Dit document bevat een beschrijving van het logisch gegevensmodel. Het gegevensmodel is gebaseerd op de richtlijnen die door [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>] worden gesteld. De objecttypen die in het logisch gegevensmodel worden gebruikt, zijn beschreven in het conceptueel informatiemodel. De begrippen die in het conceptueel informatiemodel worden genoemd, zijn beschreven in het begrippenmodel.</p>
-<p>Het conceptueel informatiemodel beschrijft het informatiedomein waar de IBRO over gaat. Het geeft een overzicht van de objecten, hun onderlinge relaties en de attributen die aan deze objecten zijn gekoppeld. Het informatiemodel is een abstracte weergave van de werkelijkheid en legt de basis voor  het logische gegevensmodel, dat in dit document beschreven wordt. Het logische gegevensmodel kan direct in een database of applicatie worden geïmplementeerd en de bijbehorende technische standaarden (MIM niveau 4) kunnen eruit worden gegenereerd.</p>
+<p>Het conceptueel informatiemodel beschrijft het informatiedomein waar de IBRO over gaat. Het geeft een overzicht van de objecten, hun onderlinge relaties en de attributen die aan deze objecten zijn gekoppeld. Het informatiemodel is een abstracte weergave van de werkelijkheid en legt de basis voor  het logisch gegevensmodel, dat in dit document beschreven wordt. Het logisch gegevensmodel kan direct in een database of applicatie worden geïmplementeerd en de bijbehorende technische standaarden (MIM niveau 4) kunnen eruit worden gegenereerd.</p>
 <p>In het logisch gegevensmodel worden er keuzes gemaakt ten behoeve van de implementatie. Zo kan er besloten worden om bepaalde onderdelen van het informatiemodel niet te implementeren, of om onderdelen van het informatiemodel op een andere manier te implementeren. Dit kan bijvoorbeeld het geval zijn als er geen behoefte is aan bepaalde functionaliteit, of als er technische beperkingen zijn.</p>
 </section></section>
 <section id="overzicht-logisch-gegevensmodel-ibro"><div class="header-wrapper"><h2 id="x2-overzicht-logisch-gegevensmodel-ibro"><bdi class="secno">2. </bdi>Overzicht logisch gegevensmodel IBRO</h2><a class="self-link" href="#overzicht-logisch-gegevensmodel-ibro" aria-label="Permalink for Section 2."></a></div>
 <section id="definitie"><div class="header-wrapper"><h3 id="x2-1-definitie"><bdi class="secno">2.1 </bdi>Definitie</h3><a class="self-link" href="#definitie" aria-label="Permalink for Section 2.1"></a></div>
 <p>In de Integrale Bronregistratie Objecten (IBRO) worden de gegevens vastgelegd omtrent gesynchroniseerde objecten uit de BAG, BGT en WOZ. Het conceptueel informatiemodel IMIBRO [<cite><a class="bibref" data-link-type="biblio" href="#bib-ibrocm" title="Conceptueel Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)">IBROCM</a></cite>] definieert het informatiedomein van de IBRO en vormt de basis voor dit logische gegevensmodel, het IBRO-LM, in het kader van de IBRO.</p>
 </section><section id="beschrijving"><div class="header-wrapper"><h3 id="x2-2-beschrijving"><bdi class="secno">2.2 </bdi>Beschrijving</h3><a class="self-link" href="#beschrijving" aria-label="Permalink for Section 2.2"></a></div>
-<p>Op basis van het conceptueel informatiemodel IMIBRO is het mogelijk om meerdere logische gegevensmodellen te maken, afhankelijk van de beoogde implementatie. Technische aspecten maar ook inhoudelijke scope kunnen hier een rol bij spelen. Dit logische gegevensmodel is generiek van opzet en heeft een brede scope. </p>
-<p>Inhoudelijk is het IBRO-LM uiteraard afgeleid van het conceptueel informatiemodel IBRO, dat weer is gebaseerd op [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>]. Daarnaast is de inhoud afgestemd op OGC CityGML 3.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-citygml3" title="OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0">CityGML3</a></cite>]. Dit is vastgelegd in een IBRO-CityGML mapping.</p>
+<p>Op basis van het conceptueel informatiemodel IMIBRO is het mogelijk om meerdere logische gegevensmodellen te maken, afhankelijk van de beoogde implementatie. Technische aspecten maar ook inhoudelijke scope kunnen hier een rol bij spelen. Dit logisch gegevensmodel is generiek van opzet en heeft een brede scope. </p>
+<div class="issue" id="issue-container-number-1"><div role="heading" class="issue-title marker" id="h-issue" aria-level="4"><span>Issue 1</span></div><aside class="">
+Hier nog de gemaakte keuzes in het logisch gegevensmodel beschrijven op basis van keuzes die in de architectuur van Mercator gemaakt worden.
+</aside></div>
+
+<p>Inhoudelijk is het IBRO-LM uiteraard afgeleid van het conceptueel informatiemodel IBRO, dat weer is gebaseerd op [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>]. Daarnaast is de inhoud afgestemd op OGC CityGML 3.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-citygml3" title="OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0">CityGML3</a></cite>]. Dit is vastgelegd in een <a href="./citygml-mapping.md">IBRO-CityGML mapping</a>.</p>
 <section id="identificatie"><div class="header-wrapper"><h4 id="x2-2-1-identificatie"><bdi class="secno">2.2.1 </bdi>Identificatie</h4><a class="self-link" href="#identificatie" aria-label="Permalink for Section 2.2.1"></a></div>
 <p>Voor de identificatie van objecten maken we gebruik van het identificatiepatroon van [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>]. </p>
 <p>
@@ -1450,21 +1490,1104 @@ ul.index code{color:inherit}
 <p>In het conceptueel informatiemodel is uitgedrukt hoe je aan een object kan zien in welke levensfase het zich bevindt. Dit gaat om de levenscyclus van een object in de werkelijkheid. </p>
 <p>Het logisch gegevensmodel voegt hier informatie over de status van objecten in de <em>registratie</em> aan toe. </p>
 <p>In IBRO-LM is de status <code>Niet gerealiseerd</code> opgenomen. Dit is een status die kan worden toegekend aan objecten waarvan het ontwerp of plan uiteindelijk niet is gerealiseerd.</p>
-</section><section id="historie"><div class="header-wrapper"><h4 id="x2-2-3-historie"><bdi class="secno">2.2.3 </bdi>Historie</h4><a class="self-link" href="#historie" aria-label="Permalink for Section 2.2.3"></a></div>
-<p>[TODO beschrijven historiemodel]</p>
+</section><section id="historie-tijdlijnen-van-informatieobjecten"><div class="header-wrapper"><h4 id="x2-2-3-historie-tijdlijnen-van-informatieobjecten"><bdi class="secno">2.2.3 </bdi>Historie - tijdlijnen van informatieobjecten</h4><a class="self-link" href="#historie-tijdlijnen-van-informatieobjecten" aria-label="Permalink for Section 2.2.3"></a></div>
+<div class="issue" id="issue-container-number-2"><div role="heading" class="issue-title marker" id="h-issue-0" aria-level="5"><span>Issue 2</span></div><aside class="">
+Dit overgenomen uit disgeo documentatie; check of dit ook voor IBRO zo klopt. 
+</aside></div>
+
+<p>Een informatieobject is een set gegevens die een beschrijving geeft van een object in de te beschrijven werkelijkheid (hierna werkelijkheid). [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>] biedt eigenschappen om van informatieobjecten uit te drukken wat de tijdlijnen geldigheid en registratie zijn. (<a href="#nen3610-registratiegegevens" class="fig-ref" title="NEN 3610:2022 - Registratiegegevens">Figuur <bdi class="">2</bdi></a>) </p>
+<figure id="nen3610-registratiegegevens">
+  <img src="media/nen3610-registratiegegevens.png" alt="nen3610-registratiegegevens">
+  <figcaption><a class="self-link" href="#nen3610-registratiegegevens">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">NEN 3610:2022 - Registratiegegevens</span></figcaption>
+</figure>
+
+<p><code>Tijdlijn Geldigheid</code> is opgenomen via de attributen <code>beginGeldigheid</code> en <code>eindGeldigheid</code>.<br>
+<code>Tijdlijn Registratie</code> is opgenomen via de attributen <code>tijdstipRegistratie</code> en <code>eindRegistratie</code>.</p>
+<p>De tijdlijn geldigheid beschrijft wanneer (de gegevens in) een informatieobject als waarheid beschouwd kunnen worden in de werkelijheid. Dit vormt dan ook de basis voor het kunnen tijdreizen langs de geldigheidstijdlijn.</p>
+<p>Hoe deze tijdlijn per object wordt ingevuld is een functionele keuze die, op basis van het objecttype en het doel van het registreren van informatieobjecten voor dat objecttype, gemaakt moet worden. Zo kan het voor fysieke objecten voor de hand liggen om het begin van de levensduur (de begindatum geldigheid van het eerste voorkomen in de levensloop van een object) te laten aansluiten op het moment van het ontstaan van dit object in de werkelijkheid.</p>
+<p>De tijdlijn registratie beschrijft wanneer (de gegevens in) een informatieobject opvraagbaar was. Dit zijn technisch tijdstippen die bepaald worden door de gegevensverstrekkende systemen.</p>
 </section><section id="herkomst"><div class="header-wrapper"><h4 id="x2-2-4-herkomst"><bdi class="secno">2.2.4 </bdi>Herkomst</h4><a class="self-link" href="#herkomst" aria-label="Permalink for Section 2.2.4"></a></div>
-<p>[TODO beschrijven lineage event sourcing: hoe ga je gebeurtenissen die hebben geleid tot een informatie-object representeren]</p>
+<div class="issue" id="issue-container-number-3"><div role="heading" class="issue-title marker" id="h-issue-1" aria-level="5"><span>Issue 3</span></div><aside class="">
+TODO: beschrijven lineage event sourcing: hoe ga je gebeurtenissen die hebben geleid tot een informatie-object representeren. Er is mogelijke input uit <a href="https://github.com/Geonovum/disgeo-im/blob/main/respec-docs/algemeen.md#brongegevens-van-informatieobjecten">DisGeo</a>. 
+</aside></div>
+
+</section><section id="geometrie"><div class="header-wrapper"><h4 id="x2-2-5-geometrie"><bdi class="secno">2.2.5 </bdi>Geometrie</h4><a class="self-link" href="#geometrie" aria-label="Permalink for Section 2.2.5"></a></div>
+<p>Voor de representatie van de locatie, oriëntatie en vorm van een object uit de werkelijkheid, gebruiken informatiemodellen geometrieën. De dimensie van een representatie variëert van nuldimensionaal (0D) tot driedimensionaal (3D). Objecten worden altijd geplaatst in een tweedimensionele (2D), of driedimensionele (3D) ruimte. </p>
+<p>In de IBRO is het uitgangspunt om objecten in 3D vast te leggen. Voor de vastlegging van (informatie over) geometrieën volgen we CityGML 3.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-citygml3" title="OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0">CityGML3</a></cite>], de internationale standaard voor 3D stadsmodellen. Representatie van 3D geometrieën in CityGML is gebaseerd op ISO 19107 [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso-19107-2003" title="Geographic information -- Spatial schema">iso-19107-2003</a></cite>]. Deze standaard voorziet zowel in de opname van de coördinaten van de geometrie, als van het coördinatenstelsel. </p>
+<p>Van sommige objecten is de onderlinge relatie van belang; ook wel <em>ruimtelijke relaties</em> genoemd. De BGT-gegevenscatalogus beschrijft bijvoorbeeld welke objecten samen een landsdekkend geheel vormen. Om deze objecten correct aan de BGT te kunnen aanleveren moeten deze ruimtelijke relaties ook in de IBRO geborgd worden. Bovendien heeft een geometrische representatie vaak ook kwaliteitskenmerken, bijvoorbeeld ten aanzien van <em>nauwkeurigheid</em> en <em>inwinregels</em>. </p>
+<p>Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel DiSGeo van toepassing zijn én hoe die concreet worden vastgelegd. </p>
+<p>Het conceptueel informatiemodel IBRO legt slechts generiek vast dat objecttypen al dan niet een geometrische representatie hebben. In het logisch gegevensmodel wordt dit voor elk objecttype verder ingevuld met een specifiek geometrietype. We gebruiken de ISO 19107-geometrietypen uit onderstaande tabel:</p>
+<table>
+<thead>
+<tr>
+<th>Primitieve</th>
+<th>In ISO 19107 - Enkelvoudig</th>
+<th>In ISO 19107 - Aggregatie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Punt</td>
+<td><code>GM_Point</code></td>
+<td><code>GM_MultiPoint</code></td>
+</tr>
+<tr>
+<td>Lijn</td>
+<td><code>GM_Curve</code></td>
+<td><code>GM_MultiCurve</code></td>
+</tr>
+<tr>
+<td>Vlak</td>
+<td><code>GM_Surface</code></td>
+<td><code>GM_MultiSurface</code></td>
+</tr>
+<tr>
+<td>Volume</td>
+<td><code>GM_Solid</code></td>
+<td><code>GM_MultiSolid</code></td>
+</tr>
+</tbody></table>
+<p>Hierbij geldt dat net zoals in CityGML alleen lineaire interpolatie is toegestaan; bogen zijn niet toegestaan.</p>
+<div class="issue" id="issue-container-number-4"><div role="heading" class="issue-title marker" id="h-issue-2" aria-level="5"><span>Issue 4</span></div><aside class="">
+Vaak verwijzen we voor de geldende afspraken over geometrie naar [<cite><a class="bibref" data-link-type="biblio" href="#bib-gimeg" title="Geometrie in model en GML">GIMEG</a></cite>] en naar de ISO-standaard Simple Features [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso-19125-1-2004" title="Geographic information -- Simple feature access -- Part 1: Common architecture">iso-19125-1-2004</a></cite>]. Omdat Simple Features zich echter beperkt tot 2D geometrie, is dat in dit geval niet toereikend. Wat wel zou kunnen is ons beperken tot de geometrietypen die in <a href="https://www.cityjson.org/specs/2.0.1/#geometry-objects">CityJSON</a> zijn toegestaan. Dat zijn de meest gebruikelijke 3D geometrietypen.
+</aside></div>
+
+</section><section id="dimensies"><div class="header-wrapper"><h4 id="x2-2-6-dimensies"><bdi class="secno">2.2.6 </bdi>Dimensies</h4><a class="self-link" href="#dimensies" aria-label="Permalink for Section 2.2.6"></a></div>
+<p>Het logisch gegevensmodel IBRO is een 3D model: het gaat uit van 3D-primitieven in een 3D-ruimte. Per objecttype kan de wijze van vastlegging verschillen. In sommige gevallen representeert een volume (3D-model) het object het beste. In andere gevallen volstaat een punt, lijn of vlak (2D-model) met eventueel een hoogteligging (2.5D-model). Het verschilt per onderwerp of een uitwerking in 2D (bijv. <code>GemeenteGebied</code>), 2.5D (bijv. <code>Verharding</code>), danwel 3D (bijv. <code>Pand</code>) nodig is.</p>
+</section><section id="coordinaatreferentiesystemen"><div class="header-wrapper"><h4 id="x2-2-7-coordinaatreferentiesystemen"><bdi class="secno">2.2.7 </bdi>Coordinaatreferentiesystemen</h4><a class="self-link" href="#coordinaatreferentiesystemen" aria-label="Permalink for Section 2.2.7"></a></div>
+<p>Iedere geometrische dataset/geometrie moet zijn voorzien van een verwijzing naar het coördinaatreferentiesysteem waarin de coördinaten van de geometrie zijn beschreven [<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>]. Welk coördinaatreferentiesysteem in een situatie van toepassing is, wordt bepaald door verschillende factoren, zoals dimensionaliteit van de gebruikte primitieven, dimensionaliteit van de ruimte en het toepassingsgebied. </p>
+<p>Het toepassingsgebied betreft het "Europese grondgebied van het Koninkrijk der Nederlanden, inclusief de daarbij behorende territoriale wateren" en meer specifiek het grondgebied van de gemeente Rotterdam of een andere gemeente die de IBRO implementeert. Het gaat om data met 3 dimensies. Het toe te passen CRS is dan RDNAP (EPSG:7415), Samengesteld RD en NAP. Zie voor meer informatie de <a href="https://docs.geostandaarden.nl/crs/crs/">CRS handreiking</a>.</p>
+<p>Maak gebruik van een lijnlengte van maximaal 200 meter. Dit volgt het langelijnenadvies van het NSGI, dat is overgenomen in [<cite><a class="bibref" data-link-type="biblio" href="#bib-hrcrs" title="Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie">HRCRS</a></cite>] in verband met compatibiliteit met RDNAPTRANS™.</p>
+<div class="issue" id="issue-container-number-5"><div role="heading" class="issue-title marker" id="h-issue-3" aria-level="5"><span>Issue 5</span></div><aside class="">
+RD of toch ETRS89?
+</aside></div>
+
+<p>Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor gebruiken we Linear Reference Systems (LRS), zie: [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso-19148" title="ISO 19148:2021 Geographic information — Linear referencing">ISO-19148</a></cite>], <a href="https://inspire.ec.europa.eu/id/document/tg/tn">INSPIRE</a>, en de <a href="https://wetten.overheid.nl/BWBR0015962/2003-12-05">Richtlijn BPS</a>. </p>
+</section><section id="ruimtelijke-relaties-en-topologie"><div class="header-wrapper"><h4 id="x2-2-8-ruimtelijke-relaties-en-topologie"><bdi class="secno">2.2.8 </bdi>Ruimtelijke relaties en topologie</h4><a class="self-link" href="#ruimtelijke-relaties-en-topologie" aria-label="Permalink for Section 2.2.8"></a></div>
+<p>Het informatiemodel IBRO gaat als bron dienen voor gegevens uit verschillende geo-basisregistraties. Voor deze basisregistraties gelden reeds bestaande regels ten aanzien van de topologische kwaliteit. De kwaliteit van de gegevens in het IBRO moet zodanig zijn dat aan deze regels kan worden voldaan. </p>
+<p>Omdat ze in het [<cite><a class="bibref" data-link-type="biblio" href="#bib-emso" title="DiS Geo : Eisen aan model samenhangende objectenregistratie">EMSO</a></cite>] geformuleerd staan en van onverminderd belang zijn voor de kwaliteit van de IBRO, herhalen we voor de volledigheid een aantal basisprincipes op deze plek. </p>
+<ul>
+<li>De reële objecten bedekken met hun x,y,z geometrie het volledige grondgebied van [een gemeente in] Nederland</li>
+<li>Geometrieën van objecten kunnen boven elkaar liggen</li>
+<li>Geometrieën van objecten kunnen elkaar uitsluiten</li>
+<li>Functionele ruimten zijn niet landsdekkend (of gemeente dekkend) en mogen elkaar overlappen</li>
+<li>Geografische ruimten zijn niet landsdekkend (of gemeente dekkend) en mogen elkaar overlappen</li>
+</ul>
+<p>Omdat het logisch gegevensmodel IBRO een 3D model is, zijn de regels ten aanzien van topologische kwaliteit anders dan in vergelijkbare 2D modellen zoals de BGT. Uitgangspunt is dat objecten die zich in de werkelijkheid op een bepaalde wijze tot elkaar verhouden (bijvoorbeeld een verharding ligt bovenop een overbrugging) ook in de registratie op deze wijze tot elkaar verhouden (bijvoorbeeld dat uit de z-coördinaten van de verharding en de overbrugging blijkt dat de verharding bovenop de overbrugging ligt). Daarnaast is het van belang dat er op elke fysieke locatie in de werkelijkheid (elke x,y-coördinaat) altijd tenminste een reëel object aanwezig is (water, begroeiing, gebouw, verharding, kunstwerk, constructies of onbepaald terrein).\</p>
 </section></section></section>
+<section id="conceptuele-mapping-van-ibro-met-citygml"><div class="header-wrapper"><h2 id="x3-conceptuele-mapping-van-ibro-met-citygml"><bdi class="secno">3. </bdi>Conceptuele mapping van IBRO met CityGML</h2><a class="self-link" href="#conceptuele-mapping-van-ibro-met-citygml" aria-label="Permalink for Section 3."></a></div>
+<p>Het IBRO informatiemodel wordt afgestemd met OGC CityGML v3.0 [<cite><a class="bibref" data-link-type="biblio" href="#bib-citygml3" title="OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0">CityGML3</a></cite>]. </p>
+<p>Om rekening mee te houden: <em>Only top-level features are allowed as direct members of a city model.</em> Dit zijn (beperkt tot de feature types waar we mappings naar hebben): </p>
+<ul>
+<li>CityFurniture</li>
+<li>GenericLogicalSpace</li>
+<li>LandUse</li>
+<li>Railway</li>
+<li>Road</li>
+<li>Waterway</li>
+<li>PlantCover</li>
+<li>SolitaryVegetationObject</li>
+<li>WaterBody</li>
+<li>OtherConstruction</li>
+<li>Bridge</li>
+<li>Building</li>
+<li>Tunnel</li>
+<li>CityObjectGroup</li>
+</ul>
+<section id="kern"><div class="header-wrapper"><h3 id="x3-1-kern"><bdi class="secno">3.1 </bdi>Kern</h3><a class="self-link" href="#kern" aria-label="Permalink for Section 3.1"></a></div>
+<p>De kern van generieke objecttypen:</p>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ReeelObject</strong></td>
+<td>AbstractPhysicalSpace</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Transaction.type</td>
+<td>Er is een transactie-gebaseerd versioning model waar iets van status in zit maar het matcht op het eerste gezicht niet goed.</td>
+</tr>
+<tr>
+<td><code>geometrie</code></td>
+<td>lod[n][geometrytype]</td>
+<td>Er zijn meerdere geometrieën per space / thematic surface, zie Figure 23</td>
+</tr>
+<tr>
+<td><strong>FunctioneleRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>geen fysiek object</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Transaction.type</td>
+<td>zie hierboven</td>
+</tr>
+<tr>
+<td><strong>GeografischeRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>geen fysiek object</td>
+</tr>
+<tr>
+<td><strong>RegistratieveRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>geen fysiek object</td>
+</tr>
+<tr>
+<td><strong>Constructie</strong></td>
+<td>Construction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>OnbepaaldTerrein</strong></td>
+<td>LandUse</td>
+<td>Geen CityGML concept mapt hier specifiek naar, ik zou zeggen het is een type LandUse.</td>
+</tr>
+</tbody></table>
+<p>Hierna kijken we alleen naar de fysieke objecten van IBRO.</p>
+</section><section id="groen"><div class="header-wrapper"><h3 id="x3-2-groen"><bdi class="secno">3.2 </bdi>Groen</h3><a class="self-link" href="#groen" aria-label="Permalink for Section 3.2"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Begroeiing</strong></td>
+<td>AbstractVegetationObject</td>
+<td></td>
+</tr>
+<tr>
+<td>Alle subklassen behalve boom en haag</td>
+<td>PlantCover</td>
+<td>Het <code>class</code> attribuut vullen met naam van subklasse.</td>
+</tr>
+<tr>
+<td><strong>Boom</strong>, <strong>Haag</strong></td>
+<td>SolitaryVegetationObject</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="bodem"><div class="header-wrapper"><h3 id="x3-3-bodem"><bdi class="secno">3.3 </bdi>Bodem</h3><a class="self-link" href="#bodem" aria-label="Permalink for Section 3.3"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>OnbegroeideGrond</strong></td>
+<td>LandUse</td>
+<td>LandUse kan worden gebruikt voor functionele of fysieke indeling volgens de definitie</td>
+</tr>
+</tbody></table>
+</section><section id="water"><div class="header-wrapper"><h3 id="x3-4-water"><bdi class="secno">3.4 </bdi>Water</h3><a class="self-link" href="#water" aria-label="Permalink for Section 3.4"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Oppervlaktewater</strong></td>
+<td>WaterBody</td>
+<td>CityGML heeft ook klasse WaterSurface maar dit is geen TopLevelFeaturetype. WaterBody kan met alleen een WaterSurface worden opgenomen of met ook een WaterGroundSurface.</td>
+</tr>
+<tr>
+<td><code>indicatiePrimair</code></td>
+<td>-</td>
+<td>Niet in CityGML. Bij Transportation heb je wel Waterway, dat zou gebruikt kunnen worden om water als ding met transportfunctie te modelleren.</td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>Waterbody</td>
+<td>Het <code>class</code> attribuut vullen met naam van subklasse.</td>
+</tr>
+<tr>
+<td><strong>Watergang</strong></td>
+<td>WaterBody</td>
+<td>Als hierboven</td>
+</tr>
+<tr>
+<td><strong>Getijdengebied</strong></td>
+<td>WaterBody</td>
+<td>WaterBody kan ook semi permanent zijn.</td>
+</tr>
+<tr>
+<td><strong>Greppel</strong></td>
+<td>WaterBody</td>
+<td>Als hierboven</td>
+</tr>
+</tbody></table>
+</section><section id="gebouwen"><div class="header-wrapper"><h3 id="x3-5-gebouwen"><bdi class="secno">3.5 </bdi>Gebouwen</h3><a class="self-link" href="#gebouwen" aria-label="Permalink for Section 3.5"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Pand</strong> (alle pand typen) als <code>aardPand</code> = Vrijstaand gebouw</td>
+<td>Building</td>
+<td>Buildings zijn <em>freestanding, self-supporting constructions</em>.</td>
+</tr>
+<tr>
+<td><strong>Pand</strong> overig</td>
+<td>Building met BuildingPart</td>
+<td>BuildingPart is geen TopLevelFeaturetype. <em>A BuildingPart is a physical or functional subdivision of a Building. It would be considered a Building, if it were not part of a collection of other BuildingParts.</em></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>conditionOfConstruction</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>aardPand</code></td>
+<td><code>class</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>oorsronkelijkBouwjaar</code></td>
+<td><code>dateOfConstruction</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>naam</code></td>
+<td><code>name</code></td>
+<td>Dit is een attribuut bij de hoogste abstracte topklasse, AbstractFeature</td>
+</tr>
+<tr>
+<td><code>indicatieOpenConstructie</code></td>
+<td>-</td>
+<td>todo check spacetype</td>
+</tr>
+<tr>
+<td><code>bestaatUit</code> Panddeel</td>
+<td><code>buildingPart</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Panddeel</strong></td>
+<td>BuildingPart of BuildingUnit</td>
+<td>Als het deel uitmaakt van een vrijstaand gebouw en het is semantisch gezien geen BuildingInstallation, dan mappen naar BuildingPart. Anders BuildingUnit of BuildingInstallation. Per panddeeltype mappen (zie volgende regels).</td>
+</tr>
+<tr>
+<td><strong>Basisconstructie</strong></td>
+<td>BuildingPart of BuildingUnit</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>LatereAanbouw</strong></td>
+<td>BuildingPart of BuildingUnit</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Serre</strong></td>
+<td>BuildingPart of BuildingUnit</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Afdak</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Balkon</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Bordes</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dakkapel</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Kolom</strong></td>
+<td>BuildingInstallation of BuildingConstructiveElement</td>
+<td>Dat laatste als <em>essential from a structural point of view.</em></td>
+</tr>
+<tr>
+<td><strong>Laadperron</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Loopbrug</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Toegangstrap</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Bouwlaag</strong></td>
+<td>Storey</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bouwlaagnummer</code></td>
+<td>storeysAboveGround</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ligtIn</code> Pand</td>
+<td><code>relatedTo</code></td>
+<td>CityGML Storey heeft geen relatie met Building of BuildingPart. Algemene relatie gebruiken van AbstractCityObject.</td>
+</tr>
+<tr>
+<td><strong>Functiezone</strong></td>
+<td>BuildingUnit</td>
+<td>Is breder, hoeft niet op zelfde storey te liggen</td>
+</tr>
+<tr>
+<td><code>brutoVloeroppervlakte</code></td>
+<td><code>area</code></td>
+<td>attribuut van AbstractSpace, waarde is van het type <code>QualifiedArea</code></td>
+</tr>
+<tr>
+<td><code>ligtIn</code> Bouwlaag</td>
+<td><code>storey</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Gebruikzone</strong></td>
+<td>BuildingUnit</td>
+<td>Mag je meerdere BuildingUnit indelingen hebben in 1 citymodel?</td>
+</tr>
+<tr>
+<td><code>gebruiksoppervlakte</code></td>
+<td><code>area</code></td>
+<td>attribuut van AbstractSpace</td>
+</tr>
+<tr>
+<td><code>ligtIn</code> Bouwlaag</td>
+<td><code>storey</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Toegangspunt</strong></td>
+<td>Door</td>
+<td>CityGML is specifieker. Door kan wel een point geometry hebben.</td>
+</tr>
+<tr>
+<td><code>toegangssoort</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>gebruiksaard</code></td>
+<td><code>usage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Verblijfsobject</strong></td>
+<td>CityObjectGroup <code>class</code>=verblijfsobject</td>
+<td>abstract groeperingsmechanisme in CityGML gebruiken aangezien Verblijfsobject een clustering van gebruikszones is.</td>
+</tr>
+<tr>
+<td><code>gebruiksoppervlakte</code></td>
+<td><code>area</code></td>
+<td>attribuut van AbstractSpace</td>
+</tr>
+<tr>
+<td><code>omvat</code> Gebruikzone</td>
+<td><code>groupMember</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="verhardingen"><div class="header-wrapper"><h3 id="x3-6-verhardingen"><bdi class="secno">3.6 </bdi>Verhardingen</h3><a class="self-link" href="#verhardingen" aria-label="Permalink for Section 3.6"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Verharding</strong></td>
+<td>TrafficArea</td>
+<td>In Citygml is dit een thematic surface terwijl Verharding een fysiek object is. TrafficArea is geen TopLevelFeaturetype, moet als onderdeel van een Road opgenomen worden.</td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td><code>surfaceMaterial</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="kunstwerken"><div class="header-wrapper"><h3 id="x3-7-kunstwerken"><bdi class="secno">3.7 </bdi>Kunstwerken</h3><a class="self-link" href="#kunstwerken" aria-label="Permalink for Section 3.7"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Kunstwerk</strong></td>
+<td>-</td>
+<td>Het concept Kunstwerk bestaat niet in CityGML, Construction omvat gebouwen, tunnels, bruggen en andere kunstwerken.</td>
+</tr>
+<tr>
+<td><code>naam</code></td>
+<td><code>name</code></td>
+<td>Dit is een attribuut bij de hoogste abstracte topklasse, AbstractFeature</td>
+</tr>
+<tr>
+<td><strong>WaterstaatkundigKunstwerk</strong></td>
+<td>-</td>
+<td>Dit concept bestaat niet in CityGML.</td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>OtherConstruction</td>
+<td>Vul <code>class</code> met naam vd subklasse</td>
+</tr>
+<tr>
+<td><strong>Kunstwerkdeel</strong></td>
+<td>AbstractConstructiveElement</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Schutkolk</strong></td>
+<td>-</td>
+<td>hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElemement en TunnelConstructiveElement</td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td><code>relatedTo</code></td>
+<td>Algemene relatie gebruiken van AbstractCityObject.</td>
+</tr>
+<tr>
+<td><strong>Sluisdeur</strong></td>
+<td>-</td>
+<td>hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElemement en TunnelConstructiveElement</td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td><code>relatedTo</code></td>
+<td>Algemene relatie gebruiken van AbstractCityObject.</td>
+</tr>
+<tr>
+<td><strong>Pyloon</strong></td>
+<td>BridgeConstructiveElemement</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
+</tr>
+<tr>
+<td><strong>Sloof</strong></td>
+<td>BridgeConstructiveElemement</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
+</tr>
+<tr>
+<td><strong>Landhoofd</strong></td>
+<td>BridgeConstructiveElemement</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
+</tr>
+<tr>
+<td><strong>Dek</strong></td>
+<td>BridgeConstructiveElemement</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
+</tr>
+<tr>
+<td><strong>Pijler</strong></td>
+<td>BridgeConstructiveElemement</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isOnderdeelVan</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
+</tr>
+<tr>
+<td><strong>Overbrugging</strong></td>
+<td>Bridge</td>
+<td></td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>Bridge</td>
+<td>Het <code>class</code> attribuut vullen met naam van subklasse.</td>
+</tr>
+<tr>
+<td><code>indicatieBeweegbaar</code></td>
+<td>isMovable</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Ondertunneling</strong></td>
+<td>Tunnel</td>
+<td>IBRO concept is breder</td>
+</tr>
+<tr>
+<td><strong>Sifon</strong></td>
+<td>Tunnel of OtherConstruction</td>
+<td>Onzeker welke van de twee betere keuze is</td>
+</tr>
+<tr>
+<td><strong>Tunnel</strong></td>
+<td>Tunnel</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Duiker</strong></td>
+<td>Tunnel of OtherConstruction</td>
+<td>Onzeker welke van de twee betere keuze is</td>
+</tr>
+<tr>
+<td><strong>Hevel</strong></td>
+<td>Tunnel of OtherConstruction</td>
+<td>Onzeker welke van de twee betere keuze is</td>
+</tr>
+</tbody></table>
+</section><section id="overige-constructies"><div class="header-wrapper"><h3 id="x3-8-overige-constructies"><bdi class="secno">3.8 </bdi>Overige constructies</h3><a class="self-link" href="#overige-constructies" aria-label="Permalink for Section 3.8"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Muur</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatieValbescherming</code> true()</td>
+<td><code>function</code></td>
+<td>vullen met 'valbescherming'</td>
+</tr>
+<tr>
+<td><code>heeftFunctie</code></td>
+<td><code>function</code></td>
+<td>vullen met Kering of Afscheiding. Meerdere functies zijn toegestaan in CityGML</td>
+</tr>
+<tr>
+<td><strong>Mast</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatieOpenMast</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hoogspanningsmast</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Installatie</strong></td>
+<td>zie subklassen</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hoortBij</code></td>
+<td>-</td>
+<td>De compositie relatie loopt bij CityGML de andere kant op, van brug/tunnel/gebouw naar installatie. En voor andere constructies is deze relatie er niet. Eventueel de generieke relatie <code>relatedTo</code> gebruiken.</td>
+</tr>
+<tr>
+<td><strong>Verlichtingsarmatuur</strong></td>
+<td>Installation of CityFurniture</td>
+<td>Hangt af van de plaatsing op constructie of paal. In CityGML heb je BridgeInstallation, BuildingInstallation en TunnelInstallation</td>
+</tr>
+<tr>
+<td><strong>Sirene</strong></td>
+<td>idem</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Zonnepanelen</strong></td>
+<td>idem</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Oplaadpunt</strong></td>
+<td>idem</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Transformator</strong></td>
+<td>CityFurniture?</td>
+<td>niet zeker van match</td>
+</tr>
+<tr>
+<td><strong>Pomp</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Kast</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Lift</strong></td>
+<td>BuildingInstallation</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Windturbine</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Straatmeubilair</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reservoir</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Omheining</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatieValbescherming</code> true()</td>
+<td><code>function</code></td>
+<td>vullen met 'valbescherming'</td>
+</tr>
+<tr>
+<td><code>heeftFunctie</code></td>
+<td><code>function</code></td>
+<td>vullen met 'afscheiding'</td>
+</tr>
+<tr>
+<td><strong>Scherm</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><code>heeftFunctie</code></td>
+<td><code>function</code></td>
+<td>vullen met 'reducering'</td>
+</tr>
+<tr>
+<td><strong>Opslagtank</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Erfconstructie</strong></td>
+<td>Building</td>
+<td></td>
+</tr>
+<tr>
+<td><code>naam</code></td>
+<td><code>name</code></td>
+<td>Dit is een attribuut bij de hoogste abstracte topklasse, AbstractFeature</td>
+</tr>
+<tr>
+<td><strong>Putdeksel</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dok</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Paal</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Geleideconstructie</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Zwembad</strong></td>
+<td>OtherConstruction</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Afvalcontainer</strong></td>
+<td>CityFurniture</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="netwerk"><div class="header-wrapper"><h3 id="x3-9-netwerk"><bdi class="secno">3.9 </bdi>Netwerk</h3><a class="self-link" href="#netwerk" aria-label="Permalink for Section 3.9"></a></div>
+<p>NB geen fysieke objecten. </p>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Netwerk</strong></td>
+<td>-</td>
+<td>Op dit abstractieniveau heeft CityGML niets</td>
+</tr>
+<tr>
+<td><code>inNetwerk</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Netwerkelement</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Knoop</strong></td>
+<td>-</td>
+<td>Ontbreekt in CityGML</td>
+</tr>
+<tr>
+<td><code>inkomendeVerbinding</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uitgaandeVerbinding</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Verbinding</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>eindknoop</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>startknoop</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Netwerkverwijzing</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Verbindingsverwijzing</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Netwerkeigenschap</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="transportnetwerk"><div class="header-wrapper"><h3 id="x3-10-transportnetwerk"><bdi class="secno">3.10 </bdi>Transportnetwerk</h3><a class="self-link" href="#transportnetwerk" aria-label="Permalink for Section 3.10"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Transportruimte</strong></td>
+<td>AbstractTransportationSpace</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hyperverbinding</code></td>
+<td><code>relatedTo</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ligtOp</code></td>
+<td><code>relatedTo</code></td>
+<td>als het specifiek om een wegdeel gaat: <code>trafficSpace</code></td>
+</tr>
+<tr>
+<td><strong>Transportverbinding</strong></td>
+<td>-</td>
+<td>geen verbindingen en knopen in CityGML</td>
+</tr>
+<tr>
+<td><strong>Transportknoop</strong></td>
+<td>-</td>
+<td>geen verbindingen en knopen in CityGML</td>
+</tr>
+</tbody></table>
+</section><section id="wegennetwerk"><div class="header-wrapper"><h3 id="x3-11-wegennetwerk"><bdi class="secno">3.11 </bdi>Wegennetwerk</h3><a class="self-link" href="#wegennetwerk" aria-label="Permalink for Section 3.11"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Wegverkeerruimteknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Wegknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>heeftOpenbareRuimte</code></td>
+<td><code>relatedTo</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>verkeersplein</strong></td>
+<td>Intersection</td>
+<td>IBRO concept is nauwer. NB Intersection is geen TopLevelFeaturetype. Intersections moeten als onderdeel van Road worden opgenomen.</td>
+</tr>
+<tr>
+<td><strong>Grensknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Koppelknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Rotonde</strong></td>
+<td>Intersection</td>
+<td>IBRO concept is nauwer</td>
+</tr>
+<tr>
+<td><strong>Kruising</strong></td>
+<td>Intersection</td>
+<td>IBRO concept is nauwer</td>
+</tr>
+<tr>
+<td><strong>Eindknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Wegverbinding</strong></td>
+<td>Road</td>
+<td></td>
+</tr>
+<tr>
+<td><code>routenummer</code></td>
+<td><code>name</code></td>
+<td>Dit is een attribuut bij de hoogste abstracte topklasse, AbstractFeature</td>
+</tr>
+<tr>
+<td><code>indicatieOpenbareWeg</code></td>
+<td>-</td>
+<td>Enige manier is om met een virtual zone aan te geven of een ruimte openbaar is of niet</td>
+</tr>
+</tbody></table>
+</section><section id="spoorwegennetwerk"><div class="header-wrapper"><h3 id="x3-12-spoorwegennetwerk"><bdi class="secno">3.12 </bdi>Spoorwegennetwerk</h3><a class="self-link" href="#spoorwegennetwerk" aria-label="Permalink for Section 3.12"></a></div>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Spoorwegknoop</strong></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Spoorverbinding</strong></td>
+<td>Railway</td>
+<td></td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>Railway</td>
+<td>Het <code>class</code> attribuut vullen met naam van subklasse.</td>
+</tr>
+</tbody></table>
+</section><section id="functionele-ruimten"><div class="header-wrapper"><h3 id="x3-13-functionele-ruimten"><bdi class="secno">3.13 </bdi>Functionele ruimten</h3><a class="self-link" href="#functionele-ruimten" aria-label="Permalink for Section 3.13"></a></div>
+<p>Als we alleen de fysieke objecttypen mappen, dan is onderstaande niet relevant. Toch even gekeken hoe dit zou mappen. </p>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[herhaling] <strong>FunctioneleRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>Zie <a href="https://docs.ogc.org/is/20-010/20-010.html#toc35">CityGML CM 7.7</a>.</td>
+</tr>
+<tr>
+<td><code>naam</code></td>
+<td><code>name</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Afscheiding</strong> en <strong>Kering</strong></td>
+<td><code>function</code></td>
+<td>Opnemen als waarde van attribuut <code>function</code> bij het fysiek object</td>
+</tr>
+<tr>
+<td>Overige subklassen</td>
+<td>GenericLogicalSpace</td>
+<td>Vul <code>class</code> met klassenaam.</td>
+</tr>
+</tbody></table>
+</section><section id="registratieve-ruimten"><div class="header-wrapper"><h3 id="x3-14-registratieve-ruimten"><bdi class="secno">3.14 </bdi>Registratieve ruimten</h3><a class="self-link" href="#registratieve-ruimten" aria-label="Permalink for Section 3.14"></a></div>
+<p>Als we alleen de fysieke objecttypen mappen, dan is onderstaande niet relevant. Toch even gekeken hoe dit zou mappen. Het is een incomplete mapping.</p>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[herhaling] <strong>RegistratieveRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>Zie <a href="https://docs.ogc.org/is/20-010/20-010.html#toc35">CityGML CM 7.7</a>.</td>
+</tr>
+<tr>
+<td><strong>Nummeraanduiding</strong></td>
+<td>Address</td>
+<td></td>
+</tr>
+<tr>
+<td>Overige subklassen</td>
+<td>GenericLogicalSpace</td>
+<td>Vul <code>class</code> met klassenaam.</td>
+</tr>
+<tr>
+<td><code>formeleNaam</code></td>
+<td><code>name</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>alternatieveNaam</code></td>
+<td><code>name</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ligtIn</code></td>
+<td><code>relatedTo</code></td>
+<td>relatedTo is gedefinieerd bij AbstractCityObject</td>
+</tr>
+</tbody></table>
+</section><section id="geografische-ruimten"><div class="header-wrapper"><h3 id="x3-15-geografische-ruimten"><bdi class="secno">3.15 </bdi>Geografische ruimten</h3><a class="self-link" href="#geografische-ruimten" aria-label="Permalink for Section 3.15"></a></div>
+<p>Als we alleen de fysieke objecttypen mappen, dan is onderstaande niet relevant. Toch even gekeken hoe dit zou mappen. Het is een incomplete mapping.</p>
+<p>N.B. je maakt in CityGML een 3D  Digital Terrain Model met behulp van de <strong>Relief</strong> module.</p>
+<table>
+<thead>
+<tr>
+<th>IBRO Concept</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[herhaling] <strong>GeografischeRuimte</strong></td>
+<td>GenericLogicalSpace</td>
+<td>Zie <a href="https://docs.ogc.org/is/20-010/20-010.html#toc35">CityGML CM 7.7</a>.</td>
+</tr>
+<tr>
+<td>Alle subklassen</td>
+<td>GenericLogicalSpace</td>
+<td>Vul <code>class</code> met klassenaam.</td>
+</tr>
+<tr>
+<td><code>alternatieveNaam</code></td>
+<td><code>name</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>naam</code></td>
+<td><code>name</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</section></section>
 
 
 
 
 
 
-<section id="conformance"><div class="header-wrapper"><h2 id="x3-conformiteit"><bdi class="secno">3. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 3."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
-<section id="tof"><div class="header-wrapper"><h2 id="x4-lijst-met-figuren"><bdi class="secno">4. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 4."></a></div><ul class="tof">
+<section id="conformance"><div class="header-wrapper"><h2 id="x4-conformiteit"><bdi class="secno">4. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></div><p>Naast onderdelen die als niet normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet normatief. Verder is alles in dit document normatief.</p></section>
+<section id="tof"><div class="header-wrapper"><h2 id="x5-lijst-met-figuren"><bdi class="secno">5. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></div><ul class="tof">
         <li class="tofline">
     <a class="tocxref" href="#fig-modelleerpatroon-voor-identificatie-in-nen-3610"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Modelleerpatroon voor identificatie in NEN 3610</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#nen3610-registratiegegevens"><span class="self-link">Figuur <bdi class="figno">2</bdi></span> <span class="fig-title">NEN 3610:2022 - Registratiegegevens</span></a>
   </li>
       </ul></section>
 <section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
@@ -1485,14 +2608,26 @@ ul.index code{color:inherit}
     <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-citygml3">[CityGML3]</dt><dd>
       <a href="https://docs.ogc.org/is/20-010/20-010.html"><cite>OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0</cite></a>.  Open Geospatial Consortium. 2021-09-13. Published. URL: <a href="https://docs.ogc.org/is/20-010/20-010.html">https://docs.ogc.org/is/20-010/20-010.html</a>
+    </dd><dt id="bib-emso">[EMSO]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/disgeo/emso/"><cite>DiS Geo : Eisen aan model samenhangende objectenregistratie</cite></a>.  Geonovum. 2021-06-16. Versie ter vaststelling. URL: <a href="https://docs.geostandaarden.nl/disgeo/emso/">https://docs.geostandaarden.nl/disgeo/emso/</a>
+    </dd><dt id="bib-hrcrs">[HRCRS]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/crs/crs/"><cite>Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie</cite></a>.  Geonovum. 2022-03-14. Definitief. URL: <a href="https://docs.geostandaarden.nl/crs/crs/">https://docs.geostandaarden.nl/crs/crs/</a>
     </dd><dt id="bib-ibrocm">[IBROCM]</dt><dd>
       <a href="https://docs.geostandaarden.nl/ibro/ibro-cm/"><cite>Conceptueel Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)</cite></a>.  Geonovum. 2025-06-30. Versie ter vaststelling. URL: <a href="https://docs.geostandaarden.nl/ibro/ibro-cm/">https://docs.geostandaarden.nl/ibro/ibro-cm/</a>
+    </dd><dt id="bib-iso-19107-2003">[iso-19107-2003]</dt><dd>
+      <a href="https://www.iso.org/standard/26012.html"><cite>Geographic information -- Spatial schema</cite></a>. ISO/TC 211.  ISO. 2003. International Standard. URL: <a href="https://www.iso.org/standard/26012.html">https://www.iso.org/standard/26012.html</a>
+    </dd><dt id="bib-iso-19148">[ISO-19148]</dt><dd>
+      <a href="https://www.iso.org/standard/75150.html"><cite>ISO 19148:2021 Geographic information — Linear referencing</cite></a>.  ISO/TC 211 Geographic information/Geomatics. 2021-04. Published. URL: <a href="https://www.iso.org/standard/75150.html">https://www.iso.org/standard/75150.html</a>
     </dd><dt id="bib-nen3610">[NEN3610]</dt><dd>
       <a href="https://www.nen.nl/nen-3610-2022-nl-296137"><cite>NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten</cite></a>.  NEN. 2022-05-31. Definitief. URL: <a href="https://www.nen.nl/nen-3610-2022-nl-296137">https://www.nen.nl/nen-3610-2022-nl-296137</a>
     </dd></dl>
   </section><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="b-2-informatieve-referenties"><bdi class="secno">B.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.2"></a></div>
-    <dl class="bibliography"><dt id="bib-mim12">[MIM12]</dt><dd>
+    <dl class="bibliography"><dt id="bib-gimeg">[GIMEG]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/nen3610/gimeg"><cite>Geometrie in model en GML</cite></a>. Linda van den Brink; Paul Janssen; Wilko Quak.  Geonovum. 2021-03-26. Vastgesteld. URL: <a href="https://docs.geostandaarden.nl/nen3610/gimeg">https://docs.geostandaarden.nl/nen3610/gimeg</a>
+    </dd><dt id="bib-iso-19125-1-2004">[iso-19125-1-2004]</dt><dd>
+      <a href="https://www.iso.org/standard/40114.html"><cite>Geographic information -- Simple feature access -- Part 1: Common architecture</cite></a>. ISO/TC 211.  ISO. 2004. International Standard. URL: <a href="https://www.iso.org/standard/40114.html">https://www.iso.org/standard/40114.html</a>
+    </dd><dt id="bib-mim12">[MIM12]</dt><dd>
       <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/"><cite>MIM - Metamodel Informatie Modellering (Versie 1.2)</cite></a>.  Geonovum. 2024-06-13. Definitief. URL: <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/">https://docs.geostandaarden.nl/mim/def-st-mim-20240613/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
