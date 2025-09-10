@@ -100,21 +100,26 @@ let respecConfig = {
       publisher: "Geonovum",
       date: "2025-06-30"
     },
-    "ISO-19148": 
-      {
-        title:"ISO 19148:2021 Geographic information — Linear referencing",
-        href: "https://www.iso.org/standard/75150.html",
-        status: "Published",
-        publisher: "ISO/TC 211 Geographic information/Geomatics",
-        date: "2021-04",
-      },
-    "EMSO":
-      {
-        title:      "DiS Geo : Eisen aan model samenhangende objectenregistratie",
-        href:       "https://docs.geostandaarden.nl/disgeo/emso/",
-        status:     "Versie ter vaststelling",
-        date:       "2021-06-16",
-        publisher:  "Geonovum",
-      },
+    "ISO-19148": {
+      title:"ISO 19148:2021 Geographic information — Linear referencing",
+      href: "https://www.iso.org/standard/75150.html",
+      status: "Published",
+      publisher: "ISO/TC 211 Geographic information/Geomatics",
+      date: "2021-04",
+    },
+    "EMSO": {
+      title:      "DiS Geo : Eisen aan model samenhangende objectenregistratie",
+      href:       "https://docs.geostandaarden.nl/disgeo/emso/",
+      status:     "Versie ter vaststelling",
+      date:       "2021-06-16",
+      publisher:  "Geonovum",
+    },
+    "NEN3610-2022": {
+      title: "NEN 3610 Basismodel geo-informatie",
+      href: "https://www.nen.nl/nen-3610-2022-nl-296137",
+      status: "Definitief",
+      date: "20 juni 2022",
+      publisher: "NEN",
+    }
   }
 };
