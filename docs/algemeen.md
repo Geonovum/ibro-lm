@@ -163,6 +163,12 @@ In de IBRO worden deze gegevens bij elke objectregistratie optgenomen, conform d
 
 Het herkomstmodel in de IBRO is gebaseerd op de W3C standaard [[PROV-O]]. Door aansluiting op PROV-O is het mogelijk om op een gestandaardiseerde en interoperabele manier de herkomst en bronverwijzingen van objecten te registreren, uit te wisselen en te interpreteren binnen en buiten de IBRO. Momenteel is in het model alleen de minimale set van herkomst- en bronverwijzingen opgenomen die nodig is voor de IBRO. In de toekomst kan dit worden uitgebreid met aanvullende elementen uit [[PROV-O]] indien nodig.
 
+#### Geconstateerde objecten
+
+In de landelijke voorziening BAG wordt onderscheid gemaakt tussen objecten die zijn geregistreerd op basis van een regulier brondocument versus objectbeschrijvingen die in registratie zijn opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument.
+
+Voor deze eigenschappen is ere een [indicatie](#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie_attribuutsoort_indicatie_object_geconstateerd) opgenomen op het niveau van de objectregistratie, waarmee kan worden aangegeven of een object is opgenomen op basis van een regulier brondocument of op basis van een feitelijke constatering.
+
 ## Afleidbare eigenschappen
 
 In het informatiemodel IBRO worden naast de direct geregistreerde eigenschappen ook afleidbare eigenschappen opgenomen. Afleidbare eigenschappen zijn eigenschappen die niet direct worden geregistreerd, maar die kunnen worden afgeleid uit andere geregistreerde eigenschappen. Dit kan bijvoorbeeld door berekeningen, regels of logica toe te passen op de geregistreerde gegevens.
