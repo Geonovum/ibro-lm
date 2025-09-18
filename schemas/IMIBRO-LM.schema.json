@@ -1,0 +1,2555 @@
+{
+  "$id" : "http://modellen.geostandaarden.nl/def/ibro#",
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$defs" : {
+    "AardPand" : {
+      "type" : "string",
+      "$anchor" : "AardPand",
+      "enum" : [ "Heterogeen", "Repeterend", "Vrijstaand" ]
+    },
+    "Toegangssoort" : {
+      "type" : "string",
+      "$anchor" : "Toegangssoort",
+      "enum" : [ "Directe toegang vanaf eigen terrein", "Directe toegang vanaf openbare weg", "Toegang vanaf gemeenschappelijke verkeersruimte" ]
+    },
+    "GebruiksaardToegangpunt" : {
+      "type" : "string",
+      "$anchor" : "GebruiksaardToegangpunt",
+      "enum" : [ "Auto", "Personen", "Vracht" ]
+    },
+    "Verbindingsrichting" : {
+      "type" : "string",
+      "$anchor" : "Verbindingsrichting",
+      "enum" : [ "BeideRichtingen", "InRichting", "InTegenovergesteldeRichting" ]
+    },
+    "Rijrichting" : {
+      "type" : "string",
+      "$anchor" : "Rijrichting",
+      "enum" : [ "Beide", "Eenrichting", "Tegenovergesteld eenrichting" ]
+    },
+    "StatusRegistratie" : {
+      "type" : "string",
+      "$anchor" : "StatusRegistratie",
+      "enum" : [ "Actief", "Afgevoerd" ]
+    },
+    "Object" : {
+      "type" : "object",
+      "$anchor" : "Object",
+      "properties" : {
+        "identificatie" : {
+          "type" : "string",
+          "pattern" : "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+"
+        },
+        "domein" : {
+          "type" : "string",
+          "pattern" : "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+"
+        },
+        "geregistreerdMet" : {
+          "$ref" : "#/$defs/Registratie"
+        }
+      },
+      "required" : [ "identificatie", "domein", "geregistreerdMet" ]
+    },
+    "FunctioneleRuimte" : {
+      "type" : "object",
+      "$anchor" : "FunctioneleRuimte",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "status" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "GeografischeRuimte" : {
+      "type" : "object",
+      "$anchor" : "GeografischeRuimte",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "altenatieveNaam" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "status", "naam" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "ReeelObject" : {
+      "type" : "object",
+      "$anchor" : "ReeelObject",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "status" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "Constructie" : {
+      "type" : "object",
+      "$anchor" : "Constructie",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "OnbepaaldTerrein" : {
+      "type" : "object",
+      "$anchor" : "OnbepaaldTerrein",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OnbepaaldTerrein"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "RegistratieveRuimte" : {
+      "type" : "object",
+      "$anchor" : "RegistratieveRuimte",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "status" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "PuntOfVlak" : {
+      "type" : "object",
+      "$anchor" : "PuntOfVlak",
+      "oneOf" : [ {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+      } ]
+    },
+    "PuntLijnOfVlak" : {
+      "type" : "object",
+      "$anchor" : "PuntLijnOfVlak",
+      "oneOf" : [ {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+      } ]
+    },
+    "LijnOfVlak" : {
+      "type" : "object",
+      "$anchor" : "LijnOfVlak",
+      "oneOf" : [ {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+      } ]
+    },
+    "MultiPuntOfMultiVlak" : {
+      "type" : "object",
+      "$anchor" : "MultiPuntOfMultiVlak",
+      "oneOf" : [ {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPoint"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPolygon"
+      } ]
+    },
+    "VlakOfMultiVlak" : {
+      "type" : "object",
+      "$anchor" : "VlakOfMultiVlak",
+      "oneOf" : [ {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPolygon"
+      }, {
+        "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+      } ]
+    },
+    "Begroeiing" : {
+      "type" : "object",
+      "$anchor" : "Begroeiing",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "OverigeBegroeiing" : {
+      "type" : "object",
+      "$anchor" : "OverigeBegroeiing",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OverigeBegroeiing"
+          }
+        },
+        "required" : [ "type", "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Begroeiing"
+      } ]
+    },
+    "Bos" : {
+      "type" : "object",
+      "$anchor" : "Bos",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Bos"
+          }
+        },
+        "required" : [ "type", "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Begroeiing"
+      } ]
+    },
+    "Boom" : {
+      "type" : "object",
+      "$anchor" : "Boom",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Boom"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Begroeiing"
+      } ]
+    },
+    "FruitOfKweekbomen" : {
+      "type" : "object",
+      "$anchor" : "FruitOfKweekbomen",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "FruitOfKweekbomen"
+          }
+        },
+        "required" : [ "type", "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Begroeiing"
+      } ]
+    },
+    "OnbegroeideGrond" : {
+      "type" : "object",
+      "$anchor" : "OnbegroeideGrond",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OnbegroeideGrond"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "Oppervlaktewater" : {
+      "type" : "object",
+      "$anchor" : "Oppervlaktewater",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          }
+        },
+        "required" : [ "geometrie" ]
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "Watervlakte" : {
+      "type" : "object",
+      "$anchor" : "Watervlakte",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "indicatiePrimair" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Watervlakte"
+          }
+        },
+        "required" : [ "type", "indicatiePrimair", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Oppervlaktewater"
+      } ]
+    },
+    "Watergang" : {
+      "type" : "object",
+      "$anchor" : "Watergang",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "indicatiePrimair" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Watergang"
+          }
+        },
+        "required" : [ "type", "indicatiePrimair", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Oppervlaktewater"
+      } ]
+    },
+    "Getijdengebied" : {
+      "type" : "object",
+      "$anchor" : "Getijdengebied",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Getijdengebied"
+          }
+        },
+        "required" : [ "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Oppervlaktewater"
+      } ]
+    },
+    "Greppel" : {
+      "type" : "object",
+      "$anchor" : "Greppel",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "entityType" : {
+            "type" : "string",
+            "const" : "Greppel"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Oppervlaktewater"
+      } ]
+    },
+    "Pand" : {
+      "type" : "object",
+      "$anchor" : "Pand",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polyhedron"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "subtype" : {
+            "type" : "string"
+          },
+          "aardPand" : {
+            "$ref" : "#/$defs/AardPand"
+          },
+          "oorspronkelijkbouwjaar" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "indicatieOpenConstructie" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Pand"
+          }
+        },
+        "required" : [ "geometrie", "type", "subtype", "aardPand", "oorspronkelijkbouwjaar", "indicatieOpenConstructie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Panddeel" : {
+      "type" : "object",
+      "$anchor" : "Panddeel",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polyhedron"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "oorspronkelijkBouwjaar" : {
+            "type" : "string"
+          },
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Pand"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Panddeel"
+          }
+        },
+        "required" : [ "geometrie", "type", "oorspronkelijkBouwjaar", "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Functiezone" : {
+      "type" : "object",
+      "$anchor" : "Functiezone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "brutoVloeroppervlakte" : {
+            "type" : "integer",
+            "readOnly" : false
+          },
+          "bouwlaagnummer" : {
+            "type" : "integer",
+            "readOnly" : false
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Pand"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Functiezone"
+          }
+        },
+        "required" : [ "geometrie", "type", "brutoVloeroppervlakte", "bouwlaagnummer", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Gebruikzone" : {
+      "type" : "object",
+      "$anchor" : "Gebruikzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/MultiPolygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "subtype" : {
+            "type" : "string"
+          },
+          "gebruiksoppervlakte" : {
+            "type" : "integer",
+            "readOnly" : false
+          },
+          "bouwlaagnummer" : {
+            "type" : "integer",
+            "readOnly" : false
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Pand"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Gebruikzone"
+          }
+        },
+        "required" : [ "geometrie", "type", "gebruiksoppervlakte", "bouwlaagnummer", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Toegangspunt" : {
+      "type" : "object",
+      "$anchor" : "Toegangspunt",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "toegangssoort" : {
+            "$ref" : "#/$defs/Toegangssoort"
+          },
+          "gebruiksaard" : {
+            "$ref" : "#/$defs/GebruiksaardToegangpunt"
+          },
+          "hoortBij" : {
+            "$ref" : "#/$defs/PandOfVerblijfsobject"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Toegangspunt"
+          }
+        },
+        "required" : [ "geometrie", "toegangssoort", "gebruiksaard", "hoortBij", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Verblijfsobject" : {
+      "type" : "object",
+      "$anchor" : "Verblijfsobject",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "omvat" : {
+            "type" : "array",
+            "minItems" : "1",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Gebruikzone"
+            } ]
+          },
+          "overlaptMet" : {
+            "type" : "array",
+            "minItems" : "1",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Functiezone"
+            } ]
+          },
+          "geometrie" : {
+            "$ref" : "#/$defs/PuntOfVlak"
+          },
+          "gebruiksoppervlakte" : {
+            "type" : "integer",
+            "readOnly" : true
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Verblijfsobject"
+          }
+        },
+        "required" : [ "omvat", "overlaptMet", "geometrie", "gebruiksoppervlakte", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/AdresseerbaarObject"
+      } ]
+    },
+    "PandOfVerblijfsobject" : {
+      "type" : "object",
+      "$anchor" : "PandOfVerblijfsobject",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Pand"
+      }, {
+        "$ref" : "#/$defs/Verblijfsobject"
+      } ]
+    },
+    "Verharding" : {
+      "type" : "object",
+      "$anchor" : "Verharding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Verharding"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/ReeelObject"
+      } ]
+    },
+    "Kunstwerk" : {
+      "type" : "object",
+      "$anchor" : "Kunstwerk",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "naam" : {
+            "type" : "string"
+          }
+        }
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Overbrugging" : {
+      "type" : "object",
+      "$anchor" : "Overbrugging",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "subtype" : {
+            "type" : "string"
+          },
+          "indicatieBeweegbaar" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Overbrugging"
+          }
+        },
+        "required" : [ "geometrie", "type", "indicatieBeweegbaar", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerk"
+      } ]
+    },
+    "Ondertunneling" : {
+      "type" : "object",
+      "$anchor" : "Ondertunneling",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Ondertunneling"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerk"
+      } ]
+    },
+    "WaterstaatkundigKunstwerk" : {
+      "type" : "object",
+      "$anchor" : "WaterstaatkundigKunstwerk",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "heeftFunctie" : {
+            "$ref" : "#/$defs/Kering_OneOf"
+          }
+        },
+        "required" : [ "geometrie" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerk"
+      } ]
+    },
+    "OverigWaterstaatkundigKunstwerk" : {
+      "type" : "object",
+      "$anchor" : "OverigWaterstaatkundigKunstwerk",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OverigWaterstaatkundigKunstwerk"
+          }
+        },
+        "required" : [ "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/WaterstaatkundigKunstwerk"
+      } ]
+    },
+    "Sluis" : {
+      "type" : "object",
+      "$anchor" : "Sluis",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "entityType" : {
+            "type" : "string",
+            "const" : "Sluis"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/WaterstaatkundigKunstwerk"
+      } ]
+    },
+    "Kunstwerkdeel" : {
+      "type" : "object",
+      "$anchor" : "Kunstwerkdeel",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Dek" : {
+      "type" : "object",
+      "$anchor" : "Dek",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Overbrugging"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Dek"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Landhoofd" : {
+      "type" : "object",
+      "$anchor" : "Landhoofd",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Overbrugging"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Landhoofd"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Pijler" : {
+      "type" : "object",
+      "$anchor" : "Pijler",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Overbrugging"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Pijler"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Pyloon" : {
+      "type" : "object",
+      "$anchor" : "Pyloon",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Overbrugging"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Pyloon"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Schutkolk" : {
+      "type" : "object",
+      "$anchor" : "Schutkolk",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Sluis"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Schutkolk"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Sloof" : {
+      "type" : "object",
+      "$anchor" : "Sloof",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Overbrugging"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Sloof"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "Sluisdeur" : {
+      "type" : "object",
+      "$anchor" : "Sluisdeur",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Sluis"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Sluisdeur"
+          }
+        },
+        "required" : [ "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      } ]
+    },
+    "OverigeConstructie" : {
+      "type" : "object",
+      "$anchor" : "OverigeConstructie",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/PuntLijnOfVlak"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OverigeConstructie"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Installatie" : {
+      "type" : "object",
+      "$anchor" : "Installatie",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "hoortBij" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : false,
+            "items" : [ {
+              "$ref" : "#/$defs/Constructie_OneOf"
+            } ]
+          }
+        }
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Kast" : {
+      "type" : "object",
+      "$anchor" : "Kast",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Kast"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Lift" : {
+      "type" : "object",
+      "$anchor" : "Lift",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Lift"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Oplaadpunt" : {
+      "type" : "object",
+      "$anchor" : "Oplaadpunt",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Oplaadpunt"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Pomp" : {
+      "type" : "object",
+      "$anchor" : "Pomp",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Pomp"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Sirene" : {
+      "type" : "object",
+      "$anchor" : "Sirene",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Sirene"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Transformator" : {
+      "type" : "object",
+      "$anchor" : "Transformator",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Transformator"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Verlichtingsarmatuur" : {
+      "type" : "object",
+      "$anchor" : "Verlichtingsarmatuur",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Verlichtingsarmatuur"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Windturbine" : {
+      "type" : "object",
+      "$anchor" : "Windturbine",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Windturbine"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Zonnepanelen" : {
+      "type" : "object",
+      "$anchor" : "Zonnepanelen",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/PuntOfVlak"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Zonnepanelen"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Installatie"
+      } ]
+    },
+    "Mast" : {
+      "type" : "object",
+      "$anchor" : "Mast",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/MultiPuntOfMultiVlak"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "indicatieOpenMast" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Mast"
+          }
+        },
+        "required" : [ "geometrie", "indicatieOpenMast", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Muur" : {
+      "type" : "object",
+      "$anchor" : "Muur",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "lijngeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "vlakgeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "indicatieValbescherming" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "heeftFunctie" : {
+            "$ref" : "#/$defs/KeringOfAfscheiding"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Muur"
+          }
+        },
+        "required" : [ "lijngeometrie", "vlakgeometrie", "indicatieValbescherming", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Omheining" : {
+      "type" : "object",
+      "$anchor" : "Omheining",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "heeftFunctie" : {
+            "$ref" : "#/$defs/Afscheiding"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Omheining"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Scherm" : {
+      "type" : "object",
+      "$anchor" : "Scherm",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "heeftFunctie" : {
+            "$ref" : "#/$defs/Reducering"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Scherm"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Constructie"
+      } ]
+    },
+    "Transportruimte" : {
+      "type" : "object",
+      "$anchor" : "Transportruimte",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Transportverbinding" : {
+      "type" : "object",
+      "$anchor" : "Transportverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "krommegeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          }
+        },
+        "required" : [ "krommegeometrie" ]
+      }, {
+        "$ref" : "#/$defs/Transportruimte"
+      } ]
+    },
+    "Transportknoop" : {
+      "type" : "object",
+      "$anchor" : "Transportknoop",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "puntgeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Point"
+          }
+        },
+        "required" : [ "puntgeometrie" ]
+      }, {
+        "$ref" : "#/$defs/Transportruimte"
+      } ]
+    },
+    "Verbindingsverwijzing" : {
+      "type" : "object",
+      "$anchor" : "Verbindingsverwijzing",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "betreftRichting" : {
+            "$ref" : "#/$defs/Verbindingsrichting"
+          },
+          "netwerkelement" : {
+            "$ref" : "#/$defs/Transportverbinding_OneOf"
+          }
+        },
+        "required" : [ "betreftRichting", "netwerkelement" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "SimpelePuntverwijzing" : {
+      "type" : "object",
+      "$anchor" : "SimpelePuntverwijzing",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "opPositie" : {
+            "type" : "number",
+            "readOnly" : false
+          },
+          "offset" : {
+            "type" : "number",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "SimpelePuntverwijzing"
+          }
+        },
+        "required" : [ "opPositie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Verbindingsverwijzing"
+      } ]
+    },
+    "SimpeleLineaireVerwijzing" : {
+      "type" : "object",
+      "$anchor" : "SimpeleLineaireVerwijzing",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "vanafPositie" : {
+            "type" : "number",
+            "readOnly" : false
+          },
+          "totPositie" : {
+            "type" : "number",
+            "readOnly" : false
+          },
+          "offset" : {
+            "type" : "number",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "SimpeleLineaireVerwijzing"
+          }
+        },
+        "required" : [ "vanafPositie", "totPositie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Verbindingsverwijzing"
+      } ]
+    },
+    "Netwerkeigenschap" : {
+      "type" : "object",
+      "$anchor" : "Netwerkeigenschap",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "netwerkverwijzing" : {
+            "type" : "array",
+            "minItems" : "1",
+            "uniqueItems" : true,
+            "readOnly" : false,
+            "items" : [ {
+              "$ref" : "#/$defs/Verbindingsverwijzing_OneOf"
+            } ]
+          },
+          "entityType" : {
+            "type" : "string"
+          }
+        },
+        "required" : [ "netwerkverwijzing", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "Wegverkeerruimteverbinding" : {
+      "type" : "object",
+      "$anchor" : "Wegverkeerruimteverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "rijrichting" : {
+            "$ref" : "#/$defs/Rijrichting"
+          },
+          "vlakgeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          }
+        },
+        "required" : [ "rijrichting", "vlakgeometrie" ]
+      }, {
+        "$ref" : "#/$defs/Transportverbinding"
+      } ]
+    },
+    "Wegverbinding" : {
+      "type" : "object",
+      "$anchor" : "Wegverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "routenummer" : {
+            "type" : "array",
+            "minItems" : "1",
+            "uniqueItems" : true,
+            "readOnly" : false,
+            "items" : [ {
+              "type" : "string"
+            } ]
+          },
+          "heeftOpenbareRuimte" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : false,
+            "items" : [ {
+              "$ref" : "#/$defs/OpenbareRuimte"
+            } ]
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "indicatieOpenbareWeg" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "startknoop" : {
+            "$ref" : "#/$defs/Wegknoop"
+          },
+          "eindknoop" : {
+            "$ref" : "#/$defs/Wegknoop"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Wegverbinding"
+          }
+        },
+        "required" : [ "routenummer", "type", "indicatieOpenbareWeg", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Wegverkeerruimteverbinding"
+      } ]
+    },
+    "Baanverbinding" : {
+      "type" : "object",
+      "$anchor" : "Baanverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "startknoop" : {
+            "$ref" : "#/$defs/Baanknoop"
+          },
+          "eindknoop" : {
+            "$ref" : "#/$defs/Baanknoop"
+          },
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Wegverbinding"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Baanverbinding"
+          }
+        },
+        "required" : [ "type", "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Wegverkeerruimteverbinding"
+      } ]
+    },
+    "Strookverbinding" : {
+      "type" : "object",
+      "$anchor" : "Strookverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "startknoop" : {
+            "$ref" : "#/$defs/Strookknoop"
+          },
+          "eindknoop" : {
+            "$ref" : "#/$defs/Strookknoop"
+          },
+          "isOnderdeelVan" : {
+            "$ref" : "#/$defs/Baanverbinding"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Strookverbinding"
+          }
+        },
+        "required" : [ "type", "isOnderdeelVan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Wegverkeerruimteverbinding"
+      } ]
+    },
+    "Wegknoop" : {
+      "type" : "object",
+      "$anchor" : "Wegknoop",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "inkomendeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Wegverbinding"
+            } ]
+          },
+          "uitgaandeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Wegverbinding"
+            } ]
+          },
+          "vlakgeometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "heeftOpenbareRuimte" : {
+            "$ref" : "#/$defs/OpenbareRuimte"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Wegknoop"
+          }
+        },
+        "required" : [ "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Transportknoop"
+      } ]
+    },
+    "Baanknoop" : {
+      "type" : "object",
+      "$anchor" : "Baanknoop",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "inkomendeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Baanverbinding"
+            } ]
+          },
+          "uitgaandeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Baanverbinding"
+            } ]
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Baanknoop"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Transportknoop"
+      } ]
+    },
+    "Strookknoop" : {
+      "type" : "object",
+      "$anchor" : "Strookknoop",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "inkomendeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Strookverbinding"
+            } ]
+          },
+          "uitgaandeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Strookverbinding"
+            } ]
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Strookknoop"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Transportknoop"
+      } ]
+    },
+    "Hectometerpunt" : {
+      "type" : "object",
+      "$anchor" : "Hectometerpunt",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "entityType" : {
+            "type" : "string",
+            "const" : "Hectometerpunt"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Netwerkeigenschap"
+      } ]
+    },
+    "Spoorverbinding" : {
+      "type" : "object",
+      "$anchor" : "Spoorverbinding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string"
+          },
+          "startknoop" : {
+            "$ref" : "#/$defs/Spoorwegknoop"
+          },
+          "eindknoop" : {
+            "$ref" : "#/$defs/Spoorwegknoop"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Spoorverbinding"
+          }
+        },
+        "required" : [ "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Transportverbinding"
+      } ]
+    },
+    "Spoorwegknoop" : {
+      "type" : "object",
+      "$anchor" : "Spoorwegknoop",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "inkomendeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Spoorverbinding"
+            } ]
+          },
+          "uitgaandeVerbinding" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : true,
+            "items" : [ {
+              "$ref" : "#/$defs/Spoorverbinding"
+            } ]
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Spoorwegknoop"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Transportknoop"
+      } ]
+    },
+    "Afscheiding" : {
+      "type" : "object",
+      "$anchor" : "Afscheiding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Afscheiding"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Complex" : {
+      "type" : "object",
+      "$anchor" : "Complex",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Complex"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "GebruikszoneOppervlaktewater" : {
+      "type" : "object",
+      "$anchor" : "GebruikszoneOppervlaktewater",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "GebruikszoneOppervlaktewater"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Kering" : {
+      "type" : "object",
+      "$anchor" : "Kering",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Grondkering" : {
+      "type" : "object",
+      "$anchor" : "Grondkering",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Grondkering"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kering"
+      } ]
+    },
+    "Waterkering" : {
+      "type" : "object",
+      "$anchor" : "Waterkering",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Waterkering"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Kering"
+      } ]
+    },
+    "Luchtvaartzone" : {
+      "type" : "object",
+      "$anchor" : "Luchtvaartzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Luchtvaartzone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Oeverzone" : {
+      "type" : "object",
+      "$anchor" : "Oeverzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "indicatieNatuurvriendelijkeOever" : {
+            "type" : "boolean",
+            "readOnly" : false
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Oeverzone"
+          }
+        },
+        "required" : [ "geometrie", "indicatieNatuurvriendelijkeOever", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Recreatiezone" : {
+      "type" : "object",
+      "$anchor" : "Recreatiezone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Recreatiezone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Reducering" : {
+      "type" : "object",
+      "$anchor" : "Reducering",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Reducering"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Spoorzone" : {
+      "type" : "object",
+      "$anchor" : "Spoorzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Spoorzone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "VerkeerskundigFunctioneleZone" : {
+      "type" : "object",
+      "$anchor" : "VerkeerskundigFunctioneleZone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "naam" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "VerkeerskundigFunctioneleZone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Waterbergingsgebied" : {
+      "type" : "object",
+      "$anchor" : "Waterbergingsgebied",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Waterbergingsgebied"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "Wegzone" : {
+      "type" : "object",
+      "$anchor" : "Wegzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Wegzone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/FunctioneleRuimte"
+      } ]
+    },
+    "KeringOfAfscheiding" : {
+      "type" : "object",
+      "$anchor" : "KeringOfAfscheiding",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Afscheiding"
+      } ]
+    },
+    "Gemeentegebied" : {
+      "type" : "object",
+      "$anchor" : "Gemeentegebied",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "entityType" : {
+            "type" : "string",
+            "const" : "Gemeentegebied"
+          }
+        },
+        "required" : [ "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Object"
+      } ]
+    },
+    "Woonplaats" : {
+      "type" : "object",
+      "$anchor" : "Woonplaats",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "formeleNaam" : {
+            "type" : "string"
+          },
+          "alternatieveNaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Gemeentegebied"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Woonplaats"
+          }
+        },
+        "required" : [ "geometrie", "formeleNaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Wijk" : {
+      "type" : "object",
+      "$anchor" : "Wijk",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "wijkcode" : {
+            "type" : "string"
+          },
+          "wijknaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Gemeentegebied"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Wijk"
+          }
+        },
+        "required" : [ "geometrie", "wijkcode", "wijknaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Buurt" : {
+      "type" : "object",
+      "$anchor" : "Buurt",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "buurtcode" : {
+            "type" : "string"
+          },
+          "buurtnaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Wijk"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Buurt"
+          }
+        },
+        "required" : [ "geometrie", "buurtcode", "buurtnaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Subbuurt" : {
+      "type" : "object",
+      "$anchor" : "Subbuurt",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "subbuurtcode" : {
+            "type" : "string"
+          },
+          "subbuurtnaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Buurt"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Subbuurt"
+          }
+        },
+        "required" : [ "geometrie", "subbuurtcode", "subbuurtnaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Subbuurtdeel" : {
+      "type" : "object",
+      "$anchor" : "Subbuurtdeel",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "subbuurtdeelcode" : {
+            "type" : "string"
+          },
+          "subbuurtdeelnaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Subbuurt"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Subbuurtdeel"
+          }
+        },
+        "required" : [ "geometrie", "subbuurtdeelcode", "subbuurtdeelnaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "OpenbareRuimte" : {
+      "type" : "object",
+      "$anchor" : "OpenbareRuimte",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "formeleNaam" : {
+            "type" : "string"
+          },
+          "alternatieveNaam" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Woonplaats"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OpenbareRuimte"
+          }
+        },
+        "required" : [ "formeleNaam", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Nummeraanduiding" : {
+      "type" : "object",
+      "$anchor" : "Nummeraanduiding",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "huisnummer" : {
+            "type" : "integer",
+            "readOnly" : false
+          },
+          "huisletter" : {
+            "type" : "string"
+          },
+          "huisnummertoevoeging" : {
+            "type" : "string"
+          },
+          "postcode" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Woonplaats"
+          },
+          "ligtAan" : {
+            "$ref" : "#/$defs/OpenbareRuimte"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Nummeraanduiding"
+          }
+        },
+        "required" : [ "huisnummer", "postcode", "ligtIn", "ligtAan", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "BenoemdePlaats" : {
+      "type" : "object",
+      "$anchor" : "BenoemdePlaats",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "typeTePlaatsenObject" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "BenoemdePlaats"
+          }
+        },
+        "required" : [ "geometrie", "typeTePlaatsenObject", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/AdresseerbaarObject"
+      } ]
+    },
+    "AdresseerbaarObject" : {
+      "type" : "object",
+      "$anchor" : "AdresseerbaarObject",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "heeftAlsNevenadres" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "readOnly" : false,
+            "items" : [ {
+              "$ref" : "#/$defs/Nummeraanduiding"
+            } ]
+          },
+          "heeftAlsHoofdadres" : {
+            "$ref" : "#/$defs/Nummeraanduiding"
+          }
+        },
+        "required" : [ "heeftAlsHoofdadres" ]
+      }, {
+        "$ref" : "#/$defs/RegistratieveRuimte"
+      } ]
+    },
+    "Bebouwingskern" : {
+      "type" : "object",
+      "$anchor" : "Bebouwingskern",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "#/$defs/VlakOfMultiVlak"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "ligtIn" : {
+            "$ref" : "#/$defs/Gemeentegebied"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Bebouwingskern"
+          }
+        },
+        "required" : [ "geometrie", "type", "ligtIn", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/GeografischeRuimte"
+      } ]
+    },
+    "Streek" : {
+      "type" : "object",
+      "$anchor" : "Streek",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Streek"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/GeografischeRuimte"
+      } ]
+    },
+    "LandschappelijkGebied" : {
+      "type" : "object",
+      "$anchor" : "LandschappelijkGebied",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "LandschappelijkGebied"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/GeografischeRuimte"
+      } ]
+    },
+    "Reliefzone" : {
+      "type" : "object",
+      "$anchor" : "Reliefzone",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/GeografischeRuimte"
+      } ]
+    },
+    "Steilrand" : {
+      "type" : "object",
+      "$anchor" : "Steilrand",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/LineString"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Steilrand"
+          }
+        },
+        "required" : [ "geometrie", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Reliefzone"
+      } ]
+    },
+    "OverigeReliefzone" : {
+      "type" : "object",
+      "$anchor" : "OverigeReliefzone",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "geometrie" : {
+            "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-objects.json#/$defs/Polygon"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "OverigeReliefzone"
+          }
+        },
+        "required" : [ "geometrie", "type", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Reliefzone"
+      } ]
+    },
+    "Bronentiteit" : {
+      "type" : "object",
+      "$anchor" : "Bronentiteit",
+      "properties" : {
+        "identificatie" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "identificatie" ]
+    },
+    "Brondocument" : {
+      "type" : "object",
+      "$anchor" : "Brondocument",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "documentdatum" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Brondocument"
+          }
+        },
+        "required" : [ "documentdatum", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Bronentiteit"
+      } ]
+    },
+    "Actor" : {
+      "type" : "object",
+      "$anchor" : "Actor"
+    },
+    "Organisatie" : {
+      "type" : "object",
+      "$anchor" : "Organisatie",
+      "allOf" : [ {
+        "type" : "object"
+      }, {
+        "$ref" : "#/$defs/Actor"
+      } ]
+    },
+    "Overheidsorganisatie" : {
+      "type" : "object",
+      "$anchor" : "Overheidsorganisatie",
+      "allOf" : [ {
+        "type" : "object",
+        "properties" : {
+          "naam" : {
+            "type" : "string"
+          },
+          "officieleNaamInclSoort" : {
+            "type" : "string"
+          },
+          "organisatiecode" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "type" : "string",
+            "const" : "Overheidsorganisatie"
+          }
+        },
+        "required" : [ "naam", "organisatiecode", "entityType" ]
+      }, {
+        "$ref" : "#/$defs/Organisatie"
+      } ]
+    },
+    "Registratie" : {
+      "type" : "object",
+      "$anchor" : "Registratie",
+      "properties" : {
+        "versie" : {
+          "type" : "string",
+          "minLength" : 1,
+          "maxLength" : 50
+        },
+        "status" : {
+          "$ref" : "#/$defs/StatusRegistratie"
+        },
+        "beginGeldigheid" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "eindGeldigheid" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "tijdstipRegistratie" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "eindRegistratie" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "indicatieObjectGeconstateerd" : {
+          "type" : "boolean",
+          "readOnly" : false
+        },
+        "primaireBron" : {
+          "$ref" : "#/$defs/Bronentiteit_OneOf"
+        },
+        "verantwoordelijkePartij" : {
+          "$ref" : "#/$defs/Actor_OneOf"
+        },
+        "entityType" : {
+          "type" : "string",
+          "const" : "Registratie"
+        }
+      },
+      "required" : [ "versie", "status", "beginGeldigheid", "tijdstipRegistratie", "indicatieObjectGeconstateerd", "verantwoordelijkePartij", "entityType" ]
+    },
+    "Constructie_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Constructie_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Pand"
+      }, {
+        "$ref" : "#/$defs/Panddeel"
+      }, {
+        "$ref" : "#/$defs/Overbrugging"
+      }, {
+        "$ref" : "#/$defs/Ondertunneling"
+      }, {
+        "$ref" : "#/$defs/OverigWaterstaatkundigKunstwerk"
+      }, {
+        "$ref" : "#/$defs/Sluis"
+      }, {
+        "$ref" : "#/$defs/Kunstwerkdeel"
+      }, {
+        "$ref" : "#/$defs/Dek"
+      }, {
+        "$ref" : "#/$defs/Landhoofd"
+      }, {
+        "$ref" : "#/$defs/Pijler"
+      }, {
+        "$ref" : "#/$defs/Pyloon"
+      }, {
+        "$ref" : "#/$defs/Schutkolk"
+      }, {
+        "$ref" : "#/$defs/Sloof"
+      }, {
+        "$ref" : "#/$defs/Sluisdeur"
+      }, {
+        "$ref" : "#/$defs/OverigeConstructie"
+      }, {
+        "$ref" : "#/$defs/Kast"
+      }, {
+        "$ref" : "#/$defs/Lift"
+      }, {
+        "$ref" : "#/$defs/Oplaadpunt"
+      }, {
+        "$ref" : "#/$defs/Pomp"
+      }, {
+        "$ref" : "#/$defs/Sirene"
+      }, {
+        "$ref" : "#/$defs/Transformator"
+      }, {
+        "$ref" : "#/$defs/Verlichtingsarmatuur"
+      }, {
+        "$ref" : "#/$defs/Windturbine"
+      }, {
+        "$ref" : "#/$defs/Zonnepanelen"
+      }, {
+        "$ref" : "#/$defs/Mast"
+      }, {
+        "$ref" : "#/$defs/Muur"
+      }, {
+        "$ref" : "#/$defs/Omheining"
+      }, {
+        "$ref" : "#/$defs/Scherm"
+      } ]
+    },
+    "Transportverbinding_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Transportverbinding_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Wegverbinding"
+      }, {
+        "$ref" : "#/$defs/Baanverbinding"
+      }, {
+        "$ref" : "#/$defs/Strookverbinding"
+      }, {
+        "$ref" : "#/$defs/Spoorverbinding"
+      } ]
+    },
+    "Verbindingsverwijzing_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Verbindingsverwijzing_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/SimpelePuntverwijzing"
+      }, {
+        "$ref" : "#/$defs/SimpeleLineaireVerwijzing"
+      } ]
+    },
+    "Kering_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Kering_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Grondkering"
+      }, {
+        "$ref" : "#/$defs/Waterkering"
+      } ]
+    },
+    "Bronentiteit_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Bronentiteit_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Brondocument"
+      } ]
+    },
+    "Actor_OneOf" : {
+      "type" : "object",
+      "$anchor" : "Actor_OneOf",
+      "oneOf" : [ {
+        "$ref" : "#/$defs/Overheidsorganisatie"
+      } ]
+    }
+  }
+}
