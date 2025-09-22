@@ -83,15 +83,7 @@ Het toepassingsgebied betreft het "Europese grondgebied van het Koninkrijk der N
 
 Maak gebruik van een lijnlengte van maximaal 200 meter. Dit volgt het langelijnenadvies van het NSGI, dat is overgenomen in [[HRCRS]] in verband met compatibiliteit met RDNAPTRANS™.
 
-<aside class="issue">
-RD of toch ETRS89?
-</aside>
-
-Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor gebruiken we Linear Reference Systems (LRS), zie: [[ISO-19148]], [INSPIRE](https://inspire.ec.europa.eu/id/document/tg/tn), en de [Richtlijn BPS](https://wetten.overheid.nl/BWBR0015962/2003-12-05). 
-
-<aside class="issue">
-We doen nog niets met de Richtlijn BPS in het model.
-</aside>
+Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor gebruiken we Linear Reference Systems (LRS), zie: [[ISO-19148]] en [INSPIRE](https://inspire.ec.europa.eu/id/document/tg/tn). 
 
 ### Ruimtelijke relaties en topologie
 
