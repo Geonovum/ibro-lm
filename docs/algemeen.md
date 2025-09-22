@@ -123,20 +123,20 @@ De geldigheidstijdlijn beschrijft de periode waarin een object in de beschouwde 
 
 De registratietijdlijn beschrijft de periode waarin een versie van de gegevens over een object in de registratie bestaat. Hiervoor worden de eigenschappen `tijdstipRegistratie` en `eindRegistratie` gebruikt.
 
-Een object wat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op ieder moment in de gecombineerde tijdlijn geldigheid en registratie minimaal één registratie.
+Een object dat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op ieder moment in de gecombineerde tijdlijn geldigheid en registratie minimaal één registratie.
 
 ![NEN 3610 tijdlijnen](media/nen3610-tijdlijnen.png "Tijdlijnen van geldigheid en van registratie in NEN 3610")
 
 ### Registratiestatus en afgevoerde registraties
 
-Een object wat beschreven wordt in de IBRO kan op ieder moment in de gecombineerde tijdlijn geldigheid en registratie een of meerdere gegevensregistraties kennen.
+Een object dat beschreven wordt in de IBRO kan op ieder moment in de gecombineerde tijdlijn geldigheid en registratie een of meerdere gegevensregistraties kennen.
 
 Een gevensregistratie heeft een registratiestatus. De registratiestatus geeft aan of de gegevensregistratie actief (`Actief`) is, of dat het een afgevoerde registratie (`Afgevoerd`) betreft. Een afgevoerde registratie is een registratie die niet meer actief is, maar die wel bewaard blijft in de registratie voor formeel-historische doeleinden.
 
 Er mag maar één gegevensregistratie zijn met de registratiestatus `Actief` op een bepaald moment in de gecombineerde tijdlijn geldigheid en registratie.
 
 <aside class="note">
-In [[EMSO]] kennen alle objecttypen de levensfase `Afgevoerd`. Dit in IMIBRO niet meer het geval. De levensfase `Afgevoerd` beschrrijft in [[EMSO]] de fase van een object wat ten onrechte is opgevoerd in de registratie, of waarvan is vastgesteld dat het ontwerp of plan voor het realiseren van het object niet geleid heeft tot feitelijke realisatie van het object.
+In [[EMSO]] kennen alle objecttypen de levensfase `Afgevoerd`. Dit in IMIBRO niet meer het geval. De levensfase `Afgevoerd` beschrrijft in [[EMSO]] de fase van een object dat ten onrechte is opgevoerd in de registratie, of waarvan is vastgesteld dat het ontwerp of plan voor het realiseren van het object niet geleid heeft tot feitelijke realisatie van het object.
 
 De bedoeling van de levensfase is om het levenscyclus van een object in de werkelijkheid zo goed mogelijk te beschrijven. Het wel of niet beschreven zijn van een object in een registratie is hier geen onderdeel van. Met die reden is besloten om dat aspect niet meer in de object-levensfasen in IMIBRO op te nemen, maar op te nemen als registratiestatus.
 
@@ -157,9 +157,9 @@ Het herkomstmodel in de IBRO is gebaseerd op de W3C standaard [[PROV-O]]. Door a
 
 #### Geconstateerde objecten
 
-In de landelijke voorziening BAG wordt onderscheid gemaakt tussen objecten die zijn geregistreerd op basis van een regulier brondocument versus objectbeschrijvingen die in registratie zijn opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument.
+In de landelijke voorziening BAG wordt onderscheid gemaakt tussen objecten die zijn geregistreerd op basis van een regulier brondocument versus objectbeschrijvingen die in de registratie zijn opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument.
 
-Voor deze eigenschappen is ere een [indicatie](#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie_attribuutsoort_indicatie_object_geconstateerd) opgenomen op het niveau van de objectregistratie, waarmee kan worden aangegeven of een object is opgenomen op basis van een regulier brondocument of op basis van een feitelijke constatering.
+Voor deze eigenschappen is er een [indicatie](#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie_attribuutsoort_indicatie_object_geconstateerd) opgenomen op het niveau van de objectregistratie, waarmee kan worden aangegeven of een object is opgenomen op basis van een regulier brondocument of op basis van een feitelijke constatering.
 
 ## Afleidbare eigenschappen
 
