@@ -54,7 +54,7 @@ In de IBRO is het uitgangspunt om reëele objecten in 3D vast te leggen. Voor de
 
 Van sommige objecten is de onderlinge relatie van belang; ook wel *ruimtelijke relaties* genoemd. De BGT-gegevenscatalogus beschrijft bijvoorbeeld welke objecten samen een landsdekkend geheel vormen. Om deze objecten correct aan de BGT te kunnen aanleveren moeten deze ruimtelijke relaties ook in de IBRO geborgd worden. Bovendien heeft een geometrische representatie vaak ook kwaliteitskenmerken, bijvoorbeeld ten aanzien van *nauwkeurigheid* en *inwinregels*. 
 
-Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel DiSGeo van toepassing zijn én hoe die concreet worden vastgelegd. 
+Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel IBRO van toepassing zijn én hoe die concreet worden vastgelegd. 
 
 Het conceptueel informatiemodel IBRO legt slechts generiek vast dat objecttypen al dan niet een geometrische representatie hebben. In het logisch gegevensmodel wordt dit voor elk objecttype verder ingevuld met een specifiek geometrietype. We gebruiken de ISO 19107-geometrietypen uit onderstaande tabel:
 
