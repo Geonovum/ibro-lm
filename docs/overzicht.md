@@ -6,7 +6,7 @@ Logisch Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)
 
 ## Definitie
 
-In de Integrale Bronregistratie Objecten (IBRO) worden de gegevens vastgelegd omtrent gesynchroniseerde objecten uit de BAG, BGT en WOZ. Het conceptueel informatiemodel IMIBRO [[IBROCM]] definieert het informatiedomein van de IBRO en vormt de basis voor dit logische gegevensmodel, het IBRO-LM, in het kader van de IBRO.
+In de Integrale Bronregistratie Objecten (IBRO) worden de gegevens vastgelegd omtrent gesynchroniseerde objecten uit de BAG, BGT en het objectendeel van de WOZ. Het conceptueel informatiemodel IMIBRO [[IBROCM]] definieert het informatiedomein van de IBRO en vormt de basis voor dit logische gegevensmodel, het IBRO-LM, in het kader van de IBRO.
 
 
 ## Beschrijving
