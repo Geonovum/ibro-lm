@@ -2,7 +2,7 @@
 
 ## Naam en Acroniemen
 
-Logisch Informatiemodel Integrale Bronregistratie Objecten (IMIBRO)
+Logisch Gegevensmodel Integrale Bronregistratie Objecten (IBRO-LM)
 
 ## Definitie
 

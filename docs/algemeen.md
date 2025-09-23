@@ -2,13 +2,13 @@
 
 ## Aansluiting op het conceptuele model IMIBRO
 
-Het logisch gegevensmodel IMIBRO-LM is een uitwerking van het conceptuele model IMIBRO. Het IMIBRO-LM beschrijft de gegevens die nodig zijn om de in het IMIBRO beschreven objecten te verwerken. Het IMIBRO-LM is daarmee een logisch gegevensmodel dat aansluit op het conceptuele model IMIBRO.
+Het logisch gegevensmodel IBRO-LM is een uitwerking van het conceptuele model IMIBRO. Het IBRO-LM beschrijft de gegevens die nodig zijn om de in het IMIBRO beschreven objecten te verwerken. Het IBRO-LM is daarmee een logisch gegevensmodel dat aansluit op het conceptuele model IMIBRO.
 
 Het logisch model heeft niet altijd dezelfde structuur als het conceptuele model. Zou zijn classificaties vaak als classificatie-attributen in het logisch model opgenomen. Daarnaast zijn in het logisch model ook attributen opgenomen die nodig zijn voor de registratie van objecten, maar niet in het conceptuele model zijn beschreven.
 
 ## Aansluiting op NEN 3610
 
-Het logisch model IMIBRO-LM is opgesteld volgens de richtlijnen van [[NEN3610-2022]] en het [[MIM12]]. Dit betekent dat het model is opgebouwd uit objecttypen, attribuutsoorten en relatiesoorten. Daarnaast wordt er gebruik gemaakt van de in NEN 3610 beschreven basisprincipes voor identificaties, tijdlijnen en geometrieën.
+Het logisch model IBRO-LM is opgesteld volgens de richtlijnen van [[NEN3610-2022]] en het [[MIM12]]. Dit betekent dat het model is opgebouwd uit objecttypen, attribuutsoorten en relatiesoorten. Daarnaast wordt er gebruik gemaakt van de in NEN 3610 beschreven basisprincipes voor identificaties, tijdlijnen en geometrieën.
 
 ## Identificatie
 
@@ -30,7 +30,7 @@ Een domein attribuut heeft als datatype een URI. De URI verwijst naar de context
 
 ## Typering
 
-Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. Classificaties zijn optioneel en kunnen per object verschillen. In het IMIBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
+Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. Classificaties zijn optioneel en kunnen per object verschillen. In het IBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
 
 In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `Bouwdeel`. Wanneer een object een verplictht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
 
@@ -52,9 +52,7 @@ Voor de representatie van de locatie, oriëntatie en vorm van een object uit de 
 
 In de IBRO is het uitgangspunt om reëele objecten in 3D vast te leggen. Voor de vastlegging van (informatie over) geometrieën volgen we CityGML 3.0 [[CityGML3]], de internationale standaard voor 3D stadsmodellen. Representatie van 3D geometrieën in CityGML is gebaseerd op ISO 19107 [[iso-19107-2003]]. Deze standaard voorziet zowel in de opname van de coördinaten van de geometrie, als van het coördinatenstelsel.
 
-Van sommige objecten is de onderlinge relatie van belang; ook wel *ruimtelijke relaties* genoemd. De BGT-gegevenscatalogus beschrijft bijvoorbeeld welke objecten samen een landsdekkend geheel vormen. Om deze objecten correct aan de BGT te kunnen aanleveren moeten deze ruimtelijke relaties ook in de IBRO geborgd worden. Bovendien heeft een geometrische representatie vaak ook kwaliteitskenmerken, bijvoorbeeld ten aanzien van *nauwkeurigheid* en *inwinregels*. 
-
-Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel IBRO van toepassing zijn én hoe die concreet worden vastgelegd. 
+Van sommige objecten is de onderlinge relatie van belang; ook wel *ruimtelijke relaties* genoemd. De BGT-gegevenscatalogus beschrijft bijvoorbeeld welke objecten samen een landsdekkend geheel vormen. Om deze objecten correct aan de BGT te kunnen aanleveren moeten deze ruimtelijke relaties ook in de IBRO geborgd worden. 
 
 Het conceptueel informatiemodel IBRO legt slechts generiek vast dat objecttypen al dan niet een geometrische representatie hebben. In het logisch gegevensmodel wordt dit voor elk objecttype verder ingevuld met een specifiek geometrietype. We gebruiken de ISO 19107-geometrietypen uit onderstaande tabel:
 
@@ -87,7 +85,7 @@ Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor g
 
 ### Ruimtelijke relaties en topologie
 
-Het informatiemodel IBRO gaat als bron dienen voor gegevens uit verschillende geo-basisregistraties. Voor deze basisregistraties gelden reeds bestaande regels ten aanzien van de topologische kwaliteit. De kwaliteit van de gegevens in het IBRO moet zodanig zijn dat aan deze regels kan worden voldaan. 
+Het IBRO-LM gaat als bron dienen voor gegevens uit verschillende geo-basisregistraties. Voor deze basisregistraties gelden reeds bestaande regels ten aanzien van de topologische kwaliteit. De kwaliteit van de gegevens in het IBRO moet zodanig zijn dat aan deze regels kan worden voldaan. 
 
 Omdat ze in het [[EMSO]] geformuleerd staan en van onverminderd belang zijn voor de kwaliteit van de IBRO, herhalen we voor de volledigheid een aantal basisprincipes op deze plek. 
 - De reële objecten bedekken met hun x,y,z geometrie het volledige grondgebied van [een gemeente in] Nederland
@@ -97,8 +95,6 @@ Omdat ze in het [[EMSO]] geformuleerd staan en van onverminderd belang zijn voor
 - Geografische ruimten zijn niet landsdekkend (of gemeente dekkend) en mogen elkaar overlappen
 
 Omdat het logisch gegevensmodel IBRO een 3D model is, zijn de regels ten aanzien van topologische kwaliteit anders dan in vergelijkbare 2D modellen zoals de BGT. Uitgangspunt is dat objecten die zich in de werkelijkheid op een bepaalde wijze tot elkaar verhouden (bijvoorbeeld een verharding ligt bovenop een overbrugging) ook in de registratie op deze wijze tot elkaar verhouden (bijvoorbeeld dat uit de z-coördinaten van de verharding en de overbrugging blijkt dat de verharding bovenop de overbrugging ligt). Daarnaast is het van belang dat er op elke fysieke locatie in de werkelijkheid (elke x,y-coördinaat) altijd tenminste een reëel object aanwezig is (water, begroeiing, gebouw, verharding, kunstwerk, constructies of onbepaald terrein).
-
-<!-- ### Linear referencing -->
 
 ## Registratiegegevens
 
@@ -163,6 +159,12 @@ Voor deze eigenschappen is er een [indicatie](#informatiemodel_imibro_logisch_do
 
 ## Afleidbare eigenschappen
 
-In het informatiemodel IBRO worden naast de direct geregistreerde eigenschappen ook afleidbare eigenschappen opgenomen. Afleidbare eigenschappen zijn eigenschappen die niet direct worden geregistreerd, maar die kunnen worden afgeleid uit andere geregistreerde eigenschappen. Dit kan bijvoorbeeld door berekeningen, regels of logica toe te passen op de geregistreerde gegevens.
+In IBRO-LM worden naast de direct geregistreerde eigenschappen ook afleidbare eigenschappen opgenomen. Afleidbare eigenschappen zijn eigenschappen die niet direct worden geregistreerd, maar die kunnen worden afgeleid uit andere geregistreerde eigenschappen. Dit kan bijvoorbeeld door berekeningen, regels of logica toe te passen op de geregistreerde gegevens.
 
 Afleidbare eigenschappen hebben in het gegensmodel de waarde `Ja` voor het metagegeven <a data-cite="MIM12#metagegeven-indicatie-afleidbaar">indicatie afleidbaar</a> en zijn in de modeldiagrammen aangeduid met een `/` als prefix bij de naam van de eigenschap. 
+
+## Authenticiteit van gegevens in IBRO
+
+In IBRO-LM zijn gegevens nog niet als authentiek aangeduid. Een authentiek gegeven is een gegeven dat in een basisregistratie is opgenomen en bij wettelijk voorschrift als authentiek is aangemerkt. Voor authentieke gegevens geldt dat ze van hoge kwaliteit zijn, dat deze kwaliteit met expliciete garanties wordt geborgd, dat ze vitaal of veelvuldig benodigd zijn voor wettelijke taken, dat er bij wet één officieel erkende registratie voor is aangewezen, en dat het authentieke gegeven in die registratie verplicht gebruikt wordt door alle overheidsinstanties. Deze definitie is afkomstig uit de Kadasterwet.
+
+Omdat de IBRO een proeftuin is en het nog niet volledig duidelijk is hoe de IBRO zich zal verhouden tot bestaande basisregistraties, is in dit stadium nog niet vastgelegd welke gegevens als authentiek worden beschouwd. De positionering van de IBRO ten opzichte van landelijke basisregistraties zoals BAG, BGT en WOZ is nog onderwerp van onderzoek en ontwikkeling. Zodra de rol van de IBRO en de wettelijke status van de gegevens duidelijk zijn, zal worden beschreven welke gegevens als authentiek worden aangemerkt en hoe dit in het gegevensmodel wordt vastgelegd.
