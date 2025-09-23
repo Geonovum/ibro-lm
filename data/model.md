@@ -1,6 +1,6 @@
 # Informatiemodel Logisch model IBRO
 ## Domein Kern
-![Kern](model-docs/media/kern.png "Domein Kern")
+![Kern](data/media/kern.png "Domein Kern")
 
 ### Objecttypen
 
@@ -350,7 +350,7 @@ De reguliere expressie voor de toegestane tekens is: [a-zA-Z|0-9|_|.|-|\/|:|]</t
 </tr>
 <tr>
 <th>Kardinaliteit relatie bron</th>
-<td>1..*</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -2260,7 +2260,7 @@ Fase van de levenscyclus waarin een object zich bevindt.</td>
 
 
 ## Domein Groen
-![Groen](model-docs/media/groen.png "Domein Groen")
+![Groen](data/media/groen.png "Domein Groen")
 
 ### Objecttypen
 
@@ -3420,7 +3420,7 @@ Geometrische representatie van een object.</td>
 
 
 ## Domein Bodem
-![Bodem](model-docs/media/bodem.png "Domein Bodem")
+![Bodem](data/media/bodem.png "Domein Bodem")
 
 ### Objecttypen
 
@@ -3614,7 +3614,7 @@ Geometrische representatie van een object.</td>
 
 
 ## Domein Water
-![Water](model-docs/media/water.png "Domein Water")
+![Water](data/media/water.png "Domein Water")
 
 ### Objecttypen
 
@@ -4703,7 +4703,7 @@ Deze watervlakte is al dan niet een hoofdverbinding in het watersysteem.</td>
 
 
 ## Domein Gebouwen
-![Gebouwen](model-docs/media/gebouwen.png "Domein Gebouwen")
+![Gebouwen](data/media/gebouwen.png "Domein Gebouwen")
 
 ### Objecttypen
 
@@ -8289,7 +8289,7 @@ Toegangspunt is primair bedoeld voor toegang tot een object door vracht zonder g
 
 
 ## Domein Verhardingen
-![Verhardingen](model-docs/media/verhardingen.png "Domein Verhardingen")
+![Verhardingen](data/media/verhardingen.png "Domein Verhardingen")
 
 ### Objecttypen
 
@@ -8607,7 +8607,7 @@ Typeclassificatie van een object.</td>
 
 
 ## Domein Kunstwerken
-![Kunstwerken](model-docs/media/kunstwerken.png "Domein Kunstwerken")
+![Kunstwerken](data/media/kunstwerken.png "Domein Kunstwerken")
 
 ### Objecttypen
 
@@ -11287,7 +11287,7 @@ Object waar dit object onderdeel van uit maakt.</td>
 
 
 ## Domein Overige constructies
-![Overige constructies](model-docs/media/overige_constructies.png "Domein Overige constructies")
+![Overige constructies](data/media/overige_constructies.png "Domein Overige constructies")
 
 ### Objecttypen
 
@@ -14901,7 +14901,7 @@ Functie die dit object vervult.</td>
 
 
 ## Domein Transportnetwerk
-![Transportnetwerk](model-docs/media/transportnetwerk.png "Domein Transportnetwerk")
+![Transportnetwerk](data/media/transportnetwerk.png "Domein Transportnetwerk")
 
 ### Objecttypen
 
@@ -16488,7 +16488,7 @@ InTegenovergesteldeRichting</td>
 
 
 ## Domein Wegennetwerk
-![Wegennetwerk](model-docs/media/wegennetwerk.png "Domein Wegennetwerk")
+![Wegennetwerk](data/media/wegennetwerk.png "Domein Wegennetwerk")
 
 ### Objecttypen
 
@@ -19533,7 +19533,7 @@ Eén rijrichting is toegestaan in de tegenovergestelde richting van de verbindin
 
 
 ## Domein Spoorwegennetwerk
-![Spoorwegennetwerk](model-docs/media/spoorwegennetwerk.png "Domein Spoorwegennetwerk")
+![Spoorwegennetwerk](data/media/spoorwegennetwerk.png "Domein Spoorwegennetwerk")
 
 ### Objecttypen
 
@@ -20193,7 +20193,7 @@ De verbindingen die de knoop verlaten.</td>
 
 
 ## Domein Functionele ruimten
-![Functionele ruimten](model-docs/media/functionele_ruimten.png "Domein Functionele ruimten")
+![Functionele ruimten](data/media/functionele_ruimten.png "Domein Functionele ruimten")
 
 ### Objecttypen
 
@@ -23928,7 +23928,7 @@ Typeclassificatie van een object.</td>
 
 
 ## Domein Bestuurlijke gebieden
-![Bestuurlijke gebieden](model-docs/media/bestuurlijke_gebieden.png "Domein Bestuurlijke gebieden")
+![Bestuurlijke gebieden](data/media/bestuurlijke_gebieden.png "Domein Bestuurlijke gebieden")
 
 ### Objecttypen
 
@@ -24013,7 +24013,7 @@ Typeclassificatie van een object.</td>
 
 
 ## Domein Registratieve ruimten
-![Registratieve ruimten](model-docs/media/registratieve_ruimten.png "Domein Registratieve ruimten")
+![Registratieve ruimten](data/media/registratieve_ruimten.png "Domein Registratieve ruimten")
 
 ### Objecttypen
 
@@ -27810,7 +27810,7 @@ Type van het object dat op de benoemde plaats is of kan worden geplaatst.</td>
 
 
 ## Domein Geografische ruimten
-![Geografische ruimten](model-docs/media/geografische_ruimten.png "Domein Geografische ruimten")
+![Geografische ruimten](data/media/geografische_ruimten.png "Domein Geografische ruimten")
 
 ### Objecttypen
 
@@ -29224,7 +29224,7 @@ Geometrische representatie van een object.</td>
 
 
 ## Domein Registratiegegevens
-![Registratiegegevens](model-docs/media/registratiegegevens.png "Domein Registratiegegevens")
+![Registratiegegevens](data/media/registratiegegevens.png "Domein Registratiegegevens")
 
 ### Objecttypen
 
