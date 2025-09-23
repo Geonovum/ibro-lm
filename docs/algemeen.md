@@ -54,7 +54,7 @@ In de IBRO is het uitgangspunt om reëele objecten in 3D vast te leggen. Voor de
 
 Van sommige objecten is de onderlinge relatie van belang; ook wel *ruimtelijke relaties* genoemd. De BGT-gegevenscatalogus beschrijft bijvoorbeeld welke objecten samen een landsdekkend geheel vormen. Om deze objecten correct aan de BGT te kunnen aanleveren moeten deze ruimtelijke relaties ook in de IBRO geborgd worden. Bovendien heeft een geometrische representatie vaak ook kwaliteitskenmerken, bijvoorbeeld ten aanzien van *nauwkeurigheid* en *inwinregels*. 
 
-Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel DiSGeo van toepassing zijn én hoe die concreet worden vastgelegd. 
+Samengevat legt het informatiemodel de volgende informatie over een geometrie vast: type, dimensie, coordinaatreferentiesysteem (CRS), ruimtelijke relaties en Kwaliteitskenmerken (o.a. nauwkeurigheid, inwinregels en topologische regels). De volgende paragrafen beschrijven welke eisen op het informatiemodel IBRO van toepassing zijn én hoe die concreet worden vastgelegd. 
 
 Het conceptueel informatiemodel IBRO legt slechts generiek vast dat objecttypen al dan niet een geometrische representatie hebben. In het logisch gegevensmodel wordt dit voor elk objecttype verder ingevuld met een specifiek geometrietype. We gebruiken de ISO 19107-geometrietypen uit onderstaande tabel:
 
@@ -83,15 +83,7 @@ Het toepassingsgebied betreft het "Europese grondgebied van het Koninkrijk der N
 
 Maak gebruik van een lijnlengte van maximaal 200 meter. Dit volgt het langelijnenadvies van het NSGI, dat is overgenomen in [[HRCRS]] in verband met compatibiliteit met RDNAPTRANS™.
 
-<aside class="issue">
-RD of toch ETRS89?
-</aside>
-
-Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor gebruiken we Linear Reference Systems (LRS), zie: [[ISO-19148]], [INSPIRE](https://inspire.ec.europa.eu/id/document/tg/tn), en de [Richtlijn BPS](https://wetten.overheid.nl/BWBR0015962/2003-12-05). 
-
-<aside class="issue">
-We doen nog niets met de Richtlijn BPS in het model.
-</aside>
+Verder is bij het onderdeel Netwerk ook lineair refereren van belang. Daarvoor gebruiken we Linear Reference Systems (LRS), zie: [[ISO-19148]] en [INSPIRE](https://inspire.ec.europa.eu/id/document/tg/tn). 
 
 ### Ruimtelijke relaties en topologie
 
@@ -131,20 +123,20 @@ De geldigheidstijdlijn beschrijft de periode waarin een object in de beschouwde 
 
 De registratietijdlijn beschrijft de periode waarin een versie van de gegevens over een object in de registratie bestaat. Hiervoor worden de eigenschappen `tijdstipRegistratie` en `eindRegistratie` gebruikt.
 
-Een object wat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op ieder moment in de gecombineerde tijdlijn geldigheid en registratie minimaal één registratie.
+Een object dat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op ieder moment in de gecombineerde tijdlijn geldigheid en registratie minimaal één registratie.
 
 ![NEN 3610 tijdlijnen](media/nen3610-tijdlijnen.png "Tijdlijnen van geldigheid en van registratie in NEN 3610")
 
 ### Registratiestatus en afgevoerde registraties
 
-Een object wat beschreven wordt in de IBRO kan op ieder moment in de gecombineerde tijdlijn geldigheid en registratie een of meerdere gegevensregistraties kennen.
+Een object dat beschreven wordt in de IBRO kan op ieder moment in de gecombineerde tijdlijn geldigheid en registratie een of meerdere gegevensregistraties kennen.
 
 Een gevensregistratie heeft een registratiestatus. De registratiestatus geeft aan of de gegevensregistratie actief (`Actief`) is, of dat het een afgevoerde registratie (`Afgevoerd`) betreft. Een afgevoerde registratie is een registratie die niet meer actief is, maar die wel bewaard blijft in de registratie voor formeel-historische doeleinden.
 
 Er mag maar één gegevensregistratie zijn met de registratiestatus `Actief` op een bepaald moment in de gecombineerde tijdlijn geldigheid en registratie.
 
 <aside class="note">
-In [[EMSO]] kennen alle objecttypen de levensfase `Afgevoerd`. Dit in IMIBRO niet meer het geval. De levensfase `Afgevoerd` beschrrijft in [[EMSO]] de fase van een object wat ten onrechte is opgevoerd in de registratie, of waarvan is vastgesteld dat het ontwerp of plan voor het realiseren van het object niet geleid heeft tot feitelijke realisatie van het object.
+In [[EMSO]] kennen alle objecttypen de levensfase `Afgevoerd`. Dit in IMIBRO niet meer het geval. De levensfase `Afgevoerd` beschrrijft in [[EMSO]] de fase van een object dat ten onrechte is opgevoerd in de registratie, of waarvan is vastgesteld dat het ontwerp of plan voor het realiseren van het object niet geleid heeft tot feitelijke realisatie van het object.
 
 De bedoeling van de levensfase is om het levenscyclus van een object in de werkelijkheid zo goed mogelijk te beschrijven. Het wel of niet beschreven zijn van een object in een registratie is hier geen onderdeel van. Met die reden is besloten om dat aspect niet meer in de object-levensfasen in IMIBRO op te nemen, maar op te nemen als registratiestatus.
 
@@ -165,9 +157,9 @@ Het herkomstmodel in de IBRO is gebaseerd op de W3C standaard [[PROV-O]]. Door a
 
 #### Geconstateerde objecten
 
-In de landelijke voorziening BAG wordt onderscheid gemaakt tussen objecten die zijn geregistreerd op basis van een regulier brondocument versus objectbeschrijvingen die in registratie zijn opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument.
+In de landelijke voorziening BAG wordt onderscheid gemaakt tussen objecten die zijn geregistreerd op basis van een regulier brondocument versus objectbeschrijvingen die in de registratie zijn opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument.
 
-Voor deze eigenschappen is ere een [indicatie](#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie_attribuutsoort_indicatie_object_geconstateerd) opgenomen op het niveau van de objectregistratie, waarmee kan worden aangegeven of een object is opgenomen op basis van een regulier brondocument of op basis van een feitelijke constatering.
+Voor deze eigenschappen is er een [indicatie](#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie_attribuutsoort_indicatie_object_geconstateerd) opgenomen op het niveau van de objectregistratie, waarmee kan worden aangegeven of een object is opgenomen op basis van een regulier brondocument of op basis van een feitelijke constatering.
 
 ## Afleidbare eigenschappen
 
