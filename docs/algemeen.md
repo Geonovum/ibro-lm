@@ -4,7 +4,7 @@
 
 Het logisch gegevensmodel IBRO-LM is een uitwerking van het conceptuele model IMIBRO. Het IBRO-LM beschrijft de gegevens die nodig zijn om de in het IMIBRO beschreven objecten te verwerken. Het IBRO-LM is daarmee een logisch gegevensmodel dat aansluit op het conceptuele model IMIBRO.
 
-Het logisch model heeft niet altijd dezelfde structuur als het conceptuele model. Zou zijn classificaties vaak als classificatie-attributen in het logisch model opgenomen. Daarnaast zijn in het logisch model ook attributen opgenomen die nodig zijn voor de registratie van objecten, maar niet in het conceptuele model zijn beschreven.
+Het logisch model heeft niet altijd dezelfde structuur als het conceptuele model. Zo zijn classificaties vaak als classificatie-attributen in het logisch model opgenomen. Daarnaast zijn in het logisch model ook attributen opgenomen die nodig zijn voor de registratie van objecten, maar niet in het conceptuele model zijn beschreven.
 
 ## Aansluiting op NEN 3610
 
@@ -32,7 +32,7 @@ Een domein attribuut heeft als datatype een URI. De URI verwijst naar de context
 
 Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. Classificaties zijn optioneel en kunnen per object verschillen. In het IBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
 
-In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `Bouwdeel`. Wanneer een object een verplictht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
+In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `Bouwdeel`. Wanneer een object een verplicht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
 
 ## Levensfasen
 
@@ -96,6 +96,14 @@ Omdat ze in het [[EMSO]] geformuleerd staan en van onverminderd belang zijn voor
 
 Omdat het logisch gegevensmodel IBRO een 3D model is, zijn de regels ten aanzien van topologische kwaliteit anders dan in vergelijkbare 2D modellen zoals de BGT. Uitgangspunt is dat objecten die zich in de werkelijkheid op een bepaalde wijze tot elkaar verhouden (bijvoorbeeld een verharding ligt bovenop een overbrugging) ook in de registratie op deze wijze tot elkaar verhouden (bijvoorbeeld dat uit de z-coördinaten van de verharding en de overbrugging blijkt dat de verharding bovenop de overbrugging ligt). Daarnaast is het van belang dat er op elke fysieke locatie in de werkelijkheid (elke x,y-coördinaat) altijd tenminste een reëel object aanwezig is (water, begroeiing, gebouw, verharding, kunstwerk, constructies of onbepaald terrein).
 
+### Gebruik CityGML eigenschappen voor 3D geometrieën
+
+Voor de representatie van 3D geometrieën in CityGML worden verschillende eigenschappen gebruikt die de LOD (Level of Detail) van de geometrie aangeven. In het IBRO-LM wordt gebruik gemaat van de eigenschappen `lod1Solid`, `lod2Solid` en `lod3Solid` voor het vastleggen van 3D geometrieën van constructies. Deze eigenschappen zijn gedefinieerd in CityGML 3.0 [[CityGML3]].
+
+De eigenschappen zijn opgenomen naast de 2D geometrieën die in het model zijn opgenomen. Dit betekent dat een object zowel een 2D geometrie kan hebben als een 3D geometrie. Zie [[[#verplichtheid-bij-2d-of-3d-registratie]]] voor meer informatie hierover.
+
+Het gebruik van deze eigenschappen vergemakkelijkt een mapping van de IBRO naar CityGML 3.0. 
+
 ## Registratiegegevens
 
 In de IBRO worden gegevens geregistreerd over objecten uit de werkelijkheid. Deze gegevens worden beheerd door een of meer bronhouders. Voor het goed kunnen beheren en gebruiken van deze gegevens is het van belang dat er registratiegegevens worden vastgelegd over de wijze waarop de gegevens zijn geregistreerd.
@@ -143,11 +151,11 @@ De status `Afgevoerd` is in IMIBRO vervangen door de registratiestatus `Afgevoer
 
 ### Herkomst en bronverwijzing
 
-Voor elke objectregistratie in de IBRO wordt opgenomen waar de gegevens vandaan komen en hoe deze tot stand zijn gekomen. Dit gebeurt door het registreren van herkomst- en bronverwijzingen. De herkomst maakt het mogelijk om de oorspronkelijke bronhouder, het gebruikte brondocument of de bronregistratie waar gegevens van akfomstig zijn te identificeren.
+Voor elke objectregistratie in de IBRO wordt opgenomen waar de gegevens vandaan komen en hoe deze tot stand zijn gekomen. Dit gebeurt door het registreren van herkomst- en bronverwijzingen. De herkomst maakt het mogelijk om de oorspronkelijke bronhouder, het gebruikte brondocument of de bronregistratie waar gegevens van afkomstig zijn te identificeren.
 
 Deze registratiegegevens zijn essentieel voor transparantie, kwaliteitsborging en het kunnen uitvoeren van controles of correcties. Ze maken het mogelijk om wijzigingen in de registratie te herleiden tot hun oorsprong en ondersteunen het beheer van de gegevens over de gehele levenscyclus van een object.
 
-In de IBRO worden deze gegevens bij elke objectregistratie optgenomen, conform de afspraken uit het gegevensmodel. Hierdoor is altijd inzichtelijk op basis van welke bron een object in de registratie is opgenomen of gewijzigd.
+In de IBRO worden deze gegevens bij elke objectregistratie opgenomen, conform de afspraken uit het gegevensmodel. Hierdoor is altijd inzichtelijk op basis van welke bron een object in de registratie is opgenomen of gewijzigd.
 
 Het herkomstmodel in de IBRO is gebaseerd op de W3C standaard [[PROV-O]]. Door aansluiting op PROV-O is het mogelijk om op een gestandaardiseerde en interoperabele manier de herkomst en bronverwijzingen van objecten te registreren, uit te wisselen en te interpreteren binnen en buiten de IBRO. Momenteel is in het model alleen de minimale set van herkomst- en bronverwijzingen opgenomen die nodig is voor de IBRO. In de toekomst kan dit worden uitgebreid met aanvullende elementen uit [[PROV-O]] indien nodig.
 
@@ -161,7 +169,7 @@ Voor deze eigenschappen is er een [indicatie](#informatiemodel_imibro_logisch_do
 
 In IBRO-LM worden naast de direct geregistreerde eigenschappen ook afleidbare eigenschappen opgenomen. Afleidbare eigenschappen zijn eigenschappen die niet direct worden geregistreerd, maar die kunnen worden afgeleid uit andere geregistreerde eigenschappen. Dit kan bijvoorbeeld door berekeningen, regels of logica toe te passen op de geregistreerde gegevens.
 
-Afleidbare eigenschappen hebben in het gegensmodel de waarde `Ja` voor het metagegeven <a data-cite="MIM12#metagegeven-indicatie-afleidbaar">indicatie afleidbaar</a> en zijn in de modeldiagrammen aangeduid met een `/` als prefix bij de naam van de eigenschap. 
+Afleidbare eigenschappen hebben in het gegevensmodel de waarde `Ja` voor het metagegeven <a data-cite="MIM12#metagegeven-indicatie-afleidbaar">indicatie afleidbaar</a> en zijn in de modeldiagrammen aangeduid met een `/` als prefix bij de naam van de eigenschap. 
 
 ## Authenticiteit van gegevens in IBRO
 
