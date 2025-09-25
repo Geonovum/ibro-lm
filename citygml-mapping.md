@@ -1,6 +1,6 @@
-# Conceptuele mapping van IBRO met CityGML
+# Mapping van IBRO-LM met CityGML 3.0
 
-Het IBRO informatiemodel wordt afgestemd met OGC CityGML v3.0 [[CityGML3]]. 
+Het IBRO informatiemodel wordt afgestemd met OGC CityGML 3.0 [[CityGML3]]. 
 
 Om rekening mee te houden: *Only top-level features are allowed as direct members of a city model.* Dit zijn (beperkt tot de feature types waar we mappings naar hebben): 
 - CityFurniture
