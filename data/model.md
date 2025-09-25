@@ -13750,7 +13750,7 @@ Vlakgeometrische representatie van een object.</td>
 <a class="external-link" href="https://geonovum.github.io/uml-datatypen/#global_class_ISO191072003_GM_Surface"> GM_Surface</a>
 </td>
 <td>
-1</td>
+0..1</td>
 </tr>
 <tr>
 <td>
@@ -13922,7 +13922,7 @@ Functie die dit object vervult.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>1</td>
+<td>0..1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
