@@ -25,7 +25,7 @@ Legenda:
 | `Bos`               | `GriendEnHakhout`             | O             |
 | `Bos`               | `Loofbos`                     | V             |
 | `Bos`               | `Naaldbos`                    | O             |
-| `Boom`              | `geometrie`                   | V             |
+| `Boom`              |                               | V             |
 | `FruitOfKweekbomen` | `FruitkwekerijMetLageOpstand` | V             |
 | `FruitOfKweekbomen` | `Boomkwekerij`                | V             |
 | `FruitOfKweekbomen` | `HoogstamBoomgaarden`         | V             |
@@ -284,6 +284,7 @@ Legenda:
 | ---------------------- | -------------------- | ---------------------- | ------------- | ------------------------------------------------------------------------------ |
 | `OverigeConstructie`   |                      |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Afvalcontainer`     |                        | O             |                                                                                |
+| `OverigeConstructie`   | `Dok`                |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Erfconstructie`     |                        | O             |                                                                                |
 | `OverigeConstructie`   | `Geleideconstructie` |                        | O             |                                                                                |
 | `OverigeConstructie`   | `Opslagtank`         |                        | V             |                                                                                |
@@ -322,14 +323,13 @@ Legenda:
 | `Scherm`               |                      |                        | C             | Schermen met een geluidreducerende functie zijn verplicht (BGT geluidsscherm). |
 
 
-### Transport
+### Transportnetwerk
 
 | Objecttype                  | Verplichtheid |
 | --------------------------- | ------------- |
 | `SimpelePuntVerwijzing`     | O             |
 | `SimpeleLineaireVerwijzing` | O             |
 | `Netwerkeigenschap`         | O             |
-
 
 
 ### Wegennetwerk
