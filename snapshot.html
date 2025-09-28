@@ -1428,14 +1428,14 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
+<body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg" width="132">
   </a> <h1 id="title" class="title">Logisch Gegevensmodel Integrale Bronregistratie Objecten (IBRO-LM)</h1>
     
     <h2>
       Geonovum Informatiemodel<br>
       Werkversie
-      <time class="dt-published" datetime="2025-09-25">25 september 2025</time>
+      <time class="dt-published" datetime="2025-09-28">28 september 2025</time>
     </h2>
     <dl>
       
@@ -1480,7 +1480,7 @@ ul.index code{color:inherit}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft het logische gegevensmodel Integrale Bronregistratie Objecten (IMIBRO).</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronregistratie-objecten"><bdi class="secno">1.1 </bdi>Bronregistratie objecten</a></li><li class="tocline"><a class="tocxref" href="#proeftuin"><bdi class="secno">1.2 </bdi>Proeftuin</a></li><li class="tocline"><a class="tocxref" href="#logisch-gegevensmodel"><bdi class="secno">1.3 </bdi>Logisch gegevensmodel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algemene-uitgangspunten"><bdi class="secno">2. </bdi>Algemene uitgangspunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aansluiting-op-het-conceptuele-model-imibro"><bdi class="secno">2.1 </bdi>Aansluiting op het conceptuele model IMIBRO</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-nen-3610"><bdi class="secno">2.2 </bdi>Aansluiting op NEN 3610</a></li><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">2.3 </bdi>Identificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie-en-domein-namespace-attributen"><bdi class="secno">2.3.1 </bdi>Identificatie en Domein (namespace) attributen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#typering"><bdi class="secno">2.4 </bdi>Typering</a></li><li class="tocline"><a class="tocxref" href="#levensfasen"><bdi class="secno">2.5 </bdi>Levensfasen</a></li><li class="tocline"><a class="tocxref" href="#geometrie"><bdi class="secno">2.6 </bdi>Geometrie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dimensies"><bdi class="secno">2.6.1 </bdi>Dimensies</a></li><li class="tocline"><a class="tocxref" href="#coordinatenreferentiesysteem"><bdi class="secno">2.6.2 </bdi>Coördinatenreferentiesysteem</a></li><li class="tocline"><a class="tocxref" href="#ruimtelijke-relaties-en-topologie"><bdi class="secno">2.6.3 </bdi>Ruimtelijke relaties en topologie</a></li><li class="tocline"><a class="tocxref" href="#gebruik-citygml-eigenschappen-voor-3d-geometrieen"><bdi class="secno">2.6.4 </bdi>Gebruik CityGML eigenschappen voor 3D geometrieën</a></li></ol></li><li class="tocline"><a class="tocxref" href="#registratiegegevens"><bdi class="secno">2.7 </bdi>Registratiegegevens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versie-tijdlijn-geldigheid-en-tijdlijn-registratie"><bdi class="secno">2.7.1 </bdi>Versie, tijdlijn geldigheid en tijdlijn registratie</a></li><li class="tocline"><a class="tocxref" href="#registratiestatus-en-afgevoerde-registraties"><bdi class="secno">2.7.2 </bdi>Registratiestatus en afgevoerde registraties</a></li><li class="tocline"><a class="tocxref" href="#herkomst-en-bronverwijzing"><bdi class="secno">2.7.3 </bdi>Herkomst en bronverwijzing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geconstateerde-objecten"><bdi class="secno">2.7.3.1 </bdi>Geconstateerde objecten</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afleidbare-eigenschappen"><bdi class="secno">2.8 </bdi>Afleidbare eigenschappen</a></li><li class="tocline"><a class="tocxref" href="#authenticiteit-van-gegevens-in-ibro"><bdi class="secno">2.9 </bdi>Authenticiteit van gegevens in IBRO</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht"><bdi class="secno">3. </bdi>Overzicht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#naam-en-acroniemen"><bdi class="secno">3.1 </bdi>Naam en Acroniemen</a></li><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">3.2 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">3.3 </bdi>Beschrijving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel-logisch-model-ibro"><bdi class="secno">4. </bdi>Informatiemodel Logisch model IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#domein-kern"><bdi class="secno">4.1 </bdi>Domein Kern</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen"><bdi class="secno">4.1.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_object"><bdi class="secno">4.1.1.1 </bdi>Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_geografische_ruimte"><bdi class="secno">4.1.1.1.1 </bdi>GeografischeRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_functionele_ruimte"><bdi class="secno">4.1.1.1.2 </bdi>FunctioneleRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_reeel_object"><bdi class="secno">4.1.1.1.3 </bdi>ReeelObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_constructie"><bdi class="secno">4.1.1.1.3.1 </bdi>Constructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_onbepaald_terrein"><bdi class="secno">4.1.1.1.3.2 </bdi>OnbepaaldTerrein</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_registratieve_ruimte"><bdi class="secno">4.1.1.1.4 </bdi>RegistratieveRuimte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#keuzen-tussen-datatypen"><bdi class="secno">4.1.2 </bdi>Keuzen tussen datatypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__punt_of_vlak"><bdi class="secno">4.1.2.1 </bdi>PuntOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__punt_lijn_of_vlak"><bdi class="secno">4.1.2.2 </bdi>PuntLijnOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__lijn_of_vlak"><bdi class="secno">4.1.2.3 </bdi>LijnOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__multi_punt_of_multi_vlak"><bdi class="secno">4.1.2.4 </bdi>MultiPuntOfMultiVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__vlak_of_multi_vlak"><bdi class="secno">4.1.2.5 </bdi>VlakOfMultiVlak</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten"><bdi class="secno">4.1.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_reeel_object"><bdi class="secno">4.1.3.1 </bdi>StatusReëelObject</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_functionele_ruimte"><bdi class="secno">4.1.3.2 </bdi>StatusFunctioneleRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_registratieve_ruimte"><bdi class="secno">4.1.3.3 </bdi>StatusRegistratieveRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_geografische_ruimte"><bdi class="secno">4.1.3.4 </bdi>StatusGeografischeRuimte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-groen"><bdi class="secno">4.2 </bdi>Domein Groen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-0"><bdi class="secno">4.2.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_begroeiing"><bdi class="secno">4.2.1.1 </bdi>Begroeiing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_boom"><bdi class="secno">4.2.1.1.1 </bdi>Boom</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_overige_begroeiing"><bdi class="secno">4.2.1.1.2 </bdi>OverigeBegroeiing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_fruit_of_kweekbomen"><bdi class="secno">4.2.1.1.3 </bdi>FruitOfKweekbomen</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_bos"><bdi class="secno">4.2.1.1.4 </bdi>Bos</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-0"><bdi class="secno">4.2.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_overige_begroeiing"><bdi class="secno">4.2.2.1 </bdi>TypeOverigeBegroeiing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_bos"><bdi class="secno">4.2.2.2 </bdi>TypeBos</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_fruit_of_kweekbomen"><bdi class="secno">4.2.2.3 </bdi>TypeFruitOfKweekbomen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-bodem"><bdi class="secno">4.3 </bdi>Domein Bodem</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-1"><bdi class="secno">4.3.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_bodem_objecttype_onbegroeide_grond"><bdi class="secno">4.3.1.1 </bdi>OnbegroeideGrond</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-water"><bdi class="secno">4.4 </bdi>Domein Water</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-2"><bdi class="secno">4.4.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_oppervlaktewater"><bdi class="secno">4.4.1.1 </bdi>Oppervlaktewater</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_watergang"><bdi class="secno">4.4.1.1.1 </bdi>Watergang</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_greppel"><bdi class="secno">4.4.1.1.2 </bdi>Greppel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_getijdengebied"><bdi class="secno">4.4.1.1.3 </bdi>Getijdengebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_watervlakte"><bdi class="secno">4.4.1.1.4 </bdi>Watervlakte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-1"><bdi class="secno">4.4.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_watervlakte"><bdi class="secno">4.4.2.1 </bdi>TypeWatervlakte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_watergang"><bdi class="secno">4.4.2.2 </bdi>TypeWatergang</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_getijdengebied"><bdi class="secno">4.4.2.3 </bdi>TypeGetijdengebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-gebouwen"><bdi class="secno">4.5 </bdi>Domein Gebouwen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-3"><bdi class="secno">4.5.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_pand"><bdi class="secno">4.5.1.1 </bdi>Pand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_panddeel"><bdi class="secno">4.5.1.2 </bdi>Panddeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_functiezone"><bdi class="secno">4.5.1.3 </bdi>Functiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_gebruikzone"><bdi class="secno">4.5.1.4 </bdi>Gebruikzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_toegangspunt"><bdi class="secno">4.5.1.5 </bdi>Toegangspunt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_verblijfsobject"><bdi class="secno">4.5.1.6 </bdi>Verblijfsobject</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties"><bdi class="secno">4.5.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_aard_pand"><bdi class="secno">4.5.2.1 </bdi>AardPand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_toegangssoort"><bdi class="secno">4.5.2.2 </bdi>Toegangssoort</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_gebruiksaard_toegangpunt"><bdi class="secno">4.5.2.3 </bdi>GebruiksaardToegangpunt</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-2"><bdi class="secno">4.5.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_pand"><bdi class="secno">4.5.3.1 </bdi>TypePand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_pand"><bdi class="secno">4.5.3.2 </bdi>SubtypePand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_panddeel"><bdi class="secno">4.5.3.3 </bdi>TypePanddeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_functiezone"><bdi class="secno">4.5.3.4 </bdi>TypeFunctiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_gebruikzone"><bdi class="secno">4.5.3.5 </bdi>TypeGebruikzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_gebruikzone"><bdi class="secno">4.5.3.6 </bdi>SubtypeGebruikzone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-verhardingen"><bdi class="secno">4.6 </bdi>Domein Verhardingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-4"><bdi class="secno">4.6.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_verhardingen_objecttype_verharding"><bdi class="secno">4.6.1.1 </bdi>Verharding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-3"><bdi class="secno">4.6.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_verhardingen_codelijst_type_verharding"><bdi class="secno">4.6.2.1 </bdi>TypeVerharding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-kunstwerken"><bdi class="secno">4.7 </bdi>Domein Kunstwerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-5"><bdi class="secno">4.7.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_kunstwerk"><bdi class="secno">4.7.1.1 </bdi>Kunstwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_overbrugging"><bdi class="secno">4.7.1.1.1 </bdi>Overbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_ondertunneling"><bdi class="secno">4.7.1.1.2 </bdi>Ondertunneling</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.1.1.3 </bdi>WaterstaatkundigKunstwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sluis"><bdi class="secno">4.7.1.1.3.1 </bdi>Sluis</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_overig_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.1.1.3.2 </bdi>OverigWaterstaatkundigKunstwerk</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_kunstwerkdeel"><bdi class="secno">4.7.1.2 </bdi>Kunstwerkdeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_schutkolk"><bdi class="secno">4.7.1.2.1 </bdi>Schutkolk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sloof"><bdi class="secno">4.7.1.2.2 </bdi>Sloof</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_pyloon"><bdi class="secno">4.7.1.2.3 </bdi>Pyloon</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_dek"><bdi class="secno">4.7.1.2.4 </bdi>Dek</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_pijler"><bdi class="secno">4.7.1.2.5 </bdi>Pijler</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sluisdeur"><bdi class="secno">4.7.1.2.6 </bdi>Sluisdeur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_landhoofd"><bdi class="secno">4.7.1.2.7 </bdi>Landhoofd</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-4"><bdi class="secno">4.7.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.2.1 </bdi>TypeWaterstaatkundigKunstwerk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_overbrugging"><bdi class="secno">4.7.2.2 </bdi>TypeOverbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_subtype_overbrugging"><bdi class="secno">4.7.2.3 </bdi>SubtypeOverbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_ondertunneling"><bdi class="secno">4.7.2.4 </bdi>TypeOndertunneling</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-overige-constructies"><bdi class="secno">4.8 </bdi>Domein Overige constructies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-6"><bdi class="secno">4.8.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_overige_constructie"><bdi class="secno">4.8.1.1 </bdi>OverigeConstructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_installatie"><bdi class="secno">4.8.1.2 </bdi>Installatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_zonnepanelen"><bdi class="secno">4.8.1.2.1 </bdi>Zonnepanelen</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_lift"><bdi class="secno">4.8.1.2.2 </bdi>Lift</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_kast"><bdi class="secno">4.8.1.2.3 </bdi>Kast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_sirene"><bdi class="secno">4.8.1.2.4 </bdi>Sirene</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_verlichtingsarmatuur"><bdi class="secno">4.8.1.2.5 </bdi>Verlichtingsarmatuur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_oplaadpunt"><bdi class="secno">4.8.1.2.6 </bdi>Oplaadpunt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_pomp"><bdi class="secno">4.8.1.2.7 </bdi>Pomp</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_transformator"><bdi class="secno">4.8.1.2.8 </bdi>Transformator</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_windturbine"><bdi class="secno">4.8.1.2.9 </bdi>Windturbine</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_mast"><bdi class="secno">4.8.1.3 </bdi>Mast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_muur"><bdi class="secno">4.8.1.4 </bdi>Muur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_omheining"><bdi class="secno">4.8.1.5 </bdi>Omheining</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_scherm"><bdi class="secno">4.8.1.6 </bdi>Scherm</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-5"><bdi class="secno">4.8.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_mast"><bdi class="secno">4.8.2.1 </bdi>TypeMast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_muur"><bdi class="secno">4.8.2.2 </bdi>TypeMuur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_overige_constructie"><bdi class="secno">4.8.2.3 </bdi>TypeOverigeConstructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_subtype_overige_constructie"><bdi class="secno">4.8.2.4 </bdi>SubtypeOverigeConstructie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-transportnetwerk"><bdi class="secno">4.9 </bdi>Domein Transportnetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-7"><bdi class="secno">4.9.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportruimte"><bdi class="secno">4.9.1.1 </bdi>Transportruimte</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportknoop"><bdi class="secno">4.9.1.1.1 </bdi>Transportknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportverbinding"><bdi class="secno">4.9.1.1.2 </bdi>Transportverbinding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_verbindingsverwijzing"><bdi class="secno">4.9.1.2 </bdi>Verbindingsverwijzing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_simpele_puntverwijzing"><bdi class="secno">4.9.1.2.1 </bdi>SimpelePuntverwijzing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_simpele_lineaire_verwijzing"><bdi class="secno">4.9.1.2.2 </bdi>SimpeleLineaireVerwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_netwerkeigenschap"><bdi class="secno">4.9.1.3 </bdi>Netwerkeigenschap</a></li></ol></li><li class="tocline"><a class="tocxref" href="#primitieve-datatypen"><bdi class="secno">4.9.2 </bdi>Primitieve datatypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_primitief_datatype_lengte"><bdi class="secno">4.9.2.1 </bdi>Lengte</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-0"><bdi class="secno">4.9.3 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_enumeratie_verbindingsrichting"><bdi class="secno">4.9.3.1 </bdi>Verbindingsrichting</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-wegennetwerk"><bdi class="secno">4.10 </bdi>Domein Wegennetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-8"><bdi class="secno">4.10.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegverkeerruimteverbinding"><bdi class="secno">4.10.1.1 </bdi>Wegverkeerruimteverbinding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_baanverbinding"><bdi class="secno">4.10.1.1.1 </bdi>Baanverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegverbinding"><bdi class="secno">4.10.1.1.2 </bdi>Wegverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_strookverbinding"><bdi class="secno">4.10.1.1.3 </bdi>Strookverbinding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegknoop"><bdi class="secno">4.10.1.2 </bdi>Wegknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_baanknoop"><bdi class="secno">4.10.1.3 </bdi>Baanknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_strookknoop"><bdi class="secno">4.10.1.4 </bdi>Strookknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_hectometerpunt"><bdi class="secno">4.10.1.5 </bdi>Hectometerpunt</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-1"><bdi class="secno">4.10.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_enumeratie_rijrichting"><bdi class="secno">4.10.2.1 </bdi>Rijrichting</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-6"><bdi class="secno">4.10.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_baanverbinding"><bdi class="secno">4.10.3.1 </bdi>TypeBaanverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_strookverbinding"><bdi class="secno">4.10.3.2 </bdi>TypeStrookverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegverbinding"><bdi class="secno">4.10.3.3 </bdi>TypeWegverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegknoop"><bdi class="secno">4.10.3.4 </bdi>TypeWegknoop</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-spoorwegennetwerk"><bdi class="secno">4.11 </bdi>Domein Spoorwegennetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-9"><bdi class="secno">4.11.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_objecttype_spoorverbinding"><bdi class="secno">4.11.1.1 </bdi>Spoorverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_objecttype_spoorwegknoop"><bdi class="secno">4.11.1.2 </bdi>Spoorwegknoop</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-7"><bdi class="secno">4.11.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_codelijst_type_spoorverbinding"><bdi class="secno">4.11.2.1 </bdi>TypeSpoorverbinding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-functionele-ruimten"><bdi class="secno">4.12 </bdi>Domein Functionele ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-10"><bdi class="secno">4.12.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_afscheiding"><bdi class="secno">4.12.1.1 </bdi>Afscheiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_complex"><bdi class="secno">4.12.1.2 </bdi>Complex</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_gebruikszone_oppervlaktewater"><bdi class="secno">4.12.1.3 </bdi>GebruikszoneOppervlaktewater</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_kering"><bdi class="secno">4.12.1.4 </bdi>Kering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_waterkering"><bdi class="secno">4.12.1.4.1 </bdi>Waterkering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_grondkering"><bdi class="secno">4.12.1.4.2 </bdi>Grondkering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_luchtvaartzone"><bdi class="secno">4.12.1.5 </bdi>Luchtvaartzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_oeverzone"><bdi class="secno">4.12.1.6 </bdi>Oeverzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_recreatiezone"><bdi class="secno">4.12.1.7 </bdi>Recreatiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_reducering"><bdi class="secno">4.12.1.8 </bdi>Reducering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_spoorzone"><bdi class="secno">4.12.1.9 </bdi>Spoorzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_verkeerskundig_functionele_zone"><bdi class="secno">4.12.1.10 </bdi>VerkeerskundigFunctioneleZone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_waterbergingsgebied"><bdi class="secno">4.12.1.11 </bdi>Waterbergingsgebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_wegzone"><bdi class="secno">4.12.1.12 </bdi>Wegzone</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-8"><bdi class="secno">4.12.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_luchtvaartzone"><bdi class="secno">4.12.2.1 </bdi>TypeLuchtvaartzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_spoorzone"><bdi class="secno">4.12.2.2 </bdi>TypeSpoorzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_verkeerskundig_functionele_zone"><bdi class="secno">4.12.2.3 </bdi>TypeVerkeerskundigFunctioneleZone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_complex"><bdi class="secno">4.12.2.4 </bdi>TypeComplex</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_wegzone"><bdi class="secno">4.12.2.5 </bdi>TypeWegzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_gebruikszone_oppervlaktewater"><bdi class="secno">4.12.2.6 </bdi>TypeGebruikszoneOppervlaktewater</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_reducering"><bdi class="secno">4.12.2.7 </bdi>TypeReducering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_recreatiezone"><bdi class="secno">4.12.2.8 </bdi>TypeRecreatiezone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-bestuurlijke-gebieden"><bdi class="secno">4.13 </bdi>Domein Bestuurlijke gebieden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-11"><bdi class="secno">4.13.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_bestuurlijke_gebieden_objecttype_gemeentegebied"><bdi class="secno">4.13.1.1 </bdi>Gemeentegebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-registratieve-ruimten"><bdi class="secno">4.14 </bdi>Domein Registratieve ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-12"><bdi class="secno">4.14.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_woonplaats"><bdi class="secno">4.14.1.1 </bdi>Woonplaats</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_wijk"><bdi class="secno">4.14.1.2 </bdi>Wijk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_buurt"><bdi class="secno">4.14.1.3 </bdi>Buurt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_subbuurt"><bdi class="secno">4.14.1.4 </bdi>Subbuurt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_subbuurtdeel"><bdi class="secno">4.14.1.5 </bdi>Subbuurtdeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_openbare_ruimte"><bdi class="secno">4.14.1.6 </bdi>OpenbareRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_nummeraanduiding"><bdi class="secno">4.14.1.7 </bdi>Nummeraanduiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_adresseerbaar_object"><bdi class="secno">4.14.1.8 </bdi>AdresseerbaarObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_benoemde_plaats"><bdi class="secno">4.14.1.8.1 </bdi>BenoemdePlaats</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-9"><bdi class="secno">4.14.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_codelijst_type_te_plaatsen_object"><bdi class="secno">4.14.2.1 </bdi>TypeTePlaatsenObject</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-geografische-ruimten"><bdi class="secno">4.15 </bdi>Domein Geografische ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-13"><bdi class="secno">4.15.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_bebouwingskern"><bdi class="secno">4.15.1.1 </bdi>Bebouwingskern</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_landschappelijk_gebied"><bdi class="secno">4.15.1.2 </bdi>LandschappelijkGebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_reliefzone"><bdi class="secno">4.15.1.3 </bdi>Reliefzone</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_overige_reliefzone"><bdi class="secno">4.15.1.3.1 </bdi>OverigeReliefzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_steilrand"><bdi class="secno">4.15.1.3.2 </bdi>Steilrand</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_streek"><bdi class="secno">4.15.1.4 </bdi>Streek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-10"><bdi class="secno">4.15.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_bebouwingskern"><bdi class="secno">4.15.2.1 </bdi>TypeBebouwingskern</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_landschappelijk_gebied"><bdi class="secno">4.15.2.2 </bdi>TypeLandschappelijkGebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_overige_reliefzone"><bdi class="secno">4.15.2.3 </bdi>TypeOverigeReliefzone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-registratiegegevens"><bdi class="secno">4.16 </bdi>Domein Registratiegegevens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-14"><bdi class="secno">4.16.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_bronentiteit"><bdi class="secno">4.16.1.1 </bdi>Bronentiteit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_brondocument"><bdi class="secno">4.16.1.1.1 </bdi>Brondocument</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_actor"><bdi class="secno">4.16.1.2 </bdi>Actor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_organisatie"><bdi class="secno">4.16.1.2.1 </bdi>Organisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_overheidsorganisatie"><bdi class="secno">4.16.1.2.1.1 </bdi>Overheidsorganisatie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie"><bdi class="secno">4.16.1.3 </bdi>Registratie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-2"><bdi class="secno">4.16.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_enumeratie_status_registratie"><bdi class="secno">4.16.2.1 </bdi>StatusRegistratie</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#verplichtheid-van-gegevens-in-ibro"><bdi class="secno">5. </bdi>Verplichtheid van gegevens in IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verplichtheid-richting-basisregistraties"><bdi class="secno">5.1 </bdi>Verplichtheid richting basisregistraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#groen"><bdi class="secno">5.1.1 </bdi>Groen</a></li><li class="tocline"><a class="tocxref" href="#bodem"><bdi class="secno">5.1.2 </bdi>Bodem</a></li><li class="tocline"><a class="tocxref" href="#water"><bdi class="secno">5.1.3 </bdi>Water</a></li><li class="tocline"><a class="tocxref" href="#gebouwen"><bdi class="secno">5.1.4 </bdi>Gebouwen</a></li><li class="tocline"><a class="tocxref" href="#verhardingen"><bdi class="secno">5.1.5 </bdi>Verhardingen</a></li><li class="tocline"><a class="tocxref" href="#kunstwerken"><bdi class="secno">5.1.6 </bdi>Kunstwerken</a></li><li class="tocline"><a class="tocxref" href="#constructies"><bdi class="secno">5.1.7 </bdi>Constructies</a></li><li class="tocline"><a class="tocxref" href="#transportnetwerk"><bdi class="secno">5.1.8 </bdi>Transportnetwerk</a></li><li class="tocline"><a class="tocxref" href="#wegennetwerk"><bdi class="secno">5.1.9 </bdi>Wegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#spoorwegennetwerk"><bdi class="secno">5.1.10 </bdi>Spoorwegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#functionele-ruimten"><bdi class="secno">5.1.11 </bdi>Functionele ruimten</a></li><li class="tocline"><a class="tocxref" href="#registratieve-ruimten"><bdi class="secno">5.1.12 </bdi>Registratieve ruimten</a></li><li class="tocline"><a class="tocxref" href="#geografische-ruimten"><bdi class="secno">5.1.13 </bdi>Geografische ruimten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#verplichtheid-bij-2d-of-3d-registratie"><bdi class="secno">5.2 </bdi>Verplichtheid bij 2D- of 3D-registratie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping-van-ibro-lm-met-citygml-3-0"><bdi class="secno">A. </bdi>Mapping van IBRO-LM met CityGML 3.0</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#levensloop-en-versiebeheer"><bdi class="secno">A.1 </bdi>Levensloop en versiebeheer</a></li><li class="tocline"><a class="tocxref" href="#kern"><bdi class="secno">A.2 </bdi>Kern</a></li><li class="tocline"><a class="tocxref" href="#groen-0"><bdi class="secno">A.3 </bdi>Groen</a></li><li class="tocline"><a class="tocxref" href="#bodem-0"><bdi class="secno">A.4 </bdi>Bodem</a></li><li class="tocline"><a class="tocxref" href="#water-0"><bdi class="secno">A.5 </bdi>Water</a></li><li class="tocline"><a class="tocxref" href="#gebouwen-0"><bdi class="secno">A.6 </bdi>Gebouwen</a></li><li class="tocline"><a class="tocxref" href="#verhardingen-0"><bdi class="secno">A.7 </bdi>Verhardingen</a></li><li class="tocline"><a class="tocxref" href="#kunstwerken-0"><bdi class="secno">A.8 </bdi>Kunstwerken</a></li><li class="tocline"><a class="tocxref" href="#overige-constructies"><bdi class="secno">A.9 </bdi>Overige constructies</a></li><li class="tocline"><a class="tocxref" href="#transportnetwerk-0"><bdi class="secno">A.10 </bdi>Transportnetwerk</a></li><li class="tocline"><a class="tocxref" href="#wegennetwerk-0"><bdi class="secno">A.11 </bdi>Wegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#spoorwegennetwerk-0"><bdi class="secno">A.12 </bdi>Spoorwegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#functionele-ruimten-0"><bdi class="secno">A.13 </bdi>Functionele ruimten</a></li><li class="tocline"><a class="tocxref" href="#registratieve-ruimten-0"><bdi class="secno">A.14 </bdi>Registratieve ruimten</a></li><li class="tocline"><a class="tocxref" href="#geografische-ruimten-0"><bdi class="secno">A.15 </bdi>Geografische ruimten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronregistratie-objecten"><bdi class="secno">1.1 </bdi>Bronregistratie objecten</a></li><li class="tocline"><a class="tocxref" href="#proeftuin"><bdi class="secno">1.2 </bdi>Proeftuin</a></li><li class="tocline"><a class="tocxref" href="#logisch-gegevensmodel"><bdi class="secno">1.3 </bdi>Logisch gegevensmodel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algemene-uitgangspunten"><bdi class="secno">2. </bdi>Algemene uitgangspunten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aansluiting-op-het-conceptuele-model-imibro"><bdi class="secno">2.1 </bdi>Aansluiting op het conceptuele model IMIBRO</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-nen-3610"><bdi class="secno">2.2 </bdi>Aansluiting op NEN 3610</a></li><li class="tocline"><a class="tocxref" href="#identificatie"><bdi class="secno">2.3 </bdi>Identificatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identificatie-en-domein-namespace-attributen"><bdi class="secno">2.3.1 </bdi>Identificatie en Domein (namespace) attributen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#typering"><bdi class="secno">2.4 </bdi>Typering</a></li><li class="tocline"><a class="tocxref" href="#levensfasen"><bdi class="secno">2.5 </bdi>Levensfasen</a></li><li class="tocline"><a class="tocxref" href="#geometrie"><bdi class="secno">2.6 </bdi>Geometrie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dimensies"><bdi class="secno">2.6.1 </bdi>Dimensies</a></li><li class="tocline"><a class="tocxref" href="#coordinatenreferentiesysteem"><bdi class="secno">2.6.2 </bdi>Coördinatenreferentiesysteem</a></li><li class="tocline"><a class="tocxref" href="#ruimtelijke-relaties-en-topologie"><bdi class="secno">2.6.3 </bdi>Ruimtelijke relaties en topologie</a></li><li class="tocline"><a class="tocxref" href="#gebruik-citygml-eigenschappen-voor-3d-geometrieen"><bdi class="secno">2.6.4 </bdi>Gebruik CityGML eigenschappen voor 3D geometrieën</a></li></ol></li><li class="tocline"><a class="tocxref" href="#registratiegegevens"><bdi class="secno">2.7 </bdi>Registratiegegevens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#versie-tijdlijn-geldigheid-en-tijdlijn-registratie"><bdi class="secno">2.7.1 </bdi>Versie, tijdlijn geldigheid en tijdlijn registratie</a></li><li class="tocline"><a class="tocxref" href="#registratiestatus-en-afgevoerde-registraties"><bdi class="secno">2.7.2 </bdi>Registratiestatus en afgevoerde registraties</a></li><li class="tocline"><a class="tocxref" href="#herkomst-en-bronverwijzing"><bdi class="secno">2.7.3 </bdi>Herkomst en bronverwijzing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#geconstateerde-objecten"><bdi class="secno">2.7.3.1 </bdi>Geconstateerde objecten</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#afleidbare-eigenschappen"><bdi class="secno">2.8 </bdi>Afleidbare eigenschappen</a></li><li class="tocline"><a class="tocxref" href="#authenticiteit-van-gegevens-in-ibro"><bdi class="secno">2.9 </bdi>Authenticiteit van gegevens in IBRO</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht"><bdi class="secno">3. </bdi>Overzicht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#naam-en-acroniemen"><bdi class="secno">3.1 </bdi>Naam en Acroniemen</a></li><li class="tocline"><a class="tocxref" href="#definitie"><bdi class="secno">3.2 </bdi>Definitie</a></li><li class="tocline"><a class="tocxref" href="#beschrijving"><bdi class="secno">3.3 </bdi>Beschrijving</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel-logisch-model-ibro"><bdi class="secno">4. </bdi>Informatiemodel Logisch model IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#domein-kern"><bdi class="secno">4.1 </bdi>Domein Kern</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen"><bdi class="secno">4.1.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_object"><bdi class="secno">4.1.1.1 </bdi>Object</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_geografische_ruimte"><bdi class="secno">4.1.1.1.1 </bdi>GeografischeRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_functionele_ruimte"><bdi class="secno">4.1.1.1.2 </bdi>FunctioneleRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_reeel_object"><bdi class="secno">4.1.1.1.3 </bdi>ReeelObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_constructie"><bdi class="secno">4.1.1.1.3.1 </bdi>Constructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_onbepaald_terrein"><bdi class="secno">4.1.1.1.3.2 </bdi>OnbepaaldTerrein</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_objecttype_registratieve_ruimte"><bdi class="secno">4.1.1.1.4 </bdi>RegistratieveRuimte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#keuzen-tussen-datatypen"><bdi class="secno">4.1.2 </bdi>Keuzen tussen datatypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__punt_of_vlak"><bdi class="secno">4.1.2.1 </bdi>PuntOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__punt_lijn_of_vlak"><bdi class="secno">4.1.2.2 </bdi>PuntLijnOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__lijn_of_vlak"><bdi class="secno">4.1.2.3 </bdi>LijnOfVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__multi_punt_of_multi_vlak"><bdi class="secno">4.1.2.4 </bdi>MultiPuntOfMultiVlak</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_keuze_datatype__vlak_of_multi_vlak"><bdi class="secno">4.1.2.5 </bdi>VlakOfMultiVlak</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten"><bdi class="secno">4.1.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_reeel_object"><bdi class="secno">4.1.3.1 </bdi>StatusReëelObject</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_functionele_ruimte"><bdi class="secno">4.1.3.2 </bdi>StatusFunctioneleRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_registratieve_ruimte"><bdi class="secno">4.1.3.3 </bdi>StatusRegistratieveRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kern_codelijst_status_geografische_ruimte"><bdi class="secno">4.1.3.4 </bdi>StatusGeografischeRuimte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-groen"><bdi class="secno">4.2 </bdi>Domein Groen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-0"><bdi class="secno">4.2.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_begroeiing"><bdi class="secno">4.2.1.1 </bdi>Begroeiing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_boom"><bdi class="secno">4.2.1.1.1 </bdi>Boom</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_overige_begroeiing"><bdi class="secno">4.2.1.1.2 </bdi>OverigeBegroeiing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_fruit_of_kweekbomen"><bdi class="secno">4.2.1.1.3 </bdi>FruitOfKweekbomen</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_objecttype_bos"><bdi class="secno">4.2.1.1.4 </bdi>Bos</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-0"><bdi class="secno">4.2.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_overige_begroeiing"><bdi class="secno">4.2.2.1 </bdi>TypeOverigeBegroeiing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_bos"><bdi class="secno">4.2.2.2 </bdi>TypeBos</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_fruit_of_kweekbomen"><bdi class="secno">4.2.2.3 </bdi>TypeFruitOfKweekbomen</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-bodem"><bdi class="secno">4.3 </bdi>Domein Bodem</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-1"><bdi class="secno">4.3.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_bodem_objecttype_onbegroeide_grond"><bdi class="secno">4.3.1.1 </bdi>OnbegroeideGrond</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-water"><bdi class="secno">4.4 </bdi>Domein Water</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-2"><bdi class="secno">4.4.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_oppervlaktewater"><bdi class="secno">4.4.1.1 </bdi>Oppervlaktewater</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_watergang"><bdi class="secno">4.4.1.1.1 </bdi>Watergang</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_greppel"><bdi class="secno">4.4.1.1.2 </bdi>Greppel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_getijdengebied"><bdi class="secno">4.4.1.1.3 </bdi>Getijdengebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_objecttype_watervlakte"><bdi class="secno">4.4.1.1.4 </bdi>Watervlakte</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-1"><bdi class="secno">4.4.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_watervlakte"><bdi class="secno">4.4.2.1 </bdi>TypeWatervlakte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_watergang"><bdi class="secno">4.4.2.2 </bdi>TypeWatergang</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_water_codelijst_type_getijdengebied"><bdi class="secno">4.4.2.3 </bdi>TypeGetijdengebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-gebouwen"><bdi class="secno">4.5 </bdi>Domein Gebouwen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-3"><bdi class="secno">4.5.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_pand"><bdi class="secno">4.5.1.1 </bdi>Pand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_panddeel"><bdi class="secno">4.5.1.2 </bdi>Panddeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_functiezone"><bdi class="secno">4.5.1.3 </bdi>Functiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_gebruikzone"><bdi class="secno">4.5.1.4 </bdi>Gebruikzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_toegangspunt"><bdi class="secno">4.5.1.5 </bdi>Toegangspunt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_objecttype_verblijfsobject"><bdi class="secno">4.5.1.6 </bdi>Verblijfsobject</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties"><bdi class="secno">4.5.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_aard_pand"><bdi class="secno">4.5.2.1 </bdi>AardPand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_toegangssoort"><bdi class="secno">4.5.2.2 </bdi>Toegangssoort</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_enumeratie_gebruiksaard_toegangpunt"><bdi class="secno">4.5.2.3 </bdi>GebruiksaardToegangpunt</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-2"><bdi class="secno">4.5.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_pand"><bdi class="secno">4.5.3.1 </bdi>TypePand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_pand"><bdi class="secno">4.5.3.2 </bdi>SubtypePand</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_panddeel"><bdi class="secno">4.5.3.3 </bdi>TypePanddeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_functiezone"><bdi class="secno">4.5.3.4 </bdi>TypeFunctiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_gebruikzone"><bdi class="secno">4.5.3.5 </bdi>TypeGebruikzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_gebruikzone"><bdi class="secno">4.5.3.6 </bdi>SubtypeGebruikzone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-verhardingen"><bdi class="secno">4.6 </bdi>Domein Verhardingen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-4"><bdi class="secno">4.6.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_verhardingen_objecttype_verharding"><bdi class="secno">4.6.1.1 </bdi>Verharding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-3"><bdi class="secno">4.6.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_verhardingen_codelijst_type_verharding"><bdi class="secno">4.6.2.1 </bdi>TypeVerharding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-kunstwerken"><bdi class="secno">4.7 </bdi>Domein Kunstwerken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-5"><bdi class="secno">4.7.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_kunstwerk"><bdi class="secno">4.7.1.1 </bdi>Kunstwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_overbrugging"><bdi class="secno">4.7.1.1.1 </bdi>Overbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_ondertunneling"><bdi class="secno">4.7.1.1.2 </bdi>Ondertunneling</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.1.1.3 </bdi>WaterstaatkundigKunstwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sluis"><bdi class="secno">4.7.1.1.3.1 </bdi>Sluis</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_overig_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.1.1.3.2 </bdi>OverigWaterstaatkundigKunstwerk</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_kunstwerkdeel"><bdi class="secno">4.7.1.2 </bdi>Kunstwerkdeel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_schutkolk"><bdi class="secno">4.7.1.2.1 </bdi>Schutkolk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sloof"><bdi class="secno">4.7.1.2.2 </bdi>Sloof</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_pyloon"><bdi class="secno">4.7.1.2.3 </bdi>Pyloon</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_dek"><bdi class="secno">4.7.1.2.4 </bdi>Dek</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_pijler"><bdi class="secno">4.7.1.2.5 </bdi>Pijler</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_sluisdeur"><bdi class="secno">4.7.1.2.6 </bdi>Sluisdeur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_objecttype_landhoofd"><bdi class="secno">4.7.1.2.7 </bdi>Landhoofd</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-4"><bdi class="secno">4.7.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_waterstaatkundig_kunstwerk"><bdi class="secno">4.7.2.1 </bdi>TypeWaterstaatkundigKunstwerk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_overbrugging"><bdi class="secno">4.7.2.2 </bdi>TypeOverbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_subtype_overbrugging"><bdi class="secno">4.7.2.3 </bdi>SubtypeOverbrugging</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_ondertunneling"><bdi class="secno">4.7.2.4 </bdi>TypeOndertunneling</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-overige-constructies"><bdi class="secno">4.8 </bdi>Domein Overige constructies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-6"><bdi class="secno">4.8.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_overige_constructie"><bdi class="secno">4.8.1.1 </bdi>OverigeConstructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_installatie"><bdi class="secno">4.8.1.2 </bdi>Installatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_zonnepanelen"><bdi class="secno">4.8.1.2.1 </bdi>Zonnepanelen</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_lift"><bdi class="secno">4.8.1.2.2 </bdi>Lift</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_kast"><bdi class="secno">4.8.1.2.3 </bdi>Kast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_sirene"><bdi class="secno">4.8.1.2.4 </bdi>Sirene</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_verlichtingsarmatuur"><bdi class="secno">4.8.1.2.5 </bdi>Verlichtingsarmatuur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_oplaadpunt"><bdi class="secno">4.8.1.2.6 </bdi>Oplaadpunt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_pomp"><bdi class="secno">4.8.1.2.7 </bdi>Pomp</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_transformator"><bdi class="secno">4.8.1.2.8 </bdi>Transformator</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_windturbine"><bdi class="secno">4.8.1.2.9 </bdi>Windturbine</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_mast"><bdi class="secno">4.8.1.3 </bdi>Mast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_muur"><bdi class="secno">4.8.1.4 </bdi>Muur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_omheining"><bdi class="secno">4.8.1.5 </bdi>Omheining</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_objecttype_scherm"><bdi class="secno">4.8.1.6 </bdi>Scherm</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-5"><bdi class="secno">4.8.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_mast"><bdi class="secno">4.8.2.1 </bdi>TypeMast</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_muur"><bdi class="secno">4.8.2.2 </bdi>TypeMuur</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_overige_constructie"><bdi class="secno">4.8.2.3 </bdi>TypeOverigeConstructie</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_subtype_overige_constructie"><bdi class="secno">4.8.2.4 </bdi>SubtypeOverigeConstructie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-transportnetwerk"><bdi class="secno">4.9 </bdi>Domein Transportnetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-7"><bdi class="secno">4.9.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportruimte"><bdi class="secno">4.9.1.1 </bdi>Transportruimte</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportknoop"><bdi class="secno">4.9.1.1.1 </bdi>Transportknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_transportverbinding"><bdi class="secno">4.9.1.1.2 </bdi>Transportverbinding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_verbindingsverwijzing"><bdi class="secno">4.9.1.2 </bdi>Verbindingsverwijzing</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_simpele_puntverwijzing"><bdi class="secno">4.9.1.2.1 </bdi>SimpelePuntverwijzing</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_simpele_lineaire_verwijzing"><bdi class="secno">4.9.1.2.2 </bdi>SimpeleLineaireVerwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_objecttype_netwerkeigenschap"><bdi class="secno">4.9.1.3 </bdi>Netwerkeigenschap</a></li></ol></li><li class="tocline"><a class="tocxref" href="#primitieve-datatypen"><bdi class="secno">4.9.2 </bdi>Primitieve datatypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_primitief_datatype_lengte"><bdi class="secno">4.9.2.1 </bdi>Lengte</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-0"><bdi class="secno">4.9.3 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_transportnetwerk_enumeratie_verbindingsrichting"><bdi class="secno">4.9.3.1 </bdi>Verbindingsrichting</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-wegennetwerk"><bdi class="secno">4.10 </bdi>Domein Wegennetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-8"><bdi class="secno">4.10.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegverkeerruimteverbinding"><bdi class="secno">4.10.1.1 </bdi>Wegverkeerruimteverbinding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_baanverbinding"><bdi class="secno">4.10.1.1.1 </bdi>Baanverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegverbinding"><bdi class="secno">4.10.1.1.2 </bdi>Wegverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_strookverbinding"><bdi class="secno">4.10.1.1.3 </bdi>Strookverbinding</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_wegknoop"><bdi class="secno">4.10.1.2 </bdi>Wegknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_baanknoop"><bdi class="secno">4.10.1.3 </bdi>Baanknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_strookknoop"><bdi class="secno">4.10.1.4 </bdi>Strookknoop</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_objecttype_hectometerpunt"><bdi class="secno">4.10.1.5 </bdi>Hectometerpunt</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-1"><bdi class="secno">4.10.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_enumeratie_rijrichting"><bdi class="secno">4.10.2.1 </bdi>Rijrichting</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-6"><bdi class="secno">4.10.3 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_baanverbinding"><bdi class="secno">4.10.3.1 </bdi>TypeBaanverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_strookverbinding"><bdi class="secno">4.10.3.2 </bdi>TypeStrookverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegverbinding"><bdi class="secno">4.10.3.3 </bdi>TypeWegverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegknoop"><bdi class="secno">4.10.3.4 </bdi>TypeWegknoop</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-spoorwegennetwerk"><bdi class="secno">4.11 </bdi>Domein Spoorwegennetwerk</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-9"><bdi class="secno">4.11.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_objecttype_spoorverbinding"><bdi class="secno">4.11.1.1 </bdi>Spoorverbinding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_objecttype_spoorwegknoop"><bdi class="secno">4.11.1.2 </bdi>Spoorwegknoop</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-7"><bdi class="secno">4.11.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_spoorwegennetwerk_codelijst_type_spoorverbinding"><bdi class="secno">4.11.2.1 </bdi>TypeSpoorverbinding</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-functionele-ruimten"><bdi class="secno">4.12 </bdi>Domein Functionele ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-10"><bdi class="secno">4.12.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_afscheiding"><bdi class="secno">4.12.1.1 </bdi>Afscheiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_complex"><bdi class="secno">4.12.1.2 </bdi>Complex</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_gebruikszone_oppervlaktewater"><bdi class="secno">4.12.1.3 </bdi>GebruikszoneOppervlaktewater</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_kering"><bdi class="secno">4.12.1.4 </bdi>Kering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_waterkering"><bdi class="secno">4.12.1.4.1 </bdi>Waterkering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_grondkering"><bdi class="secno">4.12.1.4.2 </bdi>Grondkering</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_luchtvaartzone"><bdi class="secno">4.12.1.5 </bdi>Luchtvaartzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_oeverzone"><bdi class="secno">4.12.1.6 </bdi>Oeverzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_recreatiezone"><bdi class="secno">4.12.1.7 </bdi>Recreatiezone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_reducering"><bdi class="secno">4.12.1.8 </bdi>Reducering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_spoorzone"><bdi class="secno">4.12.1.9 </bdi>Spoorzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_verkeerskundig_functionele_zone"><bdi class="secno">4.12.1.10 </bdi>VerkeerskundigFunctioneleZone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_waterbergingsgebied"><bdi class="secno">4.12.1.11 </bdi>Waterbergingsgebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_objecttype_wegzone"><bdi class="secno">4.12.1.12 </bdi>Wegzone</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-8"><bdi class="secno">4.12.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_luchtvaartzone"><bdi class="secno">4.12.2.1 </bdi>TypeLuchtvaartzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_spoorzone"><bdi class="secno">4.12.2.2 </bdi>TypeSpoorzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_verkeerskundig_functionele_zone"><bdi class="secno">4.12.2.3 </bdi>TypeVerkeerskundigFunctioneleZone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_complex"><bdi class="secno">4.12.2.4 </bdi>TypeComplex</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_wegzone"><bdi class="secno">4.12.2.5 </bdi>TypeWegzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_gebruikszone_oppervlaktewater"><bdi class="secno">4.12.2.6 </bdi>TypeGebruikszoneOppervlaktewater</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_reducering"><bdi class="secno">4.12.2.7 </bdi>TypeReducering</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_recreatiezone"><bdi class="secno">4.12.2.8 </bdi>TypeRecreatiezone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-bestuurlijke-gebieden"><bdi class="secno">4.13 </bdi>Domein Bestuurlijke gebieden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-11"><bdi class="secno">4.13.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_bestuurlijke_gebieden_objecttype_gemeentegebied"><bdi class="secno">4.13.1.1 </bdi>Gemeentegebied</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-registratieve-ruimten"><bdi class="secno">4.14 </bdi>Domein Registratieve ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-12"><bdi class="secno">4.14.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_woonplaats"><bdi class="secno">4.14.1.1 </bdi>Woonplaats</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_wijk"><bdi class="secno">4.14.1.2 </bdi>Wijk</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_buurt"><bdi class="secno">4.14.1.3 </bdi>Buurt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_subbuurt"><bdi class="secno">4.14.1.4 </bdi>Subbuurt</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_subbuurtdeel"><bdi class="secno">4.14.1.5 </bdi>Subbuurtdeel</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_openbare_ruimte"><bdi class="secno">4.14.1.6 </bdi>OpenbareRuimte</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_nummeraanduiding"><bdi class="secno">4.14.1.7 </bdi>Nummeraanduiding</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_adresseerbaar_object"><bdi class="secno">4.14.1.8 </bdi>AdresseerbaarObject</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_objecttype_benoemde_plaats"><bdi class="secno">4.14.1.8.1 </bdi>BenoemdePlaats</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-9"><bdi class="secno">4.14.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratieve_ruimten_codelijst_type_te_plaatsen_object"><bdi class="secno">4.14.2.1 </bdi>TypeTePlaatsenObject</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-geografische-ruimten"><bdi class="secno">4.15 </bdi>Domein Geografische ruimten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-13"><bdi class="secno">4.15.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_bebouwingskern"><bdi class="secno">4.15.1.1 </bdi>Bebouwingskern</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_landschappelijk_gebied"><bdi class="secno">4.15.1.2 </bdi>LandschappelijkGebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_reliefzone"><bdi class="secno">4.15.1.3 </bdi>Reliefzone</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_overige_reliefzone"><bdi class="secno">4.15.1.3.1 </bdi>OverigeReliefzone</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_steilrand"><bdi class="secno">4.15.1.3.2 </bdi>Steilrand</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_objecttype_streek"><bdi class="secno">4.15.1.4 </bdi>Streek</a></li></ol></li><li class="tocline"><a class="tocxref" href="#codelijsten-10"><bdi class="secno">4.15.2 </bdi>Codelijsten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_bebouwingskern"><bdi class="secno">4.15.2.1 </bdi>TypeBebouwingskern</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_landschappelijk_gebied"><bdi class="secno">4.15.2.2 </bdi>TypeLandschappelijkGebied</a></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_overige_reliefzone"><bdi class="secno">4.15.2.3 </bdi>TypeOverigeReliefzone</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#domein-registratiegegevens"><bdi class="secno">4.16 </bdi>Domein Registratiegegevens</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#objecttypen-14"><bdi class="secno">4.16.1 </bdi>Objecttypen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_bronentiteit"><bdi class="secno">4.16.1.1 </bdi>Bronentiteit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_brondocument"><bdi class="secno">4.16.1.1.1 </bdi>Brondocument</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_actor"><bdi class="secno">4.16.1.2 </bdi>Actor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_organisatie"><bdi class="secno">4.16.1.2.1 </bdi>Organisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_overheidsorganisatie"><bdi class="secno">4.16.1.2.1.1 </bdi>Overheidsorganisatie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_objecttype_registratie"><bdi class="secno">4.16.1.3 </bdi>Registratie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#enumeraties-2"><bdi class="secno">4.16.2 </bdi>Enumeraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodel_imibro_logisch_domein_registratiegegevens_enumeratie_status_registratie"><bdi class="secno">4.16.2.1 </bdi>StatusRegistratie</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#verplichtheid-van-gegevens-in-ibro"><bdi class="secno">5. </bdi>Verplichtheid van gegevens in IBRO</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#verplichtheid-richting-basisregistraties"><bdi class="secno">5.1 </bdi>Verplichtheid richting basisregistraties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#groen"><bdi class="secno">5.1.1 </bdi>Groen</a></li><li class="tocline"><a class="tocxref" href="#bodem"><bdi class="secno">5.1.2 </bdi>Bodem</a></li><li class="tocline"><a class="tocxref" href="#water"><bdi class="secno">5.1.3 </bdi>Water</a></li><li class="tocline"><a class="tocxref" href="#gebouwen"><bdi class="secno">5.1.4 </bdi>Gebouwen</a></li><li class="tocline"><a class="tocxref" href="#verhardingen"><bdi class="secno">5.1.5 </bdi>Verhardingen</a></li><li class="tocline"><a class="tocxref" href="#kunstwerken"><bdi class="secno">5.1.6 </bdi>Kunstwerken</a></li><li class="tocline"><a class="tocxref" href="#constructies"><bdi class="secno">5.1.7 </bdi>Constructies</a></li><li class="tocline"><a class="tocxref" href="#transportnetwerk"><bdi class="secno">5.1.8 </bdi>Transportnetwerk</a></li><li class="tocline"><a class="tocxref" href="#wegennetwerk"><bdi class="secno">5.1.9 </bdi>Wegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#spoorwegennetwerk"><bdi class="secno">5.1.10 </bdi>Spoorwegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#functionele-ruimten"><bdi class="secno">5.1.11 </bdi>Functionele ruimten</a></li><li class="tocline"><a class="tocxref" href="#registratieve-ruimten"><bdi class="secno">5.1.12 </bdi>Registratieve ruimten</a></li><li class="tocline"><a class="tocxref" href="#geografische-ruimten"><bdi class="secno">5.1.13 </bdi>Geografische ruimten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#verplichtheid-bij-2d-of-3d-registratie"><bdi class="secno">5.2 </bdi>Verplichtheid bij 2D- of 3D-registratie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping-van-ibro-lm-met-citygml-3-0"><bdi class="secno">A. </bdi>Mapping van IBRO-LM met CityGML 3.0</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#citygml-mapping-registratiegegevens"><bdi class="secno">A.1 </bdi>Registratiegegevens</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-kern"><bdi class="secno">A.2 </bdi>Kern</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-groen"><bdi class="secno">A.3 </bdi>Groen</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-bodem"><bdi class="secno">A.4 </bdi>Bodem</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-water"><bdi class="secno">A.5 </bdi>Water </a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-gebouwen"><bdi class="secno">A.6 </bdi>Gebouwen</a></li><li class="tocline"><a class="tocxref" href="#verhardingen-0"><bdi class="secno">A.7 </bdi>Verhardingen</a></li><li class="tocline"><a class="tocxref" href="#kunstwerken-0"><bdi class="secno">A.8 </bdi>Kunstwerken</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-overige-constructies"><bdi class="secno">A.9 </bdi>Overige constructies</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-transportnetwerk"><bdi class="secno">A.10 </bdi>Transportnetwerk</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-wegennetwerk"><bdi class="secno">A.11 </bdi>Wegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-spoorwegennetwerk"><bdi class="secno">A.12 </bdi>Spoorwegennetwerk</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-functionele-ruimten"><bdi class="secno">A.13 </bdi>Functionele ruimten</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-registratieve-ruimten"><bdi class="secno">A.14 </bdi>Registratieve ruimten</a></li><li class="tocline"><a class="tocxref" href="#citygml-mapping-geografische-ruimten"><bdi class="secno">A.15 </bdi>Geografische ruimten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section class="informative" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
@@ -1518,7 +1518,7 @@ ul.index code{color:inherit}
 <p>Een domein attribuut heeft als datatype een URI. De URI verwijst naar de context waarin de identificatie uniek is. Door het domein attribuut te combineren met de identificatie, wordt ervoor gezorgd dat de identificatie overal uniek is.</p>
 <p>
       </p><figure id="fig-modelleerpatroon-voor-identificatie-in-nen-3610">
-        <img src="media/nen3610-identificatie.png" alt="NEN 3610 identificatie" class="_img_1zwl3_1">
+        <img src="media/nen3610-identificatie.png" alt="NEN 3610 identificatie">
         <figcaption><a class="self-link" href="#fig-modelleerpatroon-voor-identificatie-in-nen-3610">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Modelleerpatroon voor identificatie in NEN 3610</span></figcaption>
       </figure>
     <p></p>
@@ -1609,7 +1609,7 @@ ul.index code{color:inherit}
 <p>Een object dat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op ieder moment in de gecombineerde tijdlijn geldigheid en registratie minimaal één registratie.</p>
 <p>
       </p><figure id="fig-tijdlijnen-van-geldigheid-en-van-registratie-in-nen-3610">
-        <img src="media/nen3610-tijdlijnen.png" alt="NEN 3610 tijdlijnen" class="_img_1zwl3_1">
+        <img src="media/nen3610-tijdlijnen.png" alt="NEN 3610 tijdlijnen">
         <figcaption><a class="self-link" href="#fig-tijdlijnen-van-geldigheid-en-van-registratie-in-nen-3610">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Tijdlijnen van geldigheid en van registratie in NEN 3610</span></figcaption>
       </figure>
     <p></p>
@@ -1654,7 +1654,7 @@ In [<cite><a class="bibref" data-link-type="biblio" href="#bib-emso" title="DiS 
 <section id="domein-kern"><div class="header-wrapper"><h3 id="x4-1-domein-kern"><bdi class="secno">4.1 </bdi>Domein Kern</h3><a class="self-link" href="#domein-kern" aria-label="Permalink for Section 4.1"></a></div>
 <p>
       </p><figure id="fig-domein-kern">
-        <img src="data/media/kern.png" alt="Kern" class="_img_1zwl3_1">
+        <img src="data/media/kern.png" alt="Kern">
         <figcaption><a class="self-link" href="#fig-domein-kern">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">Domein Kern</span></figcaption>
       </figure>
     <p></p>
@@ -3896,7 +3896,7 @@ Fase van de levenscyclus waarin een object zich bevindt.</td>
 </section></section></section><section id="domein-groen"><div class="header-wrapper"><h3 id="x4-2-domein-groen"><bdi class="secno">4.2 </bdi>Domein Groen</h3><a class="self-link" href="#domein-groen" aria-label="Permalink for Section 4.2"></a></div>
 <p>
       </p><figure id="fig-domein-groen">
-        <img src="data/media/groen.png" alt="Groen" class="_img_1zwl3_1">
+        <img src="data/media/groen.png" alt="Groen">
         <figcaption><a class="self-link" href="#fig-domein-groen">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">Domein Groen</span></figcaption>
       </figure>
     <p></p>
@@ -5051,7 +5051,7 @@ Geometrische representatie van een object.</td>
 </section></section></section><section id="domein-bodem"><div class="header-wrapper"><h3 id="x4-3-domein-bodem"><bdi class="secno">4.3 </bdi>Domein Bodem</h3><a class="self-link" href="#domein-bodem" aria-label="Permalink for Section 4.3"></a></div>
 <p>
       </p><figure id="fig-domein-bodem">
-        <img src="data/media/bodem.png" alt="Bodem" class="_img_1zwl3_1">
+        <img src="data/media/bodem.png" alt="Bodem">
         <figcaption><a class="self-link" href="#fig-domein-bodem">Figuur <bdi class="figno">5</bdi></a> <span class="fig-title">Domein Bodem</span></figcaption>
       </figure>
     <p></p>
@@ -5247,7 +5247,7 @@ Geometrische representatie van een object.</td>
 </section></section><section id="domein-water"><div class="header-wrapper"><h3 id="x4-4-domein-water"><bdi class="secno">4.4 </bdi>Domein Water</h3><a class="self-link" href="#domein-water" aria-label="Permalink for Section 4.4"></a></div>
 <p>
       </p><figure id="fig-domein-water">
-        <img src="data/media/water.png" alt="Water" class="_img_1zwl3_1">
+        <img src="data/media/water.png" alt="Water">
         <figcaption><a class="self-link" href="#fig-domein-water">Figuur <bdi class="figno">6</bdi></a> <span class="fig-title">Domein Water</span></figcaption>
       </figure>
     <p></p>
@@ -6331,7 +6331,7 @@ Deze watervlakte is al dan niet een hoofdverbinding in het watersysteem.</td>
 </section></section></section><section id="domein-gebouwen"><div class="header-wrapper"><h3 id="x4-5-domein-gebouwen"><bdi class="secno">4.5 </bdi>Domein Gebouwen</h3><a class="self-link" href="#domein-gebouwen" aria-label="Permalink for Section 4.5"></a></div>
 <p>
       </p><figure id="fig-domein-gebouwen">
-        <img src="data/media/gebouwen.png" alt="Gebouwen" class="_img_1zwl3_1">
+        <img src="data/media/gebouwen.png" alt="Gebouwen">
         <figcaption><a class="self-link" href="#fig-domein-gebouwen">Figuur <bdi class="figno">7</bdi></a> <span class="fig-title">Domein Gebouwen</span></figcaption>
       </figure>
     <p></p>
@@ -9897,7 +9897,7 @@ Toegangspunt is primair bedoeld voor toegang tot een object door vracht zonder g
 </section></section></section><section id="domein-verhardingen"><div class="header-wrapper"><h3 id="x4-6-domein-verhardingen"><bdi class="secno">4.6 </bdi>Domein Verhardingen</h3><a class="self-link" href="#domein-verhardingen" aria-label="Permalink for Section 4.6"></a></div>
 <p>
       </p><figure id="fig-domein-verhardingen">
-        <img src="data/media/verhardingen.png" alt="Verhardingen" class="_img_1zwl3_1">
+        <img src="data/media/verhardingen.png" alt="Verhardingen">
         <figcaption><a class="self-link" href="#fig-domein-verhardingen">Figuur <bdi class="figno">8</bdi></a> <span class="fig-title">Domein Verhardingen</span></figcaption>
       </figure>
     <p></p>
@@ -10214,7 +10214,7 @@ Typeclassificatie van een object.</td>
 </section></section></section><section id="domein-kunstwerken"><div class="header-wrapper"><h3 id="x4-7-domein-kunstwerken"><bdi class="secno">4.7 </bdi>Domein Kunstwerken</h3><a class="self-link" href="#domein-kunstwerken" aria-label="Permalink for Section 4.7"></a></div>
 <p>
       </p><figure id="fig-domein-kunstwerken">
-        <img src="data/media/kunstwerken.png" alt="Kunstwerken" class="_img_1zwl3_1">
+        <img src="data/media/kunstwerken.png" alt="Kunstwerken">
         <figcaption><a class="self-link" href="#fig-domein-kunstwerken">Figuur <bdi class="figno">9</bdi></a> <span class="fig-title">Domein Kunstwerken</span></figcaption>
       </figure>
     <p></p>
@@ -12887,7 +12887,7 @@ Object waar dit object onderdeel van uit maakt.</td>
 </section></section></section><section id="domein-overige-constructies"><div class="header-wrapper"><h3 id="x4-8-domein-overige-constructies"><bdi class="secno">4.8 </bdi>Domein Overige constructies</h3><a class="self-link" href="#domein-overige-constructies" aria-label="Permalink for Section 4.8"></a></div>
 <p>
       </p><figure id="fig-domein-overige-constructies">
-        <img src="data/media/overige_constructies.png" alt="Overige constructies" class="_img_1zwl3_1">
+        <img src="data/media/overige_constructies.png" alt="Overige constructies">
         <figcaption><a class="self-link" href="#fig-domein-overige-constructies">Figuur <bdi class="figno">10</bdi></a> <span class="fig-title">Domein Overige constructies</span></figcaption>
       </figure>
     <p></p>
@@ -16494,7 +16494,7 @@ Functie die dit object vervult.</td>
 </section></section></section><section id="domein-transportnetwerk"><div class="header-wrapper"><h3 id="x4-9-domein-transportnetwerk"><bdi class="secno">4.9 </bdi>Domein Transportnetwerk</h3><a class="self-link" href="#domein-transportnetwerk" aria-label="Permalink for Section 4.9"></a></div>
 <p>
       </p><figure id="fig-domein-transportnetwerk">
-        <img src="data/media/transportnetwerk.png" alt="Transportnetwerk" class="_img_1zwl3_1">
+        <img src="data/media/transportnetwerk.png" alt="Transportnetwerk">
         <figcaption><a class="self-link" href="#fig-domein-transportnetwerk">Figuur <bdi class="figno">11</bdi></a> <span class="fig-title">Domein Transportnetwerk</span></figcaption>
       </figure>
     <p></p>
@@ -18077,7 +18077,7 @@ InTegenovergesteldeRichting</td>
 </section></section></section><section id="domein-wegennetwerk"><div class="header-wrapper"><h3 id="x4-10-domein-wegennetwerk"><bdi class="secno">4.10 </bdi>Domein Wegennetwerk</h3><a class="self-link" href="#domein-wegennetwerk" aria-label="Permalink for Section 4.10"></a></div>
 <p>
       </p><figure id="fig-domein-wegennetwerk">
-        <img src="data/media/wegennetwerk.png" alt="Wegennetwerk" class="_img_1zwl3_1">
+        <img src="data/media/wegennetwerk.png" alt="Wegennetwerk">
         <figcaption><a class="self-link" href="#fig-domein-wegennetwerk">Figuur <bdi class="figno">12</bdi></a> <span class="fig-title">Domein Wegennetwerk</span></figcaption>
       </figure>
     <p></p>
@@ -21112,7 +21112,7 @@ Eén rijrichting is toegestaan in de tegenovergestelde richting van de verbindin
 </section></section></section><section id="domein-spoorwegennetwerk"><div class="header-wrapper"><h3 id="x4-11-domein-spoorwegennetwerk"><bdi class="secno">4.11 </bdi>Domein Spoorwegennetwerk</h3><a class="self-link" href="#domein-spoorwegennetwerk" aria-label="Permalink for Section 4.11"></a></div>
 <p>
       </p><figure id="fig-domein-spoorwegennetwerk">
-        <img src="data/media/spoorwegennetwerk.png" alt="Spoorwegennetwerk" class="_img_1zwl3_1">
+        <img src="data/media/spoorwegennetwerk.png" alt="Spoorwegennetwerk">
         <figcaption><a class="self-link" href="#fig-domein-spoorwegennetwerk">Figuur <bdi class="figno">13</bdi></a> <span class="fig-title">Domein Spoorwegennetwerk</span></figcaption>
       </figure>
     <p></p>
@@ -21771,7 +21771,7 @@ De verbindingen die de knoop verlaten.</td>
 </section></section></section><section id="domein-functionele-ruimten"><div class="header-wrapper"><h3 id="x4-12-domein-functionele-ruimten"><bdi class="secno">4.12 </bdi>Domein Functionele ruimten</h3><a class="self-link" href="#domein-functionele-ruimten" aria-label="Permalink for Section 4.12"></a></div>
 <p>
       </p><figure id="fig-domein-functionele-ruimten">
-        <img src="data/media/functionele_ruimten.png" alt="Functionele ruimten" class="_img_1zwl3_1">
+        <img src="data/media/functionele_ruimten.png" alt="Functionele ruimten">
         <figcaption><a class="self-link" href="#fig-domein-functionele-ruimten">Figuur <bdi class="figno">14</bdi></a> <span class="fig-title">Domein Functionele ruimten</span></figcaption>
       </figure>
     <p></p>
@@ -25491,7 +25491,7 @@ Typeclassificatie van een object.</td>
 </section></section></section><section id="domein-bestuurlijke-gebieden"><div class="header-wrapper"><h3 id="x4-13-domein-bestuurlijke-gebieden"><bdi class="secno">4.13 </bdi>Domein Bestuurlijke gebieden</h3><a class="self-link" href="#domein-bestuurlijke-gebieden" aria-label="Permalink for Section 4.13"></a></div>
 <p>
       </p><figure id="fig-domein-bestuurlijke-gebieden">
-        <img src="data/media/bestuurlijke_gebieden.png" alt="Bestuurlijke gebieden" class="_img_1zwl3_1">
+        <img src="data/media/bestuurlijke_gebieden.png" alt="Bestuurlijke gebieden">
         <figcaption><a class="self-link" href="#fig-domein-bestuurlijke-gebieden">Figuur <bdi class="figno">15</bdi></a> <span class="fig-title">Domein Bestuurlijke gebieden</span></figcaption>
       </figure>
     <p></p>
@@ -25578,7 +25578,7 @@ Typeclassificatie van een object.</td>
 </section></section><section id="domein-registratieve-ruimten"><div class="header-wrapper"><h3 id="x4-14-domein-registratieve-ruimten"><bdi class="secno">4.14 </bdi>Domein Registratieve ruimten</h3><a class="self-link" href="#domein-registratieve-ruimten" aria-label="Permalink for Section 4.14"></a></div>
 <p>
       </p><figure id="fig-domein-registratieve-ruimten">
-        <img src="data/media/registratieve_ruimten.png" alt="Registratieve ruimten" class="_img_1zwl3_1">
+        <img src="data/media/registratieve_ruimten.png" alt="Registratieve ruimten">
         <figcaption><a class="self-link" href="#fig-domein-registratieve-ruimten">Figuur <bdi class="figno">16</bdi></a> <span class="fig-title">Domein Registratieve ruimten</span></figcaption>
       </figure>
     <p></p>
@@ -29374,7 +29374,7 @@ Type van het object dat op de benoemde plaats is of kan worden geplaatst.</td>
 </section></section></section><section id="domein-geografische-ruimten"><div class="header-wrapper"><h3 id="x4-15-domein-geografische-ruimten"><bdi class="secno">4.15 </bdi>Domein Geografische ruimten</h3><a class="self-link" href="#domein-geografische-ruimten" aria-label="Permalink for Section 4.15"></a></div>
 <p>
       </p><figure id="fig-domein-geografische-ruimten">
-        <img src="data/media/geografische_ruimten.png" alt="Geografische ruimten" class="_img_1zwl3_1">
+        <img src="data/media/geografische_ruimten.png" alt="Geografische ruimten">
         <figcaption><a class="self-link" href="#fig-domein-geografische-ruimten">Figuur <bdi class="figno">17</bdi></a> <span class="fig-title">Domein Geografische ruimten</span></figcaption>
       </figure>
     <p></p>
@@ -30783,7 +30783,7 @@ Geometrische representatie van een object.</td>
 </section></section></section><section id="domein-registratiegegevens"><div class="header-wrapper"><h3 id="x4-16-domein-registratiegegevens"><bdi class="secno">4.16 </bdi>Domein Registratiegegevens</h3><a class="self-link" href="#domein-registratiegegevens" aria-label="Permalink for Section 4.16"></a></div>
 <p>
       </p><figure id="fig-domein-registratiegegevens">
-        <img src="data/media/registratiegegevens.png" alt="Registratiegegevens" class="_img_1zwl3_1">
+        <img src="data/media/registratiegegevens.png" alt="Registratiegegevens">
         <figcaption><a class="self-link" href="#fig-domein-registratiegegevens">Figuur <bdi class="figno">18</bdi></a> <span class="fig-title">Domein Registratiegegevens</span></figcaption>
       </figure>
     <p></p>
@@ -35308,11 +35308,76 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <li>Tunnel</li>
 <li>CityObjectGroup</li>
 </ul>
-<section id="levensloop-en-versiebeheer"><div class="header-wrapper"><h3 id="a-1-levensloop-en-versiebeheer"><bdi class="secno">A.1 </bdi>Levensloop en versiebeheer</h3><a class="self-link" href="#levensloop-en-versiebeheer" aria-label="Permalink for Appendix A.1"></a></div>
-<p>TODO nog uitwerken</p>
-</section><section id="kern"><div class="header-wrapper"><h3 id="a-2-kern"><bdi class="secno">A.2 </bdi>Kern</h3><a class="self-link" href="#kern" aria-label="Permalink for Appendix A.2"></a></div>
-<p>De kern van generieke objecttypen:</p>
-<table>
+<section id="registratiegegevens-0"><div class="header-wrapper"><h3 id="citygml-mapping-registratiegegevens"><bdi class="secno">A.1 </bdi>Registratiegegevens</h3><a class="self-link" href="#citygml-mapping-registratiegegevens" aria-label="Permalink for Appendix A.1"></a></div><table>
+<thead>
+<tr>
+<th>IBRO Element</th>
+<th>CityGML Element</th>
+<th>Opmerkingen</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em><strong>Object</strong></em></td>
+<td><em><strong>AbstractFeatureWithLifespan</strong></em></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / versie</code></td>
+<td>&nbsp;&nbsp; <code>genericAttribute: StringAttribute</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / status</code></td>
+<td>&nbsp;&nbsp; <code>genericAttribute: StringAttribute</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / status</code></td>
+<td>&nbsp;&nbsp; <code>genericAttribute: StringAttribute</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / beginGeldigheid</code></td>
+<td>&nbsp;&nbsp;<code>validFrom</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / eindGeldigheid</code></td>
+<td>&nbsp;&nbsp;<code>validTo</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / tijdstipRegistratie</code></td>
+<td>&nbsp;&nbsp;<code>creationDate</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / eindRegistratie</code></td>
+<td>&nbsp;&nbsp;<code>terminationDate</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / indicatieObjectGeconstateerd = false</code></td>
+<td>&nbsp;&nbsp; <code>genericAttribute: IntAttribute (value = 0)</code></td>
+<td>CityGML kent geen <code>BooleanAttribute</code>.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / indicatieObjectGeconstateerd = true</code></td>
+<td>&nbsp;&nbsp; <code>genericAttribute: IntAttribute (value = 1)</code></td>
+<td>CityGML kent geen <code>BooleanAttribute</code>.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / beginGprimaireBroneldigheid</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / verantwoordelijkePartij</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section><section id="kern"><div class="header-wrapper"><h3 id="citygml-mapping-kern"><bdi class="secno">A.2 </bdi>Kern</h3><a class="self-link" href="#citygml-mapping-kern" aria-label="Permalink for Appendix A.2"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -35410,10 +35475,13 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>&nbsp;&nbsp; <code>lod[n]MultiSurface</code></td>
 <td>Er zijn meerdere geometrieën per space / thematic surface, zie Figure 23</td>
 </tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geregistreerdMet</code></td>
+<td>-</td>
+<td>Zie <a href="#citygml-mapping-registratiegegevens" data-matched-text="[[[#citygml-mapping-registratiegegevens]]]" class="sec-ref"><bdi class="secno">A.1 </bdi>Registratiegegevens</a></td>
+</tr>
 </tbody></table>
-<p>Hierna kijken we alleen naar de fysieke objecten van IBRO.</p>
-</section><section id="groen-0"><div class="header-wrapper"><h3 id="a-3-groen"><bdi class="secno">A.3 </bdi>Groen</h3><a class="self-link" href="#groen-0" aria-label="Permalink for Appendix A.3"></a></div>
-<table>
+</section><section id="groen-0"><div class="header-wrapper"><h3 id="citygml-mapping-groen"><bdi class="secno">A.3 </bdi>Groen</h3><a class="self-link" href="#citygml-mapping-groen" aria-label="Permalink for Appendix A.3"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -35507,8 +35575,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="bodem-0"><div class="header-wrapper"><h3 id="a-4-bodem"><bdi class="secno">A.4 </bdi>Bodem</h3><a class="self-link" href="#bodem-0" aria-label="Permalink for Appendix A.4"></a></div>
-<table>
+</section><section id="bodem-0"><div class="header-wrapper"><h3 id="citygml-mapping-bodem"><bdi class="secno">A.4 </bdi>Bodem</h3><a class="self-link" href="#citygml-mapping-bodem" aria-label="Permalink for Appendix A.4"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -35527,8 +35594,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="water-0"><div class="header-wrapper"><h3 id="a-5-water"><bdi class="secno">A.5 </bdi>Water</h3><a class="self-link" href="#water-0" aria-label="Permalink for Appendix A.5"></a></div>
-<table>
+</section><section id="water-0"><div class="header-wrapper"><h3 id="citygml-mapping-water"><bdi class="secno">A.5 </bdi>Water </h3><a class="self-link" href="#citygml-mapping-water" aria-label="Permalink for Appendix A.5"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -35592,13 +35658,13 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="gebouwen-0"><div class="header-wrapper"><h3 id="a-6-gebouwen"><bdi class="secno">A.6 </bdi>Gebouwen</h3><a class="self-link" href="#gebouwen-0" aria-label="Permalink for Appendix A.6"></a></div>
-<p>Er zijn twee denkbare manieren hoe om te gaan met Panden in CityGML:</p>
+</section><section id="gebouwen-0"><div class="header-wrapper"><h3 id="citygml-mapping-gebouwen"><bdi class="secno">A.6 </bdi>Gebouwen</h3><a class="self-link" href="#citygml-mapping-gebouwen" aria-label="Permalink for Appendix A.6"></a></div><p>Er zijn drie denkbare manieren hoe om te gaan met Panden in CityGML:</p>
 <ol>
-<li>Alle panden als Building mappen, ook de niet-vrijstaande. De niet-vrijstaande panden zijn dan te herkennen aan het <code>genericAttribute</code> met de waarde voor de IBRO eigenschap <code>aardPand</code>. De verschillende panddelen worden dan gemapt naar BuildingPart, BuildingUnit of BuildingInstallation afhankelijk van het type panddeel. Dit is officieel niet volledig correct omdat Building in CityGML vrijstaande gebouwen representeert, maar het is wel praktisch omdat je dan alle panden in 1 CityGML klasse hebt en je geen geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
-<li>Alleen de vrijstaande panden als Building mappen. De niet-vrijstaande panden worden dan gemapt naar BuildingPart, BuildingUnit of BuildingInstallation afhankelijk van het type panddeel en worden gerelateerd aan een Building die op basis van een geometrische afleiding wordt afgeleid. Dit is wel correct volgens de definitie van Building in CityGML, maar het is minder praktisch omdat je dan niet alle panden in 1 CityGML klasse hebt en je geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
+<li>Alle panden naar <code>Building</code> mappen, ook de niet-vrijstaande. De niet-vrijstaande panden zijn dan te herkennen aan het <code>genericAttribute</code> met de waarde voor de IBRO eigenschap <code>aardPand</code>. De verschillende panddelen worden dan gemapt naar <code>BuildingPart</code>, <code>BuildingUnit</code> of <code>BuildingInstallation</code> afhankelijk van het type panddeel. Dit is officieel niet volledig correct omdat <code>Building</code> in CityGML vrijstaande gebouwen representeert, maar het is wel praktisch omdat je dan alle panden in 1 CityGML klasse hebt en je geen geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
+<li>Alleen de vrijstaande panden naar <code>Building</code> mappen. De niet-vrijstaande panden worden dan gemapt naar BuildingPart, BuildingUnit of BuildingInstallation afhankelijk van het type panddeel en worden gerelateerd aan een Building die op basis van een geometrische afleiding wordt afgeleid. Dit is wel correct volgens de definitie van Building in CityGML, maar het is minder praktisch omdat je dan niet alle panden in 1 CityGML klasse hebt en je geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
+<li>Alle panden naar <code>BuidingPart</code> mappen. Daarnaast de vrijstaande panden ook naar <code>Building</code> mappen. Voor de niet-vrijstaande panden geldt dat een <code>Building</code> worden afgeleid uit de geometrie van de aan elkaar grenzende panden. Dit is correct volgens CityGML en zorgt dat alle panden als <code>BuildingPart</code> in CityGML worden opgenomen. Het nadeel is dat je ook hier geometrische analyses moet uitvoeren om te bepalen welke panden aan elkaar grenzen en dus een <code>Building</code> vormen.</li>
 </ol>
-<p>Hieronder is gekozen voor het uitwerken van optie 2.</p>
+<p>Hieronder is gekozen voor het uitwerken van optie 3, omdat dit conformeert aan CityGML en zorgt voor de meeste consistentie in de mapping.</p>
 <table>
 <thead>
 <tr>
@@ -35609,13 +35675,18 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </thead>
 <tbody><tr>
 <td><strong>Pand</strong> <code>aardPand = Vrijstaand</code></td>
-<td><strong>Building</strong></td>
+<td><strong>Building</strong>  met <strong>BuildingPart</strong> gerelateerd via <code>buildingPart</code></td>
 <td>Buildings zijn <em>freestanding, self-supporting constructions</em>.</td>
 </tr>
 <tr>
-<td><strong>Pand</strong> <code>aardPand = Heterogeen</code></td>
-<td><strong>Building</strong> met <strong>BuildingPart</strong> gerelateerd via <code>buildingPart</code></td>
-<td>BuildingPart is geen TopLevelFeaturetype. <em>A BuildingPart is a physical or functional subdivision of a Building. It would be considered a Building, if it were not part of a collection of other BuildingParts.</em></td>
+<td><strong>Pand</strong> <code>aardPand != Vrijstaand</code></td>
+<td><strong>Building</strong>(*) met <strong>BuildingPart</strong> gerelateerd via <code>buildingPart</code></td>
+<td>Building wordt afgeleid van de geometrie van panden met <code>aardPand</code> <code>Heterogeen</code> of <code>Repeterend</code> die aan elkaar grenzen en 1 blok vormen. Dit geheel wordt als <code>Building</code> opgenomen.</td>
+</tr>
+<tr>
+<td><strong>Pand</strong></td>
+<td><strong>BuildingPart</strong></td>
+<td></td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>type = {type}, subtype = null</code></td>
@@ -35638,7 +35709,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>oorsronkelijkBouwjaar</code></td>
+<td>&nbsp;&nbsp; <code>oorspronkelijkBouwjaar</code></td>
 <td>&nbsp;&nbsp; <code>dateOfConstruction</code></td>
 <td></td>
 </tr>
@@ -35658,33 +35729,33 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>^isOnderdeeVan</code> Panddeel</td>
-<td>&nbsp;&nbsp; <code>buildingPart</code></td>
-<td>Binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>buildingPart</code> relaties.</td>
+<td>&nbsp;&nbsp; <code>^isOnderdeeVan</code> <strong>Panddeel</strong></td>
+<td>&nbsp;&nbsp; <code>buildingPart</code> of <code>buildingInstallation</code></td>
+<td>Binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>buildingPart</code> of <code>buildingInstallation</code> relaties afhankelijk van het type Panddeel (zie hieronder).</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>^hoortBij</code> <em><strong>Installatie</strong></em></td>
 <td>&nbsp;&nbsp; <code>buildingInstallation</code></td>
-<td>Binnenkomende relaties <code>hoortBij</code> worden omgezet naar <code>buildingInstallation</code> relaties.</td>
+<td>Binnenkomende relaties <code>hoortBij</code> worden omgezet naar <code>buildingInstallation</code> relaties. Zie mapping <a href="#citygml-mapping-overige-constructies" data-matched-text="[[[#citygml-mapping-overige-constructies]]]" class="sec-ref"><bdi class="secno">A.9 </bdi>Overige constructies</a></td>
 </tr>
 <tr>
-<td><strong>Panddeel</strong></td>
-<td><strong>BuildingPart</strong> of <strong>BuildingUnit</strong></td>
-<td>Als het deel uitmaakt van een vrijstaand gebouw en het is semantisch gezien geen BuildingInstallation, dan mappen naar BuildingPart. Anders BuildingUnit of BuildingInstallation. Per panddeeltype mappen (zie volgende regels).</td>
+<td>&nbsp;&nbsp; <code>^ligtIn</code> <strong>Bouwlaag</strong></td>
+<td>&nbsp;&nbsp; <code>buildingSubdivision</code> <strong>Storey</strong></td>
+<td>Binnenkomende relaties <code>ligtIn</code> worden omgezet naar <code>buildingSubdivision</code> relaties naar een <strong>Storey</strong>.</td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Basisconstructie</code></td>
-<td><strong>BuildingPart</strong> of <strong>BuildingUnit</strong> <code>type = Basisconstructie</code></td>
+<td><strong>BuildingPart</strong> <code>type = Basisconstructie</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = LatereAanbouw</code></td>
-<td><strong>BuildingPart</strong> of <strong>BuildingUnit</strong> <code>type = LatereAanbouw</code></td>
+<td><strong>BuildingPart</strong> <code>type = LatereAanbouw</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Serre</code></td>
-<td><strong>BuildingPart</strong> of <strong>BuildingUnit</strong>  <code>type = Serre</code></td>
+<td><strong>BuildingPart</strong>  <code>type = Serre</code></td>
 <td></td>
 </tr>
 <tr>
@@ -35728,19 +35799,29 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>ligtIn</code></td>
-<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td><strong>Bouwlaag</strong></td>
+<td><strong>Storey</strong></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Functiezone</strong></td>
-<td><strong>BuildingUnit</strong></td>
-<td>Is breder, hoeft niet op zelfde storey te liggen</td>
+<td>&nbsp;&nbsp; <code>geometrie</code></td>
+<td>&nbsp;&nbsp; <code>lod[n]MultiSurface</code></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Functiezone</strong></td>
-<td><strong>BuildingUnit</strong></td>
-<td>Is breder, hoeft niet op zelfde storey te liggen</td>
+<td>&nbsp;&nbsp; <code>bouwlaagnummer &gt;= 0</code></td>
+<td>&nbsp;&nbsp; <code>storeysAboveGround = {bouwlaagnummer}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>bouwlaagnummer &lt; 0</code></td>
+<td>&nbsp;&nbsp; <code>storeysBelowGround = {bouwlaagnummer * -1}</code></td>
+<td>Het negatieve bouwlaagnummer wordt positief gemaakt en als waarde van <code>storeysBelowGround</code> opgenomen.</td>
+</tr>
+<tr>
+<td><strong>Functiezone</strong> <code>type = {type}</code></td>
+<td><strong>BuildingUnit</strong> <code>class = {type}</code></td>
+<td></td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>brutoVloeroppervlakte</code></td>
@@ -35753,24 +35834,24 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>bouwlaagnummer &gt;= 0</code></td>
-<td>storeysAboveGround</td>
-<td>TODO Storey?</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp; <code>bouwlaagnummer &lt; 0</code></td>
-<td>storeysBelowGround</td>
-<td>TODO Storey?</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp; <code>ligtIn</code></td>
-<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td>&nbsp;&nbsp; <code>storey</code></td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Gebruikzone</strong> <code>type = {type}</code></td>
-<td><strong>BuildingUnit</strong> <code>class = {type}</code></td>
-<td>TODO: Mag je meerdere BuildingUnit indelingen hebben in 1 citymodel?</td>
+<td><strong>Gebruikzone</strong></td>
+<td><strong>BuildingUnit</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>type = {type}, subtype = null</code></td>
+<td>&nbsp;&nbsp; <code>class = {type}</code></td>
+<td>Wanneer <code>type</code> aanwezig, maar <code>subtype</code> niet, krijgt <code>class</code> de waarde van <code>type</code>.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>type = {type}, subtype = {subtype}</code></td>
+<td>&nbsp;&nbsp; <code>class = {subtype}</code></td>
+<td>Wanneer <code>subtype</code> aanwezig, krijgt <code>class</code> de waarde van <code>subtype</code>.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>geometrie</code></td>
@@ -35784,7 +35865,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>ligtIn</code> Bouwlaag</td>
-<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td>&nbsp;&nbsp; <code>storey</code></td>
 <td></td>
 </tr>
 <tr>
@@ -35827,11 +35908,6 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>&nbsp;&nbsp; <code>groupMember</code></td>
 <td></td>
 </tr>
-<tr>
-<td><strong>Bouwlaag</strong>?</td>
-<td>Storey</td>
-<td>TODO: afleiden uit functiezones en gebruikzones?</td>
-</tr>
 </tbody></table>
 </section><section id="verhardingen-0"><div class="header-wrapper"><h3 id="a-7-verhardingen"><bdi class="secno">A.7 </bdi>Verhardingen</h3><a class="self-link" href="#verhardingen-0" aria-label="Permalink for Appendix A.7"></a></div>
 <table>
@@ -35844,8 +35920,18 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </thead>
 <tbody><tr>
 <td><strong>Verharding</strong> <code>type = {type}</code></td>
-<td><strong>TrafficArea</strong> of <strong>OtherConstruction</strong>? <code>class = {type}</code></td>
-<td>TODO: In Citygml is dit een thematic surface terwijl Verharding een fysiek object is. TrafficArea is geen TopLevelFeaturetype, moet als onderdeel van een Road opgenomen worden.</td>
+<td><strong>TrafficArea</strong> <code>class = {type}</code></td>
+<td>In Citygml is dit een thematic surface terwijl Verharding een fysiek object is. TrafficArea is geen TopLevelFeaturetype en moet als onderdeel van een Road opgenomen worden.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>type</code></td>
+<td>&nbsp;&nbsp; <code>surfaceMaterial</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>geometrie</code></td>
+<td>&nbsp;&nbsp; <code>lod[n]MultiSurface</code></td>
+<td></td>
 </tr>
 </tbody></table>
 </section><section id="kunstwerken-0"><div class="header-wrapper"><h3 id="a-8-kunstwerken"><bdi class="secno">A.8 </bdi>Kunstwerken</h3><a class="self-link" href="#kunstwerken-0" aria-label="Permalink for Appendix A.8"></a></div>
@@ -35945,7 +36031,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <tr>
 <td><strong>Schutkolk</strong></td>
 <td><strong>OtherConstruction</strong></td>
-<td>Hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElemement en TunnelConstructiveElement.</td>
+<td>Hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElement en TunnelConstructiveElement.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>isOnderdeelVan</code></td>
@@ -35955,7 +36041,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <tr>
 <td><strong>Sluisdeur</strong></td>
 <td><strong>OtherConstruction</strong></td>
-<td>Hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElemement en TunnelConstructiveElement</td>
+<td>Hier ontbreekt een niet-abstracte klasse voor. Er zijn wel BuildingConstructiveElement, BridgeConstructiveElement en TunnelConstructiveElement</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>isOnderdeelVan</code></td>
@@ -35964,7 +36050,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Pyloon</strong></td>
-<td><strong>BridgeConstructiveElemement</strong></td>
+<td><strong>BridgeConstructiveElement</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -35974,7 +36060,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Sloof</strong></td>
-<td><strong>BridgeConstructiveElemement</strong></td>
+<td><strong>BridgeConstructiveElement</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -35984,7 +36070,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Landhoofd</strong></td>
-<td><strong>BridgeConstructiveElemement</strong></td>
+<td><strong>BridgeConstructiveElement</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -35994,7 +36080,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Dek</strong></td>
-<td><strong>BridgeConstructiveElemement</strong></td>
+<td><strong>BridgeConstructiveElement</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36004,7 +36090,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Pijler</strong></td>
-<td><strong>BridgeConstructiveElemement</strong></td>
+<td><strong>BridgeConstructiveElement</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36013,8 +36099,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>Zie <strong>Overbrugging</strong>. De compositie relatie loopt bij CityGML de andere kant op, van brug naar onderdeel</td>
 </tr>
 </tbody></table>
-</section><section id="overige-constructies"><div class="header-wrapper"><h3 id="a-9-overige-constructies"><bdi class="secno">A.9 </bdi>Overige constructies</h3><a class="self-link" href="#overige-constructies" aria-label="Permalink for Appendix A.9"></a></div>
-<table>
+</section><section id="overige-constructies"><div class="header-wrapper"><h3 id="citygml-mapping-overige-constructies"><bdi class="secno">A.9 </bdi>Overige constructies</h3><a class="self-link" href="#citygml-mapping-overige-constructies" aria-label="Permalink for Appendix A.9"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -36328,8 +36413,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>vullen met het type Reducering</td>
 </tr>
 </tbody></table>
-</section><section id="transportnetwerk-0"><div class="header-wrapper"><h3 id="a-10-transportnetwerk"><bdi class="secno">A.10 </bdi>Transportnetwerk</h3><a class="self-link" href="#transportnetwerk-0" aria-label="Permalink for Appendix A.10"></a></div>
-<table>
+</section><section id="transportnetwerk-0"><div class="header-wrapper"><h3 id="citygml-mapping-transportnetwerk"><bdi class="secno">A.10 </bdi>Transportnetwerk</h3><a class="self-link" href="#citygml-mapping-transportnetwerk" aria-label="Permalink for Appendix A.10"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -36344,11 +36428,6 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp; <code>hyperverbinding</code></td>
-<td>&nbsp;&nbsp; <code>relatedTo</code></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp; <code>ligtOp</code></td>
 <td>&nbsp;&nbsp; <code>relatedTo</code></td>
 <td></td>
 </tr>
@@ -36388,14 +36467,13 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="wegennetwerk-0"><div class="header-wrapper"><h3 id="a-11-wegennetwerk"><bdi class="secno">A.11 </bdi>Wegennetwerk</h3><a class="self-link" href="#wegennetwerk-0" aria-label="Permalink for Appendix A.11"></a></div>
-<p>Een IBRO wegverbinding kan ik CityGML worden gemapt op verschillende CityGML types, afhankelijk van de IBRO type-aanduiding. In de onderstaande tabel is per IBRO type aangegeven welk CityGML type gebruikt moet worden. Bij ontbreken van een IBRO type wordt uitgegaan van het CityGML type <strong>Road</strong>.</p>
+</section><section id="wegennetwerk-0"><div class="header-wrapper"><h3 id="citygml-mapping-wegennetwerk"><bdi class="secno">A.11 </bdi>Wegennetwerk</h3><a class="self-link" href="#citygml-mapping-wegennetwerk" aria-label="Permalink for Appendix A.11"></a></div><p>Een IBRO wegverbinding kan in CityGML worden gemapt op verschillende CityGML types, afhankelijk van de IBRO type-aanduiding. In de onderstaande tabel is per IBRO type aangegeven welk CityGML type gebruikt moet worden. Bij ontbreken van een IBRO type wordt uitgegaan van het CityGML type <strong>Road</strong>.</p>
 <table>
 <thead>
 <tr>
 <th>IBRO Element</th>
 <th>IBRO type</th>
-<th>CitGML type <em><strong>AbstractTransportationSpace</strong></em></th>
+<th>CityGML type <em><strong>AbstractTransportationSpace</strong></em></th>
 <th>Opmerkingen</th>
 </tr>
 </thead>
@@ -36403,7 +36481,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td><strong>Wegverbinding</strong></td>
 <td></td>
 <td><strong>Road</strong></td>
-<td>Bij ontbreken van typering is wordt uitgegaan van het CityGML type <strong>Road</strong>.</td>
+<td>Bij ontbreken van typering wordt uitgegaan van het CityGML type <strong>Road</strong>.</td>
 </tr>
 <tr>
 <td><strong>Wegverbinding</strong></td>
@@ -36508,12 +36586,12 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>geometrie</code></td>
+<td>&nbsp;&nbsp; <code>vlakgeometrie</code></td>
 <td>&nbsp;&nbsp; <code>lod[n]MultiSurface</code></td>
 <td></td>
 </tr>
 <tr>
-<td>collectie <strong>Wegverbinding</strong>-en met dezefde <em>OpenbareRuimte</em> (<code>heeftOpenbareRuimte</code>)</td>
+<td>collectie <strong>Wegverbinding</strong>-en met dezelfde <em>OpenbareRuimte</em> (<code>heeftOpenbareRuimte</code>)</td>
 <td><strong><code>{transportationSpaceType}</code></strong> <code>name = </code>OpenbareRuimte.naam`</td>
 <td></td>
 </tr>
@@ -36578,13 +36656,23 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>CityGML maakt geen onderscheid tussen start- en eindknopen. Hiermee wordt aangegeven welke <strong>Intersection</strong> de eindknoop is.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>^isOnderdeelVan</code></td>
+<td>&nbsp;&nbsp; <code>(^isOnderdeelVan)*</code></td>
 <td>&nbsp;&nbsp; <code>trafficSpace</code></td>
-<td>Binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>trafficSpace</code> relaties.</td>
+<td>Transitief binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>trafficSpace</code> relaties. Dus baan- en strookverbindingen.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>ligtOp</code> <strong>Verharding</strong></td>
+<td>&nbsp;&nbsp; <code>trafficArea</code></td>
+<td><code>ligtOp</code> relaties naar het type <strong>Verharding</strong> worden omgezet naar <code>trafficArea</code> relaties.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>ligtOp</code> !<strong>Verharding</strong></td>
+<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td><code>ligtOp</code> relaties naar types anders dan <strong>Verharding</strong> worden omgezet naar <code>relatedTo</code> relaties.</td>
 </tr>
 <tr>
 <td><strong>Baanverbinding</strong></td>
-<td><strong>TrafficSpace</strong></td>
+<td><strong>TrafficSpace</strong> <code>granularityValue = way</code></td>
 <td></td>
 </tr>
 <tr>
@@ -36598,13 +36686,18 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>^isOnderdeelVan</code></td>
+<td>&nbsp;&nbsp; <code>ligtOp</code> <strong>Verharding</strong></td>
 <td>&nbsp;&nbsp; <code>trafficArea</code></td>
-<td>Binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>trafficArea</code> relaties.</td>
+<td><code>ligtOp</code> relaties naar het type <strong>Verharding</strong> worden omgezet naar <code>trafficArea</code> relaties.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>ligtOp</code> !<strong>Verharding</strong></td>
+<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td><code>ligtOp</code> relaties naar types anders dan <strong>Verharding</strong> worden omgezet naar <code>relatedTo</code> relaties.</td>
 </tr>
 <tr>
 <td><strong>Strookverbinding</strong></td>
-<td><strong>TrafficArea</strong></td>
+<td><strong>TrafficSpace</strong> <code>granularityValue = lane</code></td>
 <td></td>
 </tr>
 <tr>
@@ -36616,6 +36709,16 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>&nbsp;&nbsp; <code>type = {type}</code></td>
 <td>&nbsp;&nbsp; <code>class = {type}</code></td>
 <td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>ligtOp</code> <strong>Verharding</strong></td>
+<td>&nbsp;&nbsp; <code>trafficArea</code></td>
+<td><code>ligtOp</code> relaties naar het type <strong>Verharding</strong> worden omgezet naar <code>trafficArea</code> relaties.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>ligtOp</code> !<strong>Verharding</strong></td>
+<td>&nbsp;&nbsp; <code>relatedTo</code></td>
+<td><code>ligtOp</code> relaties naar types anders dan <strong>Verharding</strong> worden omgezet naar <code>relatedTo</code> relaties.</td>
 </tr>
 <tr>
 <td><strong>Wegknoop</strong></td>
@@ -36663,15 +36766,14 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <p>CityGML biedt de mogelijkheid om <code>successor</code> en <code>predecessor</code> relaties te leggen tussen <code>TrafficSpace</code> objecten. Dit kan gebruikt worden om het netwerk van baanverbindingen te representeren, bijv. voor routering- of simulatiedoeleinden.</p>
 <p>In de huidige mapping is dit niet verder uitgewerkt.</p>
 <figure id="fig-successor-en-predecessor-relaties-van-trafficspace">
-<img src="media/TrafficSpace-successor-predecessor.png" alt="`successor` en `predecessor` relaties van `TrafficSpace`" class="_img_1zwl3_1">
+<img src="media/TrafficSpace-successor-predecessor.png" alt="`successor` en `predecessor` relaties van `TrafficSpace`">
 <figcaption><a class="self-link" href="#fig-successor-en-predecessor-relaties-van-trafficspace">Figuur <bdi class="figno">19</bdi></a> <span class="fig-title"><code>successor</code> en <code>predecessor</code> relaties van <code>TrafficSpace</code></span></figcaption>
 </figure>
 
 </aside></div>
 
-</section><section id="spoorwegennetwerk-0"><div class="header-wrapper"><h3 id="a-12-spoorwegennetwerk"><bdi class="secno">A.12 </bdi>Spoorwegennetwerk</h3><a class="self-link" href="#spoorwegennetwerk-0" aria-label="Permalink for Appendix A.12"></a></div>
-<p>TODO completeren</p>
-<table>
+
+</section><section id="spoorwegennetwerk-0"><div class="header-wrapper"><h3 id="citygml-mapping-spoorwegennetwerk"><bdi class="secno">A.12 </bdi>Spoorwegennetwerk</h3><a class="self-link" href="#citygml-mapping-spoorwegennetwerk" aria-label="Permalink for Appendix A.12"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -36680,23 +36782,27 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Spoorwegknoop</strong></td>
+<td><strong>Spoorverbinding</strong> <code>type = {type}</code></td>
+<td><strong>Railway</strong> <code>class = {type}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp; <code>startKnoop</code></td>
 <td>-</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>Spoorverbinding</strong></td>
-<td>Railway</td>
+<td>&nbsp;&nbsp; <code>eindKnoop</code></td>
+<td>-</td>
 <td></td>
 </tr>
 <tr>
-<td>Alle subklassen</td>
-<td>Railway</td>
-<td>Het <code>class</code> attribuut vullen met naam van subklasse.</td>
+<td><strong>Spoorwegknoop</strong></td>
+<td>-</td>
+<td></td>
 </tr>
 </tbody></table>
-</section><section id="functionele-ruimten-0"><div class="header-wrapper"><h3 id="a-13-functionele-ruimten"><bdi class="secno">A.13 </bdi>Functionele ruimten</h3><a class="self-link" href="#functionele-ruimten-0" aria-label="Permalink for Appendix A.13"></a></div>
-<table>
+</section><section id="functionele-ruimten-0"><div class="header-wrapper"><h3 id="citygml-mapping-functionele-ruimten"><bdi class="secno">A.13 </bdi>Functionele ruimten</h3><a class="self-link" href="#citygml-mapping-functionele-ruimten" aria-label="Permalink for Appendix A.13"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -36905,8 +37011,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="registratieve-ruimten-0"><div class="header-wrapper"><h3 id="a-14-registratieve-ruimten"><bdi class="secno">A.14 </bdi>Registratieve ruimten</h3><a class="self-link" href="#registratieve-ruimten-0" aria-label="Permalink for Appendix A.14"></a></div>
-<table>
+</section><section id="registratieve-ruimten-0"><div class="header-wrapper"><h3 id="citygml-mapping-registratieve-ruimten"><bdi class="secno">A.14 </bdi>Registratieve ruimten</h3><a class="self-link" href="#citygml-mapping-registratieve-ruimten" aria-label="Permalink for Appendix A.14"></a></div><table>
 <thead>
 <tr>
 <th>IBRO Element</th>
@@ -37120,8 +37225,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="geografische-ruimten-0"><div class="header-wrapper"><h3 id="a-15-geografische-ruimten"><bdi class="secno">A.15 </bdi>Geografische ruimten</h3><a class="self-link" href="#geografische-ruimten-0" aria-label="Permalink for Appendix A.15"></a></div>
-<p>N.B. je maakt in CityGML een 3D  Digital Terrain Model met behulp van de <strong>Relief</strong> module.</p>
+</section><section id="geografische-ruimten-0"><div class="header-wrapper"><h3 id="citygml-mapping-geografische-ruimten"><bdi class="secno">A.15 </bdi>Geografische ruimten</h3><a class="self-link" href="#citygml-mapping-geografische-ruimten" aria-label="Permalink for Appendix A.15"></a></div><p>N.B. je maakt in CityGML een 3D  Digital Terrain Model met behulp van de <strong>Relief</strong> module.</p>
 <table>
 <thead>
 <tr>
