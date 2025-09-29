@@ -35367,7 +35367,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td>CityGML kent geen <code>BooleanAttribute</code>.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>geregistreerdMet / beginGprimaireBroneldigheid</code></td>
+<td>&nbsp;&nbsp; <code>geregistreerdMet / primaireBron</code></td>
 <td>-</td>
 <td></td>
 </tr>
@@ -35520,8 +35520,8 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td><strong>OverigeBegroeiing</strong> <code>type = Houtwal</code></td>
-<td><strong>PlantCover</strong> <code>class = Houtwal</code></td>
+<td><strong>OverigeBegroeiing</strong> <code>type = Houtsingel</code></td>
+<td><strong>PlantCover</strong> <code>class = Houtsingel</code></td>
 <td></td>
 </tr>
 <tr>
@@ -35662,7 +35662,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <ol>
 <li>Alle panden naar <code>Building</code> mappen, ook de niet-vrijstaande. De niet-vrijstaande panden zijn dan te herkennen aan het <code>genericAttribute</code> met de waarde voor de IBRO eigenschap <code>aardPand</code>. De verschillende panddelen worden dan gemapt naar <code>BuildingPart</code>, <code>BuildingUnit</code> of <code>BuildingInstallation</code> afhankelijk van het type panddeel. Dit is officieel niet volledig correct omdat <code>Building</code> in CityGML vrijstaande gebouwen representeert, maar het is wel praktisch omdat je dan alle panden in 1 CityGML klasse hebt en je geen geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
 <li>Alleen de vrijstaande panden naar <code>Building</code> mappen. De niet-vrijstaande panden worden dan gemapt naar BuildingPart, BuildingUnit of BuildingInstallation afhankelijk van het type panddeel en worden gerelateerd aan een Building die op basis van een geometrische afleiding wordt afgeleid. Dit is wel correct volgens de definitie van Building in CityGML, maar het is minder praktisch omdat je dan niet alle panden in 1 CityGML klasse hebt en je geometrische analyses moet uitvoeren om te bepalen bij welke <code>Building</code> een pand hoort.</li>
-<li>Alle panden naar <code>BuidingPart</code> mappen. Daarnaast de vrijstaande panden ook naar <code>Building</code> mappen. Voor de niet-vrijstaande panden geldt dat een <code>Building</code> worden afgeleid uit de geometrie van de aan elkaar grenzende panden. Dit is correct volgens CityGML en zorgt dat alle panden als <code>BuildingPart</code> in CityGML worden opgenomen. Het nadeel is dat je ook hier geometrische analyses moet uitvoeren om te bepalen welke panden aan elkaar grenzen en dus een <code>Building</code> vormen.</li>
+<li>Alle panden naar <code>BuildingPart</code> mappen. Daarnaast de vrijstaande panden ook naar <code>Building</code> mappen. Voor de niet-vrijstaande panden geldt dat een <code>Building</code> kan worden afgeleid uit de geometrie van de aan elkaar grenzende panden. Dit is correct volgens CityGML en zorgt dat alle panden als <code>BuildingPart</code> in CityGML worden opgenomen. Het nadeel is dat je ook hier geometrische analyses moet uitvoeren om te bepalen welke panden aan elkaar grenzen en dus een <code>Building</code> vormen.</li>
 </ol>
 <p>Hieronder is gekozen voor het uitwerken van optie 3, omdat dit conformeert aan CityGML en zorgt voor de meeste consistentie in de mapping.</p>
 <table>
@@ -35729,7 +35729,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 <td></td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp; <code>^isOnderdeeVan</code> <strong>Panddeel</strong></td>
+<td>&nbsp;&nbsp; <code>^isOnderdeelVan</code> <strong>Panddeel</strong></td>
 <td>&nbsp;&nbsp; <code>buildingPart</code> of <code>buildingInstallation</code></td>
 <td>Binnenkomende relaties <code>isOnderdeelVan</code> worden omgezet naar <code>buildingPart</code> of <code>buildingInstallation</code> relaties afhankelijk van het type Panddeel (zie hieronder).</td>
 </tr>
@@ -35745,57 +35745,57 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Basisconstructie</code></td>
-<td><strong>BuildingPart</strong> <code>type = Basisconstructie</code></td>
+<td><strong>BuildingPart</strong> <code>class = Basisconstructie</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = LatereAanbouw</code></td>
-<td><strong>BuildingPart</strong> <code>type = LatereAanbouw</code></td>
+<td><strong>BuildingPart</strong> <code>class = LatereAanbouw</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Serre</code></td>
-<td><strong>BuildingPart</strong>  <code>type = Serre</code></td>
+<td><strong>BuildingPart</strong>  <code>class = Serre</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Afdak</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Afdak</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Afdak</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Balkon</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Balkon</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Balkon</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Bordes</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Bordes</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Bordes</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Dakkapel</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Dakkapel</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Dakkapel</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Kolom</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Kolom</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Kolom</code></td>
 <td>Als dragend (<em>essential from a structural point of view.</em>) dan <strong>BuildingConstructiveElement</strong>, maar dit gegevenstype is momenteel niet opgenomen in IBRO-LM.</td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Laadperron</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Laadperron</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Laadperron</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Loopbrug</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Loopbrug</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Loopbrug</code></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Panddeel</strong>  <code>type = Toegangstrap</code></td>
-<td><strong>BuildingInstallation</strong> <code>type = Toegangstrap</code></td>
+<td><strong>BuildingInstallation</strong> <code>class = Toegangstrap</code></td>
 <td></td>
 </tr>
 <tr>
@@ -36309,7 +36309,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Windturbine</strong></td>
-<td><strong>OtherConstruction</strong></td>
+<td><strong>OtherConstruction</strong> <code>class = Windturbine</code></td>
 <td></td>
 </tr>
 <tr>
@@ -36389,7 +36389,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Omheining</strong></td>
-<td><strong>OtherConstruction</strong></td>
+<td><strong>OtherConstruction</strong> <code>class = Omheining</code></td>
 <td></td>
 </tr>
 <tr>
@@ -36404,7 +36404,7 @@ Indicatie dat het informatieobject uit de registratie is afgevoerd.</td>
 </tr>
 <tr>
 <td><strong>Scherm</strong></td>
-<td><strong>OtherConstruction</strong></td>
+<td><strong>OtherConstruction</strong> <code>class = Scherm</code></td>
 <td></td>
 </tr>
 <tr>
