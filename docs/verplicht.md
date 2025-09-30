@@ -118,6 +118,7 @@ Legenda:
 | `Panddeel`        | `Laadperron`             |                                    | O             |                                                                                               |
 | `Panddeel`        | `Loopbrug`               |                                    | O             |                                                                                               |
 | `Panddeel`        | `Toegangstrap`           |                                    | O             |                                                                                               |
+| `Bouwlaag`        |                          |                                    | V             |                                                                                               |
 | `Functiezone`     |                          |                                    | V             |                                                                                               |
 | `Functiezone`     | `Bijeenkomstfunctie`     |                                    | V             |                                                                                               |
 | `Functiezone`     | `Celfunctie`             |                                    | V             |                                                                                               |
