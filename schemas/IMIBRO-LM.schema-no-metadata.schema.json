@@ -100,13 +100,6 @@
         "$ref" : "https://beta.schemas.opengis.net/json-fg/geometry-object.json#/$defs/MultiPolygon"
       } ]
     },
-    "Actor_OneOf" : {
-      "type" : "object",
-      "$anchor" : "Actor_OneOf",
-      "oneOf" : [ {
-        "$ref" : "#/$defs/Overheidsorganisatie"
-      } ]
-    },
     "Complex" : {
       "type" : "object",
       "$anchor" : "Complex",
@@ -131,16 +124,6 @@
       }, {
         "$ref" : "#/$defs/FunctioneleRuimte"
       } ]
-    },
-    "Bronentiteit" : {
-      "type" : "object",
-      "$anchor" : "Bronentiteit",
-      "properties" : {
-        "identificatie" : {
-          "type" : "string"
-        }
-      },
-      "required" : [ "identificatie" ]
     },
     "Sloof" : {
       "type" : "object",
@@ -369,51 +352,6 @@
       }, {
         "$ref" : "#/$defs/FunctioneleRuimte"
       } ]
-    },
-    "Registratie" : {
-      "type" : "object",
-      "$anchor" : "Registratie",
-      "properties" : {
-        "entityType" : {
-          "type" : "string",
-          "const" : "Registratie"
-        },
-        "versie" : {
-          "type" : "string",
-          "maxLength" : 50,
-          "minLength" : 1
-        },
-        "status" : {
-          "$ref" : "#/$defs/StatusRegistratie"
-        },
-        "beginGeldigheid" : {
-          "type" : "string",
-          "format" : "date"
-        },
-        "eindGeldigheid" : {
-          "type" : "string",
-          "format" : "date"
-        },
-        "tijdstipRegistratie" : {
-          "type" : "string",
-          "format" : "date-time"
-        },
-        "eindRegistratie" : {
-          "type" : "string",
-          "format" : "date-time"
-        },
-        "indicatieObjectGeconstateerd" : {
-          "type" : "boolean",
-          "readOnly" : false
-        },
-        "primaireBron" : {
-          "$ref" : "#/$defs/Bronentiteit_OneOf"
-        },
-        "verantwoordelijkePartij" : {
-          "$ref" : "#/$defs/Actor_OneOf"
-        }
-      },
-      "required" : [ "entityType", "versie", "status", "beginGeldigheid", "tijdstipRegistratie", "indicatieObjectGeconstateerd", "verantwoordelijkePartij" ]
     },
     "Recreatiezone" : {
       "type" : "object",
@@ -1100,13 +1038,6 @@
       "enum" : [ "BeideRichtingen", "InRichting", "InTegenovergesteldeRichting" ],
       "$anchor" : "Verbindingsrichting"
     },
-    "Bronentiteit_OneOf" : {
-      "type" : "object",
-      "$anchor" : "Bronentiteit_OneOf",
-      "oneOf" : [ {
-        "$ref" : "#/$defs/Brondocument"
-      } ]
-    },
     "OnbepaaldTerrein" : {
       "type" : "object",
       "$anchor" : "OnbepaaldTerrein",
@@ -1260,10 +1191,6 @@
       "type" : "string",
       "enum" : [ "Heterogeen", "Repeterend", "Vrijstaand" ],
       "$anchor" : "AardPand"
-    },
-    "Actor" : {
-      "type" : "object",
-      "$anchor" : "Actor"
     },
     "Schutkolk" : {
       "type" : "object",
@@ -1421,15 +1348,6 @@
         "required" : [ "entityType" ]
       }, {
         "$ref" : "#/$defs/Netwerkeigenschap"
-      } ]
-    },
-    "Organisatie" : {
-      "type" : "object",
-      "$anchor" : "Organisatie",
-      "allOf" : [ {
-        "type" : "object"
-      }, {
-        "$ref" : "#/$defs/Actor"
       } ]
     },
     "FunctioneleRuimte" : {
@@ -1764,12 +1682,9 @@
         "domein" : {
           "type" : "string",
           "pattern" : "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+"
-        },
-        "geregistreerdMet" : {
-          "$ref" : "#/$defs/Registratie"
         }
       },
-      "required" : [ "identificatie", "domein", "geregistreerdMet" ]
+      "required" : [ "identificatie", "domein" ]
     },
     "LijnOfVlak" : {
       "type" : "object",
@@ -1831,29 +1746,6 @@
         "required" : [ "entityType", "isOnderdeelVan" ]
       }, {
         "$ref" : "#/$defs/Kunstwerkdeel"
-      } ]
-    },
-    "Brondocument" : {
-      "type" : "object",
-      "$anchor" : "Brondocument",
-      "allOf" : [ {
-        "type" : "object",
-        "properties" : {
-          "entityType" : {
-            "type" : "string",
-            "const" : "Brondocument"
-          },
-          "documentnummer" : {
-            "type" : "string"
-          },
-          "documentdatum" : {
-            "type" : "string",
-            "format" : "date"
-          }
-        },
-        "required" : [ "entityType", "documentnummer", "documentdatum" ]
-      }, {
-        "$ref" : "#/$defs/Bronentiteit"
       } ]
     },
     "Kunstwerk" : {
@@ -2570,36 +2462,6 @@
         },
         "required" : [ "entityType", "geometrie" ]
       } ]
-    },
-    "Overheidsorganisatie" : {
-      "type" : "object",
-      "$anchor" : "Overheidsorganisatie",
-      "allOf" : [ {
-        "$ref" : "#/$defs/Organisatie"
-      }, {
-        "type" : "object",
-        "properties" : {
-          "entityType" : {
-            "type" : "string",
-            "const" : "Overheidsorganisatie"
-          },
-          "naam" : {
-            "type" : "string"
-          },
-          "officieleNaamInclSoort" : {
-            "type" : "string"
-          },
-          "organisatiecode" : {
-            "type" : "string"
-          }
-        },
-        "required" : [ "entityType", "naam", "organisatiecode" ]
-      } ]
-    },
-    "StatusRegistratie" : {
-      "type" : "string",
-      "enum" : [ "Actief", "Afgevoerd" ],
-      "$anchor" : "StatusRegistratie"
     },
     "Sirene" : {
       "type" : "object",

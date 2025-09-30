@@ -221,12 +221,9 @@
         "domein" : {
           "type" : "string",
           "pattern" : "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+"
-        },
-        "geregistreerdMet" : {
-          "$ref" : "#/$defs/Registratie"
         }
       },
-      "required" : [ "identificatie", "domein", "geregistreerdMet" ]
+      "required" : [ "identificatie", "domein" ]
     },
     "Oeverzone" : {
       "type" : "object",
@@ -377,13 +374,6 @@
         "$ref" : "#/$defs/Object"
       } ]
     },
-    "Actor_OneOf" : {
-      "type" : "object",
-      "$anchor" : "Actor_OneOf",
-      "oneOf" : [ {
-        "$ref" : "#/$defs/Overheidsorganisatie"
-      } ]
-    },
     "Subbuurtdeel" : {
       "type" : "object",
       "$anchor" : "Subbuurtdeel",
@@ -413,10 +403,6 @@
       "type" : "string",
       "enum" : [ "Beide", "Eenrichting", "Tegenovergesteld eenrichting" ],
       "$anchor" : "Rijrichting"
-    },
-    "Actor" : {
-      "type" : "object",
-      "$anchor" : "Actor"
     },
     "Complex" : {
       "type" : "object",
@@ -790,13 +776,6 @@
         "$ref" : "#/$defs/Wegverbinding"
       } ]
     },
-    "Bronentiteit_OneOf" : {
-      "type" : "object",
-      "$anchor" : "Bronentiteit_OneOf",
-      "oneOf" : [ {
-        "$ref" : "#/$defs/Brondocument"
-      } ]
-    },
     "VerkeerskundigFunctioneleZone" : {
       "type" : "object",
       "$anchor" : "VerkeerskundigFunctioneleZone",
@@ -902,31 +881,6 @@
         "required" : [ "geometrie", "oorspronkelijkBouwjaar", "entityType" ]
       }, {
         "$ref" : "#/$defs/Constructie"
-      } ]
-    },
-    "Overheidsorganisatie" : {
-      "type" : "object",
-      "$anchor" : "Overheidsorganisatie",
-      "allOf" : [ {
-        "type" : "object",
-        "properties" : {
-          "naam" : {
-            "type" : "string"
-          },
-          "officieleNaamInclSoort" : {
-            "type" : "string"
-          },
-          "organisatiecode" : {
-            "type" : "string"
-          },
-          "entityType" : {
-            "type" : "string",
-            "const" : "Overheidsorganisatie"
-          }
-        },
-        "required" : [ "naam", "organisatiecode", "entityType" ]
-      }, {
-        "$ref" : "#/$defs/Organisatie"
       } ]
     },
     "Greppel" : {
@@ -1371,11 +1325,6 @@
         "required" : [ "geometrie", "entityType" ]
       } ]
     },
-    "StatusRegistratie" : {
-      "type" : "string",
-      "enum" : [ "Actief", "Afgevoerd" ],
-      "$anchor" : "StatusRegistratie"
-    },
     "BenoemdePlaats" : {
       "type" : "object",
       "$anchor" : "BenoemdePlaats",
@@ -1453,16 +1402,6 @@
         },
         "required" : [ "vanafPositie", "totPositie", "entityType" ]
       } ]
-    },
-    "Bronentiteit" : {
-      "type" : "object",
-      "$anchor" : "Bronentiteit",
-      "properties" : {
-        "identificatie" : {
-          "type" : "string"
-        }
-      },
-      "required" : [ "identificatie" ]
     },
     "FunctioneleRuimte_OneOf" : {
       "type" : "object",
@@ -1821,15 +1760,6 @@
         "$ref" : "#/$defs/GeografischeRuimte"
       } ]
     },
-    "Organisatie" : {
-      "type" : "object",
-      "$anchor" : "Organisatie",
-      "allOf" : [ {
-        "$ref" : "#/$defs/Actor"
-      }, {
-        "type" : "object"
-      } ]
-    },
     "Zonnepanelen" : {
       "type" : "object",
       "$anchor" : "Zonnepanelen",
@@ -2069,29 +1999,6 @@
         "required" : [ "betreftRichting" ]
       }, {
         "$ref" : "#/$defs/Object"
-      } ]
-    },
-    "Brondocument" : {
-      "type" : "object",
-      "$anchor" : "Brondocument",
-      "allOf" : [ {
-        "type" : "object",
-        "properties" : {
-          "documentnummer" : {
-            "type" : "string"
-          },
-          "documentdatum" : {
-            "type" : "string",
-            "format" : "date"
-          },
-          "entityType" : {
-            "type" : "string",
-            "const" : "Brondocument"
-          }
-        },
-        "required" : [ "documentnummer", "documentdatum", "entityType" ]
-      }, {
-        "$ref" : "#/$defs/Bronentiteit"
       } ]
     },
     "GebruiksaardToegangpunt" : {
