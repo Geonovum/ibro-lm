@@ -10582,7 +10582,7 @@ tooiont:Overheidsorganisatie.naam_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "naam" ;
   sh:nodeKind sh:Literal ;
-  sh:path ibro:naam .
+  sh:path rdfs:label .
 
 tooiont:Overheidsorganisatie.officieleNaamInclSoort_shape a sh:PropertyShape ;
   rdfs:label "officieleNaamInclSoort" ;
