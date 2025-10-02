@@ -1831,7 +1831,7 @@
           "aardPand" : {
             "$ref" : "#/$defs/AardPand"
           },
-          "oorspronkelijkbouwjaar" : {
+          "oorspronkelijkBouwjaar" : {
             "type" : "string"
           },
           "naam" : {
@@ -1846,7 +1846,7 @@
             "const" : "Pand"
           }
         },
-        "required" : [ "geometrie", "aardPand", "oorspronkelijkbouwjaar", "indicatieOpenConstructie", "entityType" ]
+        "required" : [ "geometrie", "aardPand", "oorspronkelijkBouwjaar", "indicatieOpenConstructie", "entityType" ]
       }, {
         "$ref" : "#/$defs/Constructie"
       } ]
