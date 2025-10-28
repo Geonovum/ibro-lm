@@ -30,7 +30,7 @@ Een domein attribuut heeft als datatype een URI. De URI verwijst naar de context
 
 ## Typering
 
-Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. Classificaties zijn optioneel en kunnen per object verschillen. In het IBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
+Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. In het IBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
 
 In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `Bouwdeel`. Wanneer een object een verplicht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
 
@@ -46,7 +46,7 @@ De levensfase die in de registratie wordt opgenomen, is in principe de status zo
 
 ## Geometrie
 
-De IBRO valt binnen het toepassingsgebied van [[NEN3610-2022]], omdat het objecttypen beschrijft die direct herleidbaar zijn tot een locatie ten opzichte van de aarde. Objecttypen in de IBRO zijn gemodelleerd als specialisatie van het NEN3610-objecttype Geo-Object of een daarvan afgeleide klasse. De verbinding met deze semantische klassen is opgenomen in het conceptueel model [[IBROCM]].
+De IBRO valt binnen het toepassingsgebied van [[NEN3610-2022]], omdat het objecttypen beschrijft die direct herleidbaar zijn tot een locatie ten opzichte van de aarde. Objecttypen in de IBRO zijn gemodelleerd als specialisatie van het NEN3610-objecttype Geo-Object of een daarvan afgeleide klasse. De verbinding met deze semantische klassen is opgenomen in het conceptueel model [[IMIBRO]].
 
 Voor de representatie van de locatie, oriëntatie en vorm van een object uit de werkelijkheid, gebruiken we in dit model geometrieën. De dimensie van een representatie variëert van nuldimensionaal (0D) tot driedimensionaal (3D). Objecten worden altijd geplaatst in een tweedimensionele (2D), of driedimensionele (3D) ruimte. 
 
@@ -89,10 +89,11 @@ Het IBRO-LM gaat als bron dienen voor gegevens uit verschillende geo-basisregist
 
 Omdat ze in het [[EMSO]] geformuleerd staan en van onverminderd belang zijn voor de kwaliteit van de IBRO, herhalen we voor de volledigheid een aantal basisprincipes op deze plek. 
 - De reële objecten bedekken met hun x,y,z geometrie het volledige grondgebied van [een gemeente in] Nederland
-- Geometrieën van objecten kunnen boven elkaar liggen
+- Geometrieën van objecten kunnen boven elkaar liggen, bijvoorbeeld vanwege hoogteverschillen
 - Geometrieën van objecten kunnen elkaar uitsluiten
 - Functionele ruimten zijn niet landsdekkend (of gemeente dekkend) en mogen elkaar overlappen
 - Geografische ruimten zijn niet landsdekkend (of gemeente dekkend) en mogen elkaar overlappen
+- Geometrieën van reële, functionele en geografische ruimten mogen elkaar overlappen
 
 Omdat het logisch gegevensmodel IBRO een 3D model is, zijn de regels ten aanzien van topologische kwaliteit anders dan in vergelijkbare 2D modellen zoals de BGT. Uitgangspunt is dat objecten die zich in de werkelijkheid op een bepaalde wijze tot elkaar verhouden (bijvoorbeeld een verharding ligt bovenop een overbrugging) ook in de registratie op deze wijze tot elkaar verhouden (bijvoorbeeld dat uit de z-coördinaten van de verharding en de overbrugging blijkt dat de verharding bovenop de overbrugging ligt). Daarnaast is het van belang dat er op elke fysieke locatie in de werkelijkheid (elke x,y-coördinaat) altijd tenminste een reëel object aanwezig is (water, begroeiing, gebouw, verharding, kunstwerk, constructies of onbepaald terrein).
 
@@ -135,7 +136,7 @@ Een object dat beschreven wordt in de IBRO heeft gedurende zijn levenscylus op i
 
 Een object dat beschreven wordt in de IBRO kan op ieder moment in de gecombineerde tijdlijn geldigheid en registratie een of meerdere gegevensregistraties kennen.
 
-Een gevensregistratie heeft een registratiestatus. De registratiestatus geeft aan of de gegevensregistratie actief (`Actief`) is, of dat het een afgevoerde registratie (`Afgevoerd`) betreft. Een afgevoerde registratie is een registratie die niet meer actief is, maar die wel bewaard blijft in de registratie voor formeel-historische doeleinden.
+Een gegevensregistratie is een set gegevens gebaseerd op een objecttype en heeft een registratiestatus. De registratiestatus geeft aan of de gegevensregistratie actief (`Actief`) is, of dat het een afgevoerde registratie (`Afgevoerd`) betreft. Een afgevoerde registratie is een registratie die niet meer actief is, maar die wel bewaard blijft in de registratie voor formeel-historische doeleinden.
 
 Er mag maar één gegevensregistratie zijn met de registratiestatus `Actief` op een bepaald moment in de gecombineerde tijdlijn geldigheid en registratie.
 

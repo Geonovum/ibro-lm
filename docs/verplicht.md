@@ -20,11 +20,12 @@ Legenda:
 | `OverigeBegroeiing` | `Rietland`                    | V             |
 | `OverigeBegroeiing` | `Heide`                       | V             |
 | `OverigeBegroeiing` | `Haag`                        | O             |
+| `OverigeBegroeiing` | `Houtsingel`                  | V             |
 | `OverigeBegroeiing` | `Houtwal`                     | V             |
 | `Bos`               | `GemengdBos`                  | V             |
 | `Bos`               | `GriendEnHakhout`             | O             |
 | `Bos`               | `Loofbos`                     | V             |
-| `Bos`               | `Naaldbos`                    | O             |
+| `Bos`               | `Naaldbos`                    | V             |
 | `Boom`              |                               | V             |
 | `FruitOfKweekbomen` | `FruitkwekerijMetLageOpstand` | V             |
 | `FruitOfKweekbomen` | `Boomkwekerij`                | V             |
@@ -268,14 +269,14 @@ Legenda:
 | `OverigWaterstaatkundigKunstwerk` | `Voorde`           |           | O             |
 | `OverigWaterstaatkundigKunstwerk` | `Vuilvang`         |           | O             |
 | `OverigWaterstaatkundigKunstwerk` | `Walbescherming`   |           | V             |
-| `Sluis`                           |                    |           | V             |
+| `Sluis`                           |                    |           | O             |
 | `Dek`                             |                    |           | O             |
 | `Landhoofd`                       |                    |           | O             |
 | `Pijler`                          |                    |           | O             |
 | `Pyloon`                          |                    |           | O             |
 | `Schutkolk`                       |                    |           | O             |
 | `Sloof`                           |                    |           | O             |
-| `Sluisdeur`                       |                    |           | O             |
+| `Sluisdeur`                       |                    |           | V             |
 
 
 ### Constructies
@@ -290,7 +291,7 @@ Legenda:
 | `OverigeConstructie`   | `Geleideconstructie` |                        | O             |                                                                                |
 | `OverigeConstructie`   | `Opslagtank`         |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Paal`               |                        | O             |                                                                                |
-| `OverigeConstructie`   | `Putdeksel`          |                        | O             |                                                                                |
+| `OverigeConstructie`   | `Putdeksel`          |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Reservoir`          |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Reservoir`          | `Bassin`               | V             |                                                                                |
 | `OverigeConstructie`   | `Reservoir`          | `Bezinkbak`            | V             |                                                                                |
@@ -305,7 +306,7 @@ Legenda:
 | `OverigeConstructie`   | `Straatmeubilair`    | `Picknicktafel`        | O             |                                                                                |
 | `OverigeConstructie`   | `Straatmeubilair`    | `Speelvoorziening`     | O             |                                                                                |
 | `OverigeConstructie`   | `Straatmeubilair`    | `Zitelement`           | O             |                                                                                |
-| `OverigeConstructie`   | `Zwembad`            |                        | O             |                                                                                |
+| `OverigeConstructie`   | `Zwembad`            |                        | V             |                                                                                |
 | `Kast`                 |                      |                        | C             | Kasten die horen bij transformatoren (BGT lage trafo) zijn verplicht           |
 | `Lift`                 |                      |                        | O             |                                                                                |
 | `Oplaadpunt`           |                      |                        | O             |                                                                                |
@@ -315,7 +316,7 @@ Legenda:
 | `Verlichtingsarmatuur` |                      |                        | O             |                                                                                |
 | `Windturbine`          |                      |                        | V             |                                                                                |
 | `Zonnepanelen`         |                      |                        | O             |                                                                                |
-| `Mast`                 |                      |                        | O             |                                                                                |
+| `Mast`                 |                      |                        | V             |                                                                                |
 | `Mast`                 | `Hoogspanningsmast`  |                        | V             |                                                                                |
 | `Muur`                 |                      |                        | V             |                                                                                |
 | `Muur`                 | `Kademuur`           |                        | V             |                                                                                |
@@ -344,8 +345,8 @@ Legenda:
 | `Wegverbinding`    | `Fietspad`                                | V             |
 | `Wegverbinding`    | `FietsOfBromfietspad`                     | V             |
 | `Wegverbinding`    | `Fietsstraat`                             | O             |
-| `Wegverbinding`    | `GebiedsontsluitingswegGesloten`          | O             |
-| `Wegverbinding`    | `GebiedsontsluitingswegOpen`              | O             |
+| `Wegverbinding`    | `GebiedsontsluitingswegGesloten`          | V             |
+| `Wegverbinding`    | `GebiedsontsluitingswegOpen`              | V             |
 | `Wegverbinding`    | `Ruiterpad`                               | V             |
 | `Wegverbinding`    | `Veerverbinding`                          | O             |
 | `Wegverbinding`    | `Voetgangerszone`                         | V             |
@@ -420,7 +421,7 @@ Legenda:
 
 | Objecttype                      | Type                   | Verplichtheid |
 | ------------------------------- | ---------------------- | ------------- |
-| `Afscheiding`                   |                        | V             |
+| `Afscheiding`                   |                        | O             |
 | `Complex`                       |                        | V             |
 | `Complex`                       | `Begraafplaats`        | O             |
 | `Complex`                       | `Coupurecomplex`       | O             |
@@ -443,7 +444,7 @@ Legenda:
 | `Luchtvaartzone`                | `BaanVoorVliegverkeer` | V             |
 | `Luchtvaartzone`                | `Luchthaven`           | O             |
 | `Oeverzone`                     |                        | V             |
-| `Recreatiezone`                 |                        | V             |
+| `Recreatiezone`                 |                        | O             |
 | `Recreatiezone`                 | `Bungalowpark`         | O             |
 | `Recreatiezone`                 | `Camping`              | O             |
 | `Recreatiezone`                 | `Park`                 | O             |
