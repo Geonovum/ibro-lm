@@ -9,6 +9,12 @@ Legenda:
 - **O**: Optioneel
 - **C**: Condioneel (verplicht onder bepaalde voorwaarden, deze voorwaarden worden in de tabellen weergegeven)
 
+### Kern
+
+| Objecttype         | Verplichtheid |
+| ------------------ | ------------- |
+| `OnbepaaldTerrein` | V             |
+
 ### Groen
 
 | Objecttype          | Type                          | Verplichtheid |
