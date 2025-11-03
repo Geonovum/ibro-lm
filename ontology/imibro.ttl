@@ -8,7 +8,7 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix ibro: <http://modellen.geostandaarden.nl/def/ibro#> .
 @prefix mim: <http://modellen.mim-standaard.nl/def/mim#> .
-@prefix nen3610-2022: <http://modellen.geostandaarden.nl/def/nen3610-2022#> .
+@prefix nen3610: <http://modellen.geostandaarden.nl/def/nen3610#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -286,8 +286,8 @@ ibro:Brondocument a owl:Class ;
   rdfs:label "Brondocument" ;
   rdfs:comment "Een brondocument is een bronentiteit in de vorm van een document." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:indicatieAbstractObject false ;
   rdfs:isDefinedBy ibro:Registratiegegevens ;
   rdfs:subClassOf ibro:Bronentiteit .
@@ -296,8 +296,8 @@ ibro:Bronentiteit a owl:Class ;
   rdfs:label "Bronentiteit" ;
   rdfs:comment "Een bronentiteit is een entiteit waaraan een ander object ter herleiden is." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:indicatieAbstractObject true ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
 
@@ -1113,8 +1113,8 @@ ibro:StatusRegistratie a owl:NamedIndividual, owl:Class ;
   rdfs:comment "De status van de registratie." ;
   mim:alias "Status registratie" ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:toelichting "Objectregistraties met status 'Afgevoerd' zijn alleen vindbaar via de tijdlijn registratie." ;
   rdfs:subClassOf skos:Concept .
 
@@ -1822,7 +1822,7 @@ ibro:Zonnepanelen a owl:Class ;
   rdfs:isDefinedBy ibro:OverigeConstructies ;
   rdfs:subClassOf ibro:Installatie .
 
-nen3610-2022:Registratie a owl:Class ;
+nen3610:Registratie a owl:Class ;
   rdfs:label "Registratie" ;
   rdfs:comment "Vastlegging van een versie van een set gegevens." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/objectregistratie%20> ;
@@ -1836,7 +1836,7 @@ prov:Agent a owl:Class ;
   rdfs:label "Actor" ;
   rdfs:comment "Een actor is een entiteit die verantwoordelijk is voor het plaatsvinden van een activiteit, het bestaan van een entiteit, of voor de activiteit van een andere actor." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:indicatieAbstractObject true ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
@@ -1845,7 +1845,7 @@ prov:Organization a owl:Class ;
   rdfs:label "Organisatie" ;
   rdfs:comment "Een organisatie is een actor in de vorm van een sociaal of legaal samenwerkingsverband." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:indicatieAbstractObject true ;
   rdfs:isDefinedBy ibro:Registratiegegevens ;
@@ -1857,7 +1857,7 @@ tooiont:Overheidsorganisatie a owl:Class ;
   rdfs:label "Overheidsorganisatie" ;
   rdfs:comment "Een organisatie die namens de overheid taken uitvoert en onder het gezag en toezicht van de overheid valt." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "TOOI - Ontologie 1.6.2" ;
   mim:indicatieAbstractObject false ;
   rdfs:isDefinedBy ibro:Registratiegegevens ;
@@ -2472,7 +2472,7 @@ ibro:vlakgeometrie a owl:ObjectProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:OverigeConstructies .
 
-nen3610-2022:geregistreerdMet a owl:ObjectProperty ;
+nen3610:geregistreerdMet a owl:ObjectProperty ;
   rdfs:label "geregistreerdMet" ;
   rdfs:comment "Gegevens over de registratie van het object als informatieobject." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/registratiegegevens> ;
@@ -2499,7 +2499,7 @@ prov:hadPrimarySource a owl:ObjectProperty ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -2516,7 +2516,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "IMIBRO" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -2524,6 +2524,44 @@ prov:wasAttributedTo a owl:ObjectProperty ;
   mim:indicatieMaterieleHistorie false ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#domein> a owl:DatatypeProperty ;
+  rdfs:label "domein" ;
+  rdfs:comment "Aanduiding van het domein waarbinnen de identificatie uniek is." ;
+  dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/domein> ;
+  mim:authentiek "Overig" ;
+  mim:datumOpname "2025-09-09" ;
+  mim:heeftTijdlijnGeldigheid false ;
+  mim:heeftTijdlijnRegistratie false ;
+  mim:herkomst "NEN 3610:2022 nl" ;
+  mim:herkomstDefinitie "NEN 3610:2022 nl" ;
+  mim:identificerend true ;
+  mim:indicatieAfleidbaar false ;
+  mim:indicatieFormeleHistorie false ;
+  mim:indicatieMaterieleHistorie false ;
+  mim:mogelijkGeenWaarde false ;
+  mim:patroon "Alleen de volgende karakters mogen in een waarde van het attribuut domein voorkomen: {'A' ... 'Z', 'a' ... 'z', '0' ... '9', '_', '-', ',', '.', '/', ':'}" ;
+  rdfs:isDefinedBy ibro:Kern .
+
+<http://modellen.geostandaarden.nl/def/nen3610-2022#identificatie> a owl:DatatypeProperty ;
+  rdfs:label "identificatie" ;
+  rdfs:comment "Unieke identificatiecode van een informatieobject binnen de context van een registratie." ;
+  dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/identificatie> ;
+  mim:authentiek "Overig" ;
+  mim:datumOpname "2025-09-09" ;
+  mim:heeftTijdlijnGeldigheid false ;
+  mim:heeftTijdlijnRegistratie false ;
+  mim:herkomst "NEN 3610:2022 nl" ;
+  mim:herkomstDefinitie "NEN 3610:2022 nl" ;
+  mim:identificerend true ;
+  mim:indicatieAfleidbaar false ;
+  mim:indicatieFormeleHistorie false ;
+  mim:indicatieMaterieleHistorie false ;
+  mim:mogelijkGeenWaarde false ;
+  mim:patroon "Alleen de volgende karakters mogen in een waarde van het attribuut identificatie voorkomen: {'A' ... 'Z', 'a' ... 'z', '0' ... '9', '_', '-', ',', '.', '/', ':'}" ;
+  mim:toelichting """'identificatie' is de identificatiecode die een object heeft binnen een registratie of binnen een ketenproces voor data-uitwisseling. Binnen de registratie of de data-uitwisseling is het object uniek identificeerbaar. In combinatie met het attribuut domein wordt een object hiermee uniek identificeerbaar op het niveau van verschillende registraties, uitwisselprocessen en ook wereldwijd uniek.
+De reguliere expressie voor de toegestane tekens is: [a-zA-Z|0-9|_|.|-|\\/|:|]""" ;
+  rdfs:isDefinedBy ibro:Kern .
 
 ibro:altenatieveNaam a owl:DatatypeProperty ;
   rdfs:label "altenatieveNaam" ;
@@ -2557,7 +2595,7 @@ ibro:alternatieveNaam a owl:DatatypeProperty ;
   mim:indicatieFormeleHistorie true ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
-  mim:toelichting "Alternatieve benaming van een woonplaats zoals deze bekend staat in het Fries (bij een formele benaming in het Nederlands) of in het Nederlands (bij een formele benaming in het Fries)." ;
+  mim:toelichting "Alternatieve benaming van een openbare ruimte zoals deze breed is geaccepteerd in de volksmond of zoals deze bekend staat in het Fries (bij een formele benaming in het Nederlands) of in het Nederlands (bij een formele benaming in het Fries)." ;
   rdfs:isDefinedBy ibro:RegistratieveRuimten .
 
 ibro:bouwlaagnummer a owl:DatatypeProperty ;
@@ -2639,8 +2677,8 @@ ibro:documentdatum a owl:DatatypeProperty ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
   mim:indicatieFormeleHistorie false ;
@@ -2655,8 +2693,8 @@ ibro:documentnummer a owl:DatatypeProperty ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
   mim:indicatieFormeleHistorie false ;
@@ -2790,7 +2828,7 @@ ibro:indicatieObjectGeconstateerd a owl:DatatypeProperty ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "Grondslagen Basis Registratie Adressen versie 4.0BAG" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -3115,7 +3153,7 @@ ibro:wijknaam a owl:DatatypeProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:RegistratieveRuimten .
 
-nen3610-2022:beginGeldigheid a owl:DatatypeProperty ;
+nen3610:beginGeldigheid a owl:DatatypeProperty ;
   rdfs:label "beginGeldigheid" ;
   rdfs:comment "Start van de periode waarop deze versie van het informatieobject geldig is." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/begin_geldigheid> ;
@@ -3133,25 +3171,7 @@ nen3610-2022:beginGeldigheid a owl:DatatypeProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
 
-nen3610-2022:domein a owl:DatatypeProperty ;
-  rdfs:label "domein" ;
-  rdfs:comment "Aanduiding van het domein waarbinnen de identificatie uniek is." ;
-  dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/domein> ;
-  mim:authentiek "Overig" ;
-  mim:datumOpname "2025-09-09" ;
-  mim:heeftTijdlijnGeldigheid false ;
-  mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "NEN 3610:2022 nl" ;
-  mim:herkomstDefinitie "NEN 3610:2022 nl" ;
-  mim:identificerend true ;
-  mim:indicatieAfleidbaar false ;
-  mim:indicatieFormeleHistorie false ;
-  mim:indicatieMaterieleHistorie false ;
-  mim:mogelijkGeenWaarde false ;
-  mim:patroon "Alleen de volgende karakters mogen in een waarde van het attribuut domein voorkomen: {'A' ... 'Z', 'a' ... 'z', '0' ... '9', '_', '-', ',', '.', '/', ':'}" ;
-  rdfs:isDefinedBy ibro:Kern .
-
-nen3610-2022:eindGeldigheid a owl:DatatypeProperty ;
+nen3610:eindGeldigheid a owl:DatatypeProperty ;
   rdfs:label "eindGeldigheid" ;
   rdfs:comment "Eind van de periode waarop deze versie van het informatieobject geldig is. De periode is tot aan deze tijdsaanduiding. Wanneer deze waarde niet is ingevuld, is de versie nog geldig." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/eind_geldigheid> ;
@@ -3169,7 +3189,7 @@ nen3610-2022:eindGeldigheid a owl:DatatypeProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
 
-nen3610-2022:eindRegistratie a owl:DatatypeProperty ;
+nen3610:eindRegistratie a owl:DatatypeProperty ;
   rdfs:label "eindRegistratie" ;
   rdfs:comment "Eind van de periode dat deze versie van het informatieobject actueel is in de registratie. De periode is tot aan deze tijdsaanduiding. Wanneer deze waarde niet is ingevuld, is de versie nog actueel." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/eind_registratie> ;
@@ -3187,27 +3207,7 @@ nen3610-2022:eindRegistratie a owl:DatatypeProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
 
-nen3610-2022:identificatie a owl:DatatypeProperty ;
-  rdfs:label "identificatie" ;
-  rdfs:comment "Unieke identificatiecode van een informatieobject binnen de context van een registratie." ;
-  dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/identificatie> ;
-  mim:authentiek "Overig" ;
-  mim:datumOpname "2025-09-09" ;
-  mim:heeftTijdlijnGeldigheid false ;
-  mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "NEN 3610:2022 nl" ;
-  mim:herkomstDefinitie "NEN 3610:2022 nl" ;
-  mim:identificerend true ;
-  mim:indicatieAfleidbaar false ;
-  mim:indicatieFormeleHistorie false ;
-  mim:indicatieMaterieleHistorie false ;
-  mim:mogelijkGeenWaarde false ;
-  mim:patroon "Alleen de volgende karakters mogen in een waarde van het attribuut identificatie voorkomen: {'A' ... 'Z', 'a' ... 'z', '0' ... '9', '_', '-', ',', '.', '/', ':'}" ;
-  mim:toelichting """'identificatie' is de identificatiecode die een object heeft binnen een registratie of binnen een ketenproces voor data-uitwisseling. Binnen de registratie of de data-uitwisseling is het object uniek identificeerbaar. In combinatie met het attribuut domein wordt een object hiermee uniek identificeerbaar op het niveau van verschillende registraties, uitwisselprocessen en ook wereldwijd uniek.
-De reguliere expressie voor de toegestane tekens is: [a-zA-Z|0-9|_|.|-|\\/|:|]""" ;
-  rdfs:isDefinedBy ibro:Kern .
-
-nen3610-2022:tijdstipRegistratie a owl:DatatypeProperty ;
+nen3610:tijdstipRegistratie a owl:DatatypeProperty ;
   rdfs:label "tijdstipRegistratie" ;
   rdfs:comment "Tijdsaanduiding van het moment waarop deze versie van het informatieobject is opgenomen in de registratie." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/tijdstip_registratie> ;
@@ -3225,7 +3225,7 @@ nen3610-2022:tijdstipRegistratie a owl:DatatypeProperty ;
   mim:mogelijkGeenWaarde false ;
   rdfs:isDefinedBy ibro:Registratiegegevens .
 
-nen3610-2022:versie a owl:DatatypeProperty ;
+nen3610:versie a owl:DatatypeProperty ;
   rdfs:label "versie" ;
   rdfs:comment "Versieaanduiding van een informatieobject." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/versie> ;
@@ -3355,15 +3355,15 @@ ibro:StatusRegistratie.Actief a owl:NamedIndividual, ibro:StatusRegistratie ;
   rdfs:label "Actief" ;
   rdfs:comment "Indicatie dat de objectregistratie actief is in de registratie." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   skos:inScheme ibro:StatusRegistratie .
 
 ibro:StatusRegistratie.Afgevoerd a owl:NamedIndividual, ibro:StatusRegistratie ;
   rdfs:label "Afgevoerd" ;
   rdfs:comment "Indicatie dat het informatieobject uit de registratie is afgevoerd." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "EMSO" ;
   skos:inScheme ibro:StatusRegistratie .
 
@@ -3422,13 +3422,13 @@ ibro:AardPand_shape a sh:NodeShape ;
     sh:path rdf:type ;
   ] ;
   sh:property [
-    sh:path skos:definition ;
+    sh:path rdfs:label ;
   ] ;
   sh:property [
     sh:path skos:inScheme ;
   ] ;
   sh:property [
-    sh:path rdfs:label ;
+    sh:path skos:definition ;
   ] ;
   sh:targetClass ibro:AardPand .
 
@@ -3658,6 +3658,7 @@ ibro:Baanverbinding.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeBaanverbinding_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -3735,6 +3736,7 @@ ibro:Bebouwingskern.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeBebouwingskern_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4022,8 +4024,8 @@ ibro:Brondocument.documentdatum_shape a sh:PropertyShape ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
   mim:indicatieFormeleHistorie false ;
@@ -4043,8 +4045,8 @@ ibro:Brondocument.documentnummer_shape a sh:PropertyShape ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
   mim:indicatieFormeleHistorie false ;
@@ -4061,8 +4063,8 @@ ibro:Brondocument_shape a sh:NodeShape ;
   rdfs:label "Brondocument" ;
   rdfs:comment "Een brondocument is een bronentiteit in de vorm van een document." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:indicatieAbstractObject false ;
   sh:property ibro:Brondocument.documentdatum_shape ;
   sh:property ibro:Brondocument.documentnummer_shape ;
@@ -4075,7 +4077,7 @@ ibro:Bronentiteit.identificatie_shape a sh:PropertyShape ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "NEN 3610:2022 nl" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -4087,14 +4089,14 @@ ibro:Bronentiteit.identificatie_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "identificatie" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:identificatie .
+  sh:path <http://modellen.geostandaarden.nl/def/nen3610-2022#identificatie> .
 
 ibro:Bronentiteit_shape a sh:NodeShape ;
   rdfs:label "Bronentiteit" ;
   rdfs:comment "Een bronentiteit is een entiteit waaraan een ander object ter herleiden is." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:indicatieAbstractObject true ;
   sh:property ibro:Bronentiteit.identificatie_shape ;
   sh:targetClass ibro:Bronentiteit .
@@ -4263,6 +4265,7 @@ ibro:Complex.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeComplex_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4629,16 +4632,16 @@ ibro:GebruiksaardToegangpunt_shape a sh:NodeShape ;
     sh:path rdf:type ;
   ] ;
   sh:property [
-    sh:path skos:inScheme ;
+    sh:path skos:notation ;
+  ] ;
+  sh:property [
+    sh:path rdfs:label ;
   ] ;
   sh:property [
     sh:path skos:definition ;
   ] ;
   sh:property [
-    sh:path skos:notation ;
-  ] ;
-  sh:property [
-    sh:path rdfs:label ;
+    sh:path skos:inScheme ;
   ] ;
   sh:targetClass ibro:GebruiksaardToegangpunt .
 
@@ -4789,6 +4792,7 @@ ibro:Gebruikzone.subtype_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "subtype" ;
   sh:node ibro:SubtypeGebruikzone_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -4804,7 +4808,7 @@ ibro:Gebruikzone.type_shape a sh:PropertyShape ;
   mim:herkomst "IMIBRO" ;
   mim:herkomstDefinitie "IMIBRO" ;
   mim:identificerend false ;
-  mim:indicatieAfleidbaar false ;
+  mim:indicatieAfleidbaar true ;
   mim:indicatieFormeleHistorie true ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
@@ -5249,6 +5253,7 @@ ibro:LandschappelijkGebied.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeLandschappelijkGebied_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -5406,6 +5411,7 @@ ibro:Luchtvaartzone.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeLuchtvaartzone_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -5613,6 +5619,7 @@ ibro:Muur.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeMuur_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -5858,7 +5865,7 @@ ibro:Object.domein_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "domein" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:domein ;
+  sh:path <http://modellen.geostandaarden.nl/def/nen3610-2022#domein> ;
   sh:pattern "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+" .
 
 ibro:Object.geregistreerdMet_shape a sh:PropertyShape ;
@@ -5877,12 +5884,12 @@ ibro:Object.geregistreerdMet_shape a sh:PropertyShape ;
   mim:indicatieFormeleHistorie false ;
   mim:indicatieMaterieleHistorie false ;
   mim:mogelijkGeenWaarde false ;
-  sh:class nen3610-2022:Registratie ;
+  sh:class nen3610:Registratie ;
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "geregistreerdMet" ;
   sh:nodeKind sh:IRI ;
-  sh:path nen3610-2022:geregistreerdMet .
+  sh:path nen3610:geregistreerdMet .
 
 ibro:Object.identificatie_shape a sh:PropertyShape ;
   rdfs:label "identificatie" ;
@@ -5905,7 +5912,7 @@ ibro:Object.identificatie_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "identificatie" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:identificatie ;
+  sh:path <http://modellen.geostandaarden.nl/def/nen3610-2022#identificatie> ;
   sh:pattern "([a-z]|[A-Z]|[0-9]|\\_|\\-|\\,|\\.|\\:|\\/)+" .
 
 ibro:Object_shape a sh:NodeShape ;
@@ -6144,6 +6151,7 @@ ibro:Ondertunneling.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeOndertunneling_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6384,6 +6392,7 @@ ibro:Overbrugging.subtype_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "subtype" ;
   sh:node ibro:SubtypeOverbrugging_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6399,11 +6408,12 @@ ibro:Overbrugging.type_shape a sh:PropertyShape ;
   mim:herkomst "IMIBRO" ;
   mim:herkomstDefinitie "IMIBRO" ;
   mim:identificerend false ;
-  mim:indicatieAfleidbaar false ;
+  mim:indicatieAfleidbaar true ;
   mim:indicatieFormeleHistorie true ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeOverbrugging_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6438,6 +6448,7 @@ ibro:OverigWaterstaatkundigKunstwerk.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeWaterstaatkundigKunstwerk_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6497,6 +6508,7 @@ ibro:OverigeBegroeiing.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeOverigeBegroeiing_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6774,6 +6786,7 @@ ibro:Pand.subtype_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "subtype" ;
   sh:node ibro:SubtypePand_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6789,11 +6802,12 @@ ibro:Pand.type_shape a sh:PropertyShape ;
   mim:herkomst "IMIBRO" ;
   mim:herkomstDefinitie "IMIBRO" ;
   mim:identificerend false ;
-  mim:indicatieAfleidbaar false ;
+  mim:indicatieAfleidbaar true ;
   mim:indicatieFormeleHistorie true ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypePand_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -6922,6 +6936,7 @@ ibro:Panddeel.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypePanddeel_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -7239,6 +7254,7 @@ ibro:Reducering.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeReducering_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -7344,20 +7360,20 @@ ibro:Rijrichting_shape a sh:NodeShape ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "EMSO" ;
   sh:property [
-    sh:hasValue ibro:Rijrichting ;
-    sh:path rdf:type ;
+    sh:path rdfs:label ;
+  ] ;
+  sh:property [
+    sh:path skos:inScheme ;
   ] ;
   sh:property [
     sh:path skos:definition ;
   ] ;
   sh:property [
-    sh:path rdfs:label ;
-  ] ;
-  sh:property [
     sh:path skos:notation ;
   ] ;
   sh:property [
-    sh:path skos:inScheme ;
+    sh:hasValue ibro:Rijrichting ;
+    sh:path rdf:type ;
   ] ;
   sh:targetClass ibro:Rijrichting .
 
@@ -7872,6 +7888,7 @@ ibro:Spoorzone.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeSpoorzone_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -7925,24 +7942,24 @@ ibro:StatusRegistratie_shape a sh:NodeShape ;
   rdfs:comment "De status van de registratie." ;
   mim:alias "Status registratie" ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
-  mim:herkomstDefinitie "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
+  mim:herkomstDefinitie "IBRO-LM" ;
   mim:toelichting "Objectregistraties met status 'Afgevoerd' zijn alleen vindbaar via de tijdlijn registratie." ;
   sh:property [
-    sh:path skos:definition ;
+    sh:path skos:inScheme ;
   ] ;
   sh:property [
-    sh:path skos:notation ;
+    sh:path rdfs:label ;
+  ] ;
+  sh:property [
+    sh:path skos:definition ;
   ] ;
   sh:property [
     sh:hasValue ibro:StatusRegistratie ;
     sh:path rdf:type ;
   ] ;
   sh:property [
-    sh:path skos:inScheme ;
-  ] ;
-  sh:property [
-    sh:path rdfs:label ;
+    sh:path skos:notation ;
   ] ;
   sh:targetClass ibro:StatusRegistratie .
 
@@ -8535,20 +8552,20 @@ ibro:Toegangssoort_shape a sh:NodeShape ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "EMSO" ;
   sh:property [
+    sh:path skos:notation ;
+  ] ;
+  sh:property [
     sh:path rdfs:label ;
   ] ;
   sh:property [
-    sh:path skos:inScheme ;
+    sh:path skos:definition ;
   ] ;
   sh:property [
     sh:hasValue ibro:Toegangssoort ;
     sh:path rdf:type ;
   ] ;
   sh:property [
-    sh:path skos:notation ;
-  ] ;
-  sh:property [
-    sh:path skos:definition ;
+    sh:path skos:inScheme ;
   ] ;
   sh:targetClass ibro:Toegangssoort .
 
@@ -9070,20 +9087,20 @@ ibro:Verbindingsrichting_shape a sh:NodeShape ;
   mim:herkomst "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   mim:herkomstDefinitie "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   sh:property [
-    sh:path skos:inScheme ;
-  ] ;
-  sh:property [
     sh:hasValue ibro:Verbindingsrichting ;
     sh:path rdf:type ;
-  ] ;
-  sh:property [
-    sh:path skos:notation ;
   ] ;
   sh:property [
     sh:path rdfs:label ;
   ] ;
   sh:property [
+    sh:path skos:inScheme ;
+  ] ;
+  sh:property [
     sh:path skos:definition ;
+  ] ;
+  sh:property [
+    sh:path skos:notation ;
   ] ;
   sh:targetClass ibro:Verbindingsrichting .
 
@@ -9367,6 +9384,7 @@ ibro:VerkeerskundigFunctioneleZone.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeVerkeerskundigFunctioneleZone_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -9732,6 +9750,7 @@ ibro:Wegknoop.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeWegknoop_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -9917,6 +9936,7 @@ ibro:Wegverbinding.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeWegverbinding_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -10042,6 +10062,7 @@ ibro:Wegzone.type_shape a sh:PropertyShape ;
   mim:indicatieMaterieleHistorie true ;
   mim:mogelijkGeenWaarde false ;
   sh:maxCount 1 ;
+  sh:minCount 1 ;
   sh:name "type" ;
   sh:node ibro:TypeWegzone_shape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
@@ -10332,7 +10353,7 @@ ibro:Zonnepanelen_shape a sh:NodeShape ;
   sh:property ibro:Zonnepanelen.geometrie_shape ;
   sh:targetClass ibro:Zonnepanelen .
 
-nen3610-2022:Registratie.beginGeldigheid_shape a sh:PropertyShape ;
+nen3610:Registratie.beginGeldigheid_shape a sh:PropertyShape ;
   rdfs:label "beginGeldigheid" ;
   rdfs:comment "Start van de periode waarop deze versie van het informatieobject geldig is." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/begin_geldigheid> ;
@@ -10352,9 +10373,9 @@ nen3610-2022:Registratie.beginGeldigheid_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "beginGeldigheid" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:beginGeldigheid .
+  sh:path nen3610:beginGeldigheid .
 
-nen3610-2022:Registratie.eindGeldigheid_shape a sh:PropertyShape ;
+nen3610:Registratie.eindGeldigheid_shape a sh:PropertyShape ;
   rdfs:label "eindGeldigheid" ;
   rdfs:comment "Eind van de periode waarop deze versie van het informatieobject geldig is. De periode is tot aan deze tijdsaanduiding. Wanneer deze waarde niet is ingevuld, is de versie nog geldig." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/eind_geldigheid> ;
@@ -10373,9 +10394,9 @@ nen3610-2022:Registratie.eindGeldigheid_shape a sh:PropertyShape ;
   sh:maxCount 1 ;
   sh:name "eindGeldigheid" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:eindGeldigheid .
+  sh:path nen3610:eindGeldigheid .
 
-nen3610-2022:Registratie.eindRegistratie_shape a sh:PropertyShape ;
+nen3610:Registratie.eindRegistratie_shape a sh:PropertyShape ;
   rdfs:label "eindRegistratie" ;
   rdfs:comment "Eind van de periode dat deze versie van het informatieobject actueel is in de registratie. De periode is tot aan deze tijdsaanduiding. Wanneer deze waarde niet is ingevuld, is de versie nog actueel." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/eind_registratie> ;
@@ -10394,16 +10415,16 @@ nen3610-2022:Registratie.eindRegistratie_shape a sh:PropertyShape ;
   sh:maxCount 1 ;
   sh:name "eindRegistratie" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:eindRegistratie .
+  sh:path nen3610:eindRegistratie .
 
-nen3610-2022:Registratie.indicatieObjectGeconstateerd_shape a sh:PropertyShape ;
+nen3610:Registratie.indicatieObjectGeconstateerd_shape a sh:PropertyShape ;
   rdfs:label "indicatieObjectGeconstateerd" ;
   rdfs:comment "Een aanduiding waarmee kan worden aangegeven dat het object in de registratie is opgenomen als gevolg van een feitelijke constatering, zonder dat er op het moment van opname sprake was van een regulier brondocument voor deze opname." ;
   mim:authentiek "Overig" ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "Grondslagen Basis Registratie Adressen versie 4.0BAG" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -10417,7 +10438,7 @@ nen3610-2022:Registratie.indicatieObjectGeconstateerd_shape a sh:PropertyShape ;
   sh:nodeKind sh:Literal ;
   sh:path ibro:indicatieObjectGeconstateerd .
 
-nen3610-2022:Registratie.primaireBron_shape a sh:PropertyShape ;
+nen3610:Registratie.primaireBron_shape a sh:PropertyShape ;
   rdfs:label "primaireBron" ;
   rdfs:comment "Een primaire bron voor een object is een entiteit op basis waarvan de totstandkoming van het object direct gebaseerd is." ;
   mim:aggregatietype "Geen" ;
@@ -10425,7 +10446,7 @@ nen3610-2022:Registratie.primaireBron_shape a sh:PropertyShape ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -10438,7 +10459,7 @@ nen3610-2022:Registratie.primaireBron_shape a sh:PropertyShape ;
   sh:nodeKind sh:IRI ;
   sh:path prov:hadPrimarySource .
 
-nen3610-2022:Registratie.status_shape a sh:PropertyShape ;
+nen3610:Registratie.status_shape a sh:PropertyShape ;
   rdfs:label "status" ;
   rdfs:comment "Fase van de levenscyclus waarin een object zich bevindt." ;
   mim:authentiek "Overig" ;
@@ -10459,7 +10480,7 @@ nen3610-2022:Registratie.status_shape a sh:PropertyShape ;
   sh:nodeKind sh:BlankNodeOrIRI ;
   sh:path ibro:status .
 
-nen3610-2022:Registratie.tijdstipRegistratie_shape a sh:PropertyShape ;
+nen3610:Registratie.tijdstipRegistratie_shape a sh:PropertyShape ;
   rdfs:label "tijdstipRegistratie" ;
   rdfs:comment "Tijdsaanduiding van het moment waarop deze versie van het informatieobject is opgenomen in de registratie." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/tijdstip_registratie> ;
@@ -10479,9 +10500,9 @@ nen3610-2022:Registratie.tijdstipRegistratie_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "tijdstipRegistratie" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:tijdstipRegistratie .
+  sh:path nen3610:tijdstipRegistratie .
 
-nen3610-2022:Registratie.verantwoordelijkePartij_shape a sh:PropertyShape ;
+nen3610:Registratie.verantwoordelijkePartij_shape a sh:PropertyShape ;
   rdfs:label "verantwoordelijkePartij" ;
   rdfs:comment "Een verantwoordelijke partij is een actor die verantwoordelijk is voor het object." ;
   mim:aggregatietype "Geen" ;
@@ -10489,7 +10510,7 @@ nen3610-2022:Registratie.verantwoordelijkePartij_shape a sh:PropertyShape ;
   mim:datumOpname "2025-09-09" ;
   mim:heeftTijdlijnGeldigheid false ;
   mim:heeftTijdlijnRegistratie false ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "IMIBRO" ;
   mim:identificerend false ;
   mim:indicatieAfleidbaar false ;
@@ -10503,7 +10524,7 @@ nen3610-2022:Registratie.verantwoordelijkePartij_shape a sh:PropertyShape ;
   sh:nodeKind sh:IRI ;
   sh:path prov:wasAttributedTo .
 
-nen3610-2022:Registratie.versie_shape a sh:PropertyShape ;
+nen3610:Registratie.versie_shape a sh:PropertyShape ;
   rdfs:label "versie" ;
   rdfs:comment "Versieaanduiding van een informatieobject." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/versie> ;
@@ -10524,9 +10545,9 @@ nen3610-2022:Registratie.versie_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "versie" ;
   sh:nodeKind sh:Literal ;
-  sh:path nen3610-2022:versie .
+  sh:path nen3610:versie .
 
-nen3610-2022:Registratie_shape a sh:NodeShape ;
+nen3610:Registratie_shape a sh:NodeShape ;
   rdfs:label "Registratie" ;
   rdfs:comment "Vastlegging van een versie van een set gegevens." ;
   dct:subject <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/objectregistratie%20> ;
@@ -10534,22 +10555,22 @@ nen3610-2022:Registratie_shape a sh:NodeShape ;
   mim:herkomst "NEN 3610:2022 nl" ;
   mim:herkomstDefinitie "NEN 3610:2022 nl" ;
   mim:indicatieAbstractObject false ;
-  sh:property nen3610-2022:Registratie.beginGeldigheid_shape ;
-  sh:property nen3610-2022:Registratie.eindGeldigheid_shape ;
-  sh:property nen3610-2022:Registratie.eindRegistratie_shape ;
-  sh:property nen3610-2022:Registratie.indicatieObjectGeconstateerd_shape ;
-  sh:property nen3610-2022:Registratie.primaireBron_shape ;
-  sh:property nen3610-2022:Registratie.status_shape ;
-  sh:property nen3610-2022:Registratie.tijdstipRegistratie_shape ;
-  sh:property nen3610-2022:Registratie.verantwoordelijkePartij_shape ;
-  sh:property nen3610-2022:Registratie.versie_shape ;
-  sh:targetClass nen3610-2022:Registratie .
+  sh:property nen3610:Registratie.beginGeldigheid_shape ;
+  sh:property nen3610:Registratie.eindGeldigheid_shape ;
+  sh:property nen3610:Registratie.eindRegistratie_shape ;
+  sh:property nen3610:Registratie.indicatieObjectGeconstateerd_shape ;
+  sh:property nen3610:Registratie.primaireBron_shape ;
+  sh:property nen3610:Registratie.status_shape ;
+  sh:property nen3610:Registratie.tijdstipRegistratie_shape ;
+  sh:property nen3610:Registratie.verantwoordelijkePartij_shape ;
+  sh:property nen3610:Registratie.versie_shape ;
+  sh:targetClass nen3610:Registratie .
 
 prov:Agent_shape a sh:NodeShape ;
   rdfs:label "Actor" ;
   rdfs:comment "Een actor is een entiteit die verantwoordelijk is voor het plaatsvinden van een activiteit, het bestaan van een entiteit, of voor de activiteit van een andere actor." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:indicatieAbstractObject true ;
   sh:targetClass prov:Agent .
@@ -10558,7 +10579,7 @@ prov:Organization_shape a sh:NodeShape ;
   rdfs:label "Organisatie" ;
   rdfs:comment "Een organisatie is een actor in de vorm van een sociaal of legaal samenwerkingsverband." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "PROV" ;
   mim:indicatieAbstractObject true ;
   sh:targetClass prov:Organization .
@@ -10582,7 +10603,7 @@ tooiont:Overheidsorganisatie.naam_shape a sh:PropertyShape ;
   sh:minCount 1 ;
   sh:name "naam" ;
   sh:nodeKind sh:Literal ;
-  sh:path rdfs:label .
+  sh:path ibro:naam .
 
 tooiont:Overheidsorganisatie.officieleNaamInclSoort_shape a sh:PropertyShape ;
   rdfs:label "officieleNaamInclSoort" ;
@@ -10629,7 +10650,7 @@ tooiont:Overheidsorganisatie_shape a sh:NodeShape ;
   rdfs:label "Overheidsorganisatie" ;
   rdfs:comment "Een organisatie die namens de overheid taken uitvoert en onder het gezag en toezicht van de overheid valt." ;
   mim:datumOpname "2025-09-09" ;
-  mim:herkomst "IMIBRO" ;
+  mim:herkomst "IBRO-LM" ;
   mim:herkomstDefinitie "TOOI - Ontologie 1.6.2" ;
   mim:indicatieAbstractObject false ;
   sh:property tooiont:Overheidsorganisatie.naam_shape ;
