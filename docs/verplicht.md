@@ -2,7 +2,9 @@
 
 ## Verplichtheid richting basisregistraties
 
-In deze sectie beschrijven wij per objecttype, en waar relevant per type of subtype, of het verplicht is om deze informatie op te nemen. De verplichtheid is gerelateerd aan de wettelijke verplichtingen voor opname in de landelijke basisregistraties, zoals de Basisregistratie Adressen en Gebouwen (BAG), de Basisregistratie Grootschalige Topografie (BGT) en de Basisregistratie Wet Onroerende Zaken (WOZ). Voor elk objecttype wordt aangegeven of de registratie van het object en zijn eigenschappen verplicht is, optioneel is, of onder bepaalde voorwaarden geldt. Zo ontstaat inzicht in welke gegevens noodzakelijk zijn voor een correcte en volledige landelijke registratie.
+In deze sectie wordt per objecttype, en waar relevant per type of subtype, beschreven in welke mate het opnemen van informatie verplicht, optioneel of conditioneel is. De bepaling van de verplichtheid is gebaseerd heeft als doel het verbeteren en uniformeren van gemeentelijke registraties.
+
+Als uitgangspunt is het [[EMSO]] gehanteerd. Op basis van de huidige inzichten is de verplichtheid voor verschillende objecttypen opnieuw beoordeeld en waar nodig aangepast, met als doel een betere aansluiting op de gemeentelijke informatiepraktijk en een toekomstbestendige gegevensbasis.
 
 Legenda:
 - **V**: Verplicht
@@ -25,7 +27,7 @@ Legenda:
 | `OverigeBegroeiing` | `Moeras`                      | V             |
 | `OverigeBegroeiing` | `Rietland`                    | V             |
 | `OverigeBegroeiing` | `Heide`                       | V             |
-| `OverigeBegroeiing` | `Haag`                        | O             |
+| `OverigeBegroeiing` | `Haag`                        | V             |
 | `OverigeBegroeiing` | `Houtsingel`                  | V             |
 | `OverigeBegroeiing` | `Houtwal`                     | V             |
 | `Bos`               | `GemengdBos`                  | V             |
@@ -52,7 +54,7 @@ Legenda:
 | `Watervlakte`    | `Plas`   | O             |
 | `Watervlakte`    | `Ven`    | O             |
 | `Watervlakte`    | `Vijver` | O             |
-| `Watervlakte`    | `Zee`    | V             |
+| `Watervlakte`    | `Zee`    | O             |
 | `Watergang`      |          | V             |
 | `Watergang`      | `Beek`   | O             |
 | `Watergang`      | `Gracht` | O             |
@@ -60,8 +62,8 @@ Legenda:
 | `Watergang`      | `Rivier` | O             |
 | `Watergang`      | `Sloot`  | O             |
 | `Getijdengebied` |          | V             |
-| `Getijdengebied` | `Schor`  | V             |
-| `Getijdengebied` | `Slik`   | V             |
+| `Getijdengebied` | `Schor`  | O             |
+| `Getijdengebied` | `Slik`   | O             |
 | `Greppel`        |          | V             |
 
 
@@ -70,61 +72,61 @@ Legenda:
 | Objecttype        | Type                     | Subtype                            | Verplichtheid | Conditie                                                                                      |
 | ----------------- | ------------------------ | ---------------------------------- | ------------- | --------------------------------------------------------------------------------------------- |
 | `Pand`            |                          |                                    | V             |                                                                                               |
-| `Pand`            | `Bijgebouw`              |                                    | O             |                                                                                               |
-| `Pand`            | `Bijgebouw`              | `Garage`                           | O             |                                                                                               |
-| `Pand`            | `Bijgebouw`              | `Schuur`                           | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         |                                    | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Boerderij`                        | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Fabriek`                          | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Hangar`                           | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Kas`                              | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Loods`                            | C             | Verplicht indien het gaat om een pand met open constructie (`indicatieOpenConstructie: true`) |
-| `Pand`            | `Bedrijfsgebouw`         | `Molen`                            | O             |                                                                                               |
+| `Pand`            | `Bijgebouw`              |                                    | V             |                                                                                               |
+| `Pand`            | `Bijgebouw`              | `Garage`                           | V             |                                                                                               |
+| `Pand`            | `Bijgebouw`              | `Schuur`                           | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         |                                    | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Boerderij`                        | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Fabriek`                          | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Hangar`                           | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Kas`                              | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Loods`                            | V             | Verplicht indien het gaat om een pand met open constructie (`indicatieOpenConstructie: true`) |
+| `Pand`            | `Bedrijfsgebouw`         | `Molen`                            | V             |                                                                                               |
 | `Pand`            | `Bedrijfsgebouw`         | `Parkeergarage`                    | V             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Stal`                             | O             |                                                                                               |
-| `Pand`            | `Bedrijfsgebouw`         | `Voertuigenstalling`               | O             |                                                                                               |
-| `Pand`            | `Doelgroepengebouw`      |                                    | O             |                                                                                               |
-| `Pand`            | `Doelgroepengebouw`      | `Gevangenis`                       | O             |                                                                                               |
-| `Pand`            | `Doelgroepengebouw`      | `Kazerne`                          | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           |                                    | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Kapel`                            | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Kerkgebouw`                       | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Klooster`                         | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Moskee`                           | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Synagoge`                         | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Tempel`                           | O             |                                                                                               |
-| `Pand`            | `Gebedsgebouw`           | `Tempel`                           | O             |                                                                                               |
-| `Pand`            | `Installatiegebouw`      |                                    | O             |                                                                                               |
-| `Pand`            | `Installatiegebouw`      | `Energiecentrale`                  | O             |                                                                                               |
-| `Pand`            | `Installatiegebouw`      | `Gemaalgebouw`                     | O             |                                                                                               |
-| `Pand`            | `Kantoorgebouw`          |                                    | O             |                                                                                               |
-| `Pand`            | `Multigebouw`            |                                    | O             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Stal`                             | V             |                                                                                               |
+| `Pand`            | `Bedrijfsgebouw`         | `Voertuigenstalling`               | V             |                                                                                               |
+| `Pand`            | `Doelgroepengebouw`      |                                    | V             |                                                                                               |
+| `Pand`            | `Doelgroepengebouw`      | `Gevangenis`                       | V             |                                                                                               |
+| `Pand`            | `Doelgroepengebouw`      | `Kazerne`                          | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           |                                    | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Kapel`                            | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Kerkgebouw`                       | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Klooster`                         | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Moskee`                           | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Synagoge`                         | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Tempel`                           | V             |                                                                                               |
+| `Pand`            | `Gebedsgebouw`           | `Tempel`                           | V             |                                                                                               |
+| `Pand`            | `Installatiegebouw`      |                                    | V             |                                                                                               |
+| `Pand`            | `Installatiegebouw`      | `Energiecentrale`                  | V             |                                                                                               |
+| `Pand`            | `Installatiegebouw`      | `Gemaalgebouw`                     | V             |                                                                                               |
+| `Pand`            | `Kantoorgebouw`          |                                    | V             |                                                                                               |
+| `Pand`            | `Multigebouw`            |                                    | V             |                                                                                               |
 | `Pand`            | `Overkapping`            |                                    | V             |                                                                                               |
-| `Pand`            | `Recreatiegebouw`        |                                    | O             |                                                                                               |
-| `Pand`            | `Recreatiegebouw`        | `Sportgebouw`                      | O             |                                                                                               |
-| `Pand`            | `Toren`                  |                                    | O             |                                                                                               |
-| `Pand`            | `Toren`                  | `Fabrieksschoorsteen`              | O             |                                                                                               |
-| `Pand`            | `Toren`                  | `Klokkentoren`                     | O             |                                                                                               |
+| `Pand`            | `Recreatiegebouw`        |                                    | V             |                                                                                               |
+| `Pand`            | `Recreatiegebouw`        | `Sportgebouw`                      | V             |                                                                                               |
+| `Pand`            | `Toren`                  |                                    | V             |                                                                                               |
+| `Pand`            | `Toren`                  | `Fabrieksschoorsteen`              | V             |                                                                                               |
+| `Pand`            | `Toren`                  | `Klokkentoren`                     | V             |                                                                                               |
 | `Pand`            | `Toren`                  | `Uitkijktoren`                     | V             |                                                                                               |
-| `Pand`            | `Toren`                  | `Vuurtoren`                        | O             |                                                                                               |
-| `Pand`            | `Toren`                  | `Watertoren`                       | O             |                                                                                               |
-| `Pand`            | `Vestingsgebouw`         |                                    | O             |                                                                                               |
-| `Pand`            | `Vestingsgebouw`         | `Bunker`                           | O             |                                                                                               |
-| `Pand`            | `Vestingsgebouw`         | `Fort`                             | O             |                                                                                               |
-| `Pand`            | `Vestingsgebouw`         | `Kasteel`                          | O             |                                                                                               |
-| `Pand`            | `Woongebouw`             |                                    | O             |                                                                                               |
+| `Pand`            | `Toren`                  | `Vuurtoren`                        | V             |                                                                                               |
+| `Pand`            | `Toren`                  | `Watertoren`                       | V             |                                                                                               |
+| `Pand`            | `Vestingsgebouw`         |                                    | V             |                                                                                               |
+| `Pand`            | `Vestingsgebouw`         | `Bunker`                           | V             |                                                                                               |
+| `Pand`            | `Vestingsgebouw`         | `Fort`                             | V             |                                                                                               |
+| `Pand`            | `Vestingsgebouw`         | `Kasteel`                          | V             |                                                                                               |
+| `Pand`            | `Woongebouw`             |                                    | V             |                                                                                               |
 | `Panddeel`        |                          |                                    | V             |                                                                                               |
 | `Panddeel`        | `Basisconstructie`       |                                    | V             |                                                                                               |
-| `Panddeel`        | `LatereAanbouw`          |                                    | O             |                                                                                               |
+| `Panddeel`        | `LatereAanbouw`          |                                    | V             |                                                                                               |
 | `Panddeel`        | `Serre`                  |                                    | V             |                                                                                               |
-| `Panddeel`        | `Afdak`                  |                                    | O             |                                                                                               |
-| `Panddeel`        | `Balkon`                 |                                    | O             |                                                                                               |
-| `Panddeel`        | `Bordes`                 |                                    | O             |                                                                                               |
-| `Panddeel`        | `Dakkapel`               |                                    | O             |                                                                                               |
-| `Panddeel`        | `Kolom`                  |                                    | O             |                                                                                               |
-| `Panddeel`        | `Laadperron`             |                                    | O             |                                                                                               |
-| `Panddeel`        | `Loopbrug`               |                                    | O             |                                                                                               |
-| `Panddeel`        | `Toegangstrap`           |                                    | O             |                                                                                               |
+| `Panddeel`        | `Afdak`                  |                                    | V             |                                                                                               |
+| `Panddeel`        | `Balkon`                 |                                    | V             |                                                                                               |
+| `Panddeel`        | `Bordes`                 |                                    | V             |                                                                                               |
+| `Panddeel`        | `Dakkapel`               |                                    | V             |                                                                                               |
+| `Panddeel`        | `Kolom`                  |                                    | V             |                                                                                               |
+| `Panddeel`        | `Laadperron`             |                                    | V             |                                                                                               |
+| `Panddeel`        | `Loopbrug`               |                                    | V             |                                                                                               |
+| `Panddeel`        | `Toegangstrap`           |                                    | V             |                                                                                               |
 | `Bouwlaag`        |                          |                                    | V             |                                                                                               |
 | `Functiezone`     |                          |                                    | V             |                                                                                               |
 | `Functiezone`     | `Bijeenkomstfunctie`     |                                    | V             |                                                                                               |
@@ -142,88 +144,88 @@ Legenda:
 | `Functiezone`     | `Woonfunctie`            |                                    | V             |                                                                                               |
 | `Gebruikzone`     |                          |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `AgrarischBedrijf`       |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `AgrarischBedrijf`       | `Akkerbouw`                        | O             |                                                                                               |
-| `Gebruikzone`     | `AgrarischBedrijf`       | `Tuinbouw`                         | O             |                                                                                               |
-| `Gebruikzone`     | `AgrarischBedrijf`       | `Veehouderij`                      | O             |                                                                                               |
-| `Gebruikzone`     | `AgrarischBedrijf`       | `Viskwekerij`                      | O             |                                                                                               |
+| `Gebruikzone`     | `AgrarischBedrijf`       | `Akkerbouw`                        | V             |                                                                                               |
+| `Gebruikzone`     | `AgrarischBedrijf`       | `Tuinbouw`                         | V             |                                                                                               |
+| `Gebruikzone`     | `AgrarischBedrijf`       | `Veehouderij`                      | V             |                                                                                               |
+| `Gebruikzone`     | `AgrarischBedrijf`       | `Viskwekerij`                      | V             |                                                                                               |
 | `Gebruikzone`     | `Bijeenkomsten`          |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Cellen`                 |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Detailhandel`           |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Dienstverlening`        |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Bibliotheek`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Buurtgebouw`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Crematorium`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Gemeentekantoor`                  | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Laboratorium`                     | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Paleis`                           | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Politiebureau`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Rechtbank`                        | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Tol`                              | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Verkeerstoren`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Dienstverlening`        | `Wasstraat`                        | O             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Bibliotheek`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Buurtgebouw`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Crematorium`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Gemeentekantoor`                  | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Laboratorium`                     | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Paleis`                           | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Politiebureau`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Rechtbank`                        | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Tol`                              | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Verkeerstoren`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Dienstverlening`        | `Wasstraat`                        | V             |                                                                                               |
 | `Gebruikzone`     | `Energievoorziening`     |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Groothandel`            |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Groothandel`            | `Grossier`                         | O             |                                                                                               |
-| `Gebruikzone`     | `Groothandel`            | `Veiling`                          | O             |                                                                                               |
+| `Gebruikzone`     | `Groothandel`            | `Grossier`                         | V             |                                                                                               |
+| `Gebruikzone`     | `Groothandel`            | `Veiling`                          | V             |                                                                                               |
 | `Gebruikzone`     | `Horeca`                 |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Horeca`                 | `Hotel`                            | O             |                                                                                               |
-| `Gebruikzone`     | `Horeca`                 | `Strandpaviljoen`                  | O             |                                                                                               |
+| `Gebruikzone`     | `Horeca`                 | `Hotel`                            | V             |                                                                                               |
+| `Gebruikzone`     | `Horeca`                 | `Strandpaviljoen`                  | V             |                                                                                               |
 | `Gebruikzone`     | `Industrie`              |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Industrie`              | `Werf`                             | O             |                                                                                               |
+| `Gebruikzone`     | `Industrie`              | `Werf`                             | V             |                                                                                               |
 | `Gebruikzone`     | `Kantoor`                |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Kunst`                  |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Kunst`                  | `Bioscoop`                         | O             |                                                                                               |
-| `Gebruikzone`     | `Kunst`                  | `Museum`                           | O             |                                                                                               |
-| `Gebruikzone`     | `Kunst`                  | `Podiumkunst`                      | O             |                                                                                               |
+| `Gebruikzone`     | `Kunst`                  | `Bioscoop`                         | V             |                                                                                               |
+| `Gebruikzone`     | `Kunst`                  | `Museum`                           | V             |                                                                                               |
+| `Gebruikzone`     | `Kunst`                  | `Podiumkunst`                      | V             |                                                                                               |
 | `Gebruikzone`     | `Onderwijs`              |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Opslag`                 |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Opslag`                 | `Distributiecentrum`               | O             |                                                                                               |
-| `Gebruikzone`     | `Opslag`                 | `Koelcel`                          | O             |                                                                                               |
-| `Gebruikzone`     | `Opslag`                 | `Magazijn`                         | O             |                                                                                               |
-| `Gebruikzone`     | `Opslag`                 | `Munitiedepot`                     | O             |                                                                                               |
+| `Gebruikzone`     | `Opslag`                 | `Distributiecentrum`               | V             |                                                                                               |
+| `Gebruikzone`     | `Opslag`                 | `Koelcel`                          | V             |                                                                                               |
+| `Gebruikzone`     | `Opslag`                 | `Magazijn`                         | V             |                                                                                               |
+| `Gebruikzone`     | `Opslag`                 | `Munitiedepot`                     | V             |                                                                                               |
 | `Gebruikzone`     | `Productverwerking`      |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Recreatie`              |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Recreatie`              | `Clubgebouw`                       | O             |                                                                                               |
+| `Gebruikzone`     | `Recreatie`              | `Clubgebouw`                       | V             |                                                                                               |
 | `Gebruikzone`     | `Religie`                |                                    | V             |                                                                                               |
 | `Gebruikzone`     | `Sport`                  |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Recreatie`              | `Manege`                           | O             |                                                                                               |
-| `Gebruikzone`     | `Recreatie`              | `Zwembadzone`                      | O             |                                                                                               |
+| `Gebruikzone`     | `Recreatie`              | `Manege`                           | V             |                                                                                               |
+| `Gebruikzone`     | `Recreatie`              | `Zwembadzone`                      | V             |                                                                                               |
 | `Gebruikzone`     | `Techniek`               |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Brugwachtershuis`                 | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Gasverdeelstation`                | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Observatorium`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Peilmeetstation`                  | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Pompstation`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Radarpost`                        | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Rioolgemaal`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Telecommunicatie`                 | O             |                                                                                               |
-| `Gebruikzone`     | `Techniek`               | `Transformatorstation`             | O             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Brugwachtershuis`                 | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Gasverdeelstation`                | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Observatorium`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Peilmeetstation`                  | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Pompstation`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Radarpost`                        | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Rioolgemaal`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Telecommunicatie`                 | V             |                                                                                               |
+| `Gebruikzone`     | `Techniek`               | `Transformatorstation`             | V             |                                                                                               |
 | `Gebruikzone`     | `Voertuigen`             |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Ambulancepost`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Brandweerkazerne`                 | O             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Metrostation`                     | O             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Parkeergaragezone`                | O             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Remise`                           | O             |                                                                                               |
-| `Gebruikzone`     | `Voertuigen`             | `Station`                          | O             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Ambulancepost`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Brandweerkazerne`                 | V             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Metrostation`                     | V             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Parkeergaragezone`                | V             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Remise`                           | V             |                                                                                               |
+| `Gebruikzone`     | `Voertuigen`             | `Station`                          | V             |                                                                                               |
 | `Gebruikzone`     | `Wonen`                  |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `TweeOnderEenKapWoning`            | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Benedenwoning`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Bovenwoning`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Corridorflatwoning`               | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Eindwoning`                       | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Galerijflatwoning`                | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `GeschakeldeWoning`                | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `GeschakeldeTweeOnderEenKapWoning` | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Maisonnette`                      | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Personeelshuisvesting`            | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Portiekflatwoning`                | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Portiekwoning`                    | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `Tussenwoning`                     | O             |                                                                                               |
-| `Gebruikzone`     | `Wonen`                  | `VrijstaandeWoning`                | O             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `TweeOnderEenKapWoning`            | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Benedenwoning`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Bovenwoning`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Corridorflatwoning`               | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Eindwoning`                       | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Galerijflatwoning`                | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `GeschakeldeWoning`                | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `GeschakeldeTweeOnderEenKapWoning` | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Maisonnette`                      | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Personeelshuisvesting`            | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Portiekflatwoning`                | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Portiekwoning`                    | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `Tussenwoning`                     | V             |                                                                                               |
+| `Gebruikzone`     | `Wonen`                  | `VrijstaandeWoning`                | V             |                                                                                               |
 | `Gebruikzone`     | `Zorg`                   |                                    | V             |                                                                                               |
-| `Gebruikzone`     | `Zorg`                   | `InstitutioneelHuishouden`         | O             |                                                                                               |
-| `Gebruikzone`     | `Zorg`                   | `Ziekenhuis`                       | O             |                                                                                               |
-| `Toegangspunt`    |                          |                                    | O             |                                                                                               |
+| `Gebruikzone`     | `Zorg`                   | `InstitutioneelHuishouden`         | V             |                                                                                               |
+| `Gebruikzone`     | `Zorg`                   | `Ziekenhuis`                       | V             |                                                                                               |
+| `Toegangspunt`    |                          |                                    | V             |                                                                                               |
 | `Verblijfsobject` |                          |                                    | V             |                                                                                               |
 
 
@@ -246,42 +248,42 @@ Legenda:
 | Objecttype                        | Type               | Subtype   | Verplichtheid |
 | --------------------------------- | ------------------ | --------- | ------------- |
 | `Overbrugging`                    |                    |           | V             |
-| `Overbrugging`                    | `Aquaduct`         |           | O             |
-| `Overbrugging`                    | `Brug`             |           | O             |
-| `Overbrugging`                    | `Ecoduct`          |           | O             |
-| `Overbrugging`                    | `Overkluizing`     |           | O             |
-| `Overbrugging`                    | `Viaduct`          |           | O             |
-| `Overbrugging`                    | `Viaduct`          | `Flyover` | O             |
+| `Overbrugging`                    | `Aquaduct`         |           | V             |
+| `Overbrugging`                    | `Brug`             |           | V             |
+| `Overbrugging`                    | `Ecoduct`          |           | V             |
+| `Overbrugging`                    | `Overkluizing`     |           | V             |
+| `Overbrugging`                    | `Viaduct`          |           | V             |
+| `Overbrugging`                    | `Viaduct`          | `Flyover` | V             |
 | `Ondertunneling`                  |                    |           | V             |
-| `Ondertunneling`                  | `Duiker`           |           | O             |
-| `Ondertunneling`                  | `Hevel`            |           | O             |
-| `Ondertunneling`                  | `Sifon`            |           | O             |
+| `Ondertunneling`                  | `Duiker`           |           | V             |
+| `Ondertunneling`                  | `Hevel`            |           | V             |
+| `Ondertunneling`                  | `Sifon`            |           | V             |
 | `Ondertunneling`                  | `Tunnel`           |           | V             |
 | `OverigWaterstaatkundigKunstwerk` |                    |           | V             |
-| `OverigWaterstaatkundigKunstwerk` | `Bodemval`         |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Coupure`          |           | O             |
+| `OverigWaterstaatkundigKunstwerk` | `Bodemval`         |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Coupure`          |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Damwand`          |           | V             |
-| `OverigWaterstaatkundigKunstwerk` | `Dijklichaam`      |           | O             |
+| `OverigWaterstaatkundigKunstwerk` | `Dijklichaam`      |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Gemaal`           |           | V             |
-| `OverigWaterstaatkundigKunstwerk` | `Krib`             |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Ponton`           |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Schot`            |           | O             |
+| `OverigWaterstaatkundigKunstwerk` | `Krib`             |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Ponton`           |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Schot`            |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Steiger`          |           | V             |
-| `OverigWaterstaatkundigKunstwerk` | `Stormvloedkering` |           | O             |
+| `OverigWaterstaatkundigKunstwerk` | `Stormvloedkering` |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Strekdam`         |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Stuw`             |           | V             |
-| `OverigWaterstaatkundigKunstwerk` | `VasteDam`         |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Vispassage`       |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Voorde`           |           | O             |
-| `OverigWaterstaatkundigKunstwerk` | `Vuilvang`         |           | O             |
+| `OverigWaterstaatkundigKunstwerk` | `VasteDam`         |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Vispassage`       |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Voorde`           |           | V             |
+| `OverigWaterstaatkundigKunstwerk` | `Vuilvang`         |           | V             |
 | `OverigWaterstaatkundigKunstwerk` | `Walbescherming`   |           | V             |
-| `Sluis`                           |                    |           | O             |
-| `Dek`                             |                    |           | O             |
-| `Landhoofd`                       |                    |           | O             |
-| `Pijler`                          |                    |           | O             |
-| `Pyloon`                          |                    |           | O             |
-| `Schutkolk`                       |                    |           | O             |
-| `Sloof`                           |                    |           | O             |
+| `Sluis`                           |                    |           | V             |
+| `Dek`                             |                    |           | V             |
+| `Landhoofd`                       |                    |           | V             |
+| `Pijler`                          |                    |           | V             |
+| `Pyloon`                          |                    |           | V             |
+| `Schutkolk`                       |                    |           | V             |
+| `Sloof`                           |                    |           | V             |
 | `Sluisdeur`                       |                    |           | V             |
 
 
@@ -298,9 +300,9 @@ Legenda:
 | `OverigeConstructie`   | `Opslagtank`         |                        | V             |                                                                                |
 | `OverigeConstructie`   | `Paal`               |                        | O             |                                                                                |
 | `OverigeConstructie`   | `Putdeksel`          |                        | V             |                                                                                |
-| `OverigeConstructie`   | `Reservoir`          |                        | V             |                                                                                |
-| `OverigeConstructie`   | `Reservoir`          | `Bassin`               | V             |                                                                                |
-| `OverigeConstructie`   | `Reservoir`          | `Bezinkbak`            | V             |                                                                                |
+| `OverigeConstructie`   | `Reservoir`          |                        | O             |                                                                                |
+| `OverigeConstructie`   | `Reservoir`          | `Bassin`               | O             |                                                                                |
+| `OverigeConstructie`   | `Reservoir`          | `Bezinkbak`            | O             |                                                                                |
 | `OverigeConstructie`   | `Straatmeubilair`    |                        | O             |                                                                                |
 | `OverigeConstructie`   | `Straatmeubilair`    | `Abri`                 | O             |                                                                                |
 | `OverigeConstructie`   | `Straatmeubilair`    | `Afvalbak`             | O             |                                                                                |
@@ -317,17 +319,17 @@ Legenda:
 | `Lift`                 |                      |                        | O             |                                                                                |
 | `Oplaadpunt`           |                      |                        | O             |                                                                                |
 | `Pomp`                 |                      |                        | O             |                                                                                |
-| `Sirene`               |                      |                        | O             |                                                                                |
+| `Sirene`               |                      |                        | V             |                                                                                |
 | `Transformator`        |                      |                        | V             |                                                                                |
-| `Verlichtingsarmatuur` |                      |                        | O             |                                                                                |
+| `Verlichtingsarmatuur` |                      |                        | V             |                                                                                |
 | `Windturbine`          |                      |                        | V             |                                                                                |
 | `Zonnepanelen`         |                      |                        | O             |                                                                                |
 | `Mast`                 |                      |                        | V             |                                                                                |
 | `Mast`                 | `Hoogspanningsmast`  |                        | V             |                                                                                |
 | `Muur`                 |                      |                        | V             |                                                                                |
 | `Muur`                 | `Kademuur`           |                        | V             |                                                                                |
-| `Muur`                 | `Keermuur`           |                        | O             |                                                                                |
-| `Omheining`            |                      |                        | V             |                                                                                |
+| `Muur`                 | `Keermuur`           |                        | V             |                                                                                |
+| `Omheining`            |                      |                        | O             |                                                                                |
 | `Scherm`               |                      |                        | C             | Schermen met een geluidreducerende functie zijn verplicht (BGT geluidsscherm). |
 
 
@@ -350,28 +352,28 @@ Legenda:
 | `Wegverbinding`    | `Erftoegangsweg`                          | V             |
 | `Wegverbinding`    | `Fietspad`                                | V             |
 | `Wegverbinding`    | `FietsOfBromfietspad`                     | V             |
-| `Wegverbinding`    | `Fietsstraat`                             | O             |
+| `Wegverbinding`    | `Fietsstraat`                             | V             |
 | `Wegverbinding`    | `GebiedsontsluitingswegGesloten`          | V             |
 | `Wegverbinding`    | `GebiedsontsluitingswegOpen`              | V             |
 | `Wegverbinding`    | `Ruiterpad`                               | V             |
-| `Wegverbinding`    | `Veerverbinding`                          | O             |
+| `Wegverbinding`    | `Veerverbinding`                          | V             |
 | `Wegverbinding`    | `Voetgangerszone`                         | V             |
 | `Wegverbinding`    | `Voetpad`                                 | V             |
 | `Baanverbinding`   |                                           | V             |
 | `Baanverbinding`   | `Busbaan`                                 | V             |
-| `Baanverbinding`   | `Fietspadbaan`                            | O             |
-| `Baanverbinding`   | `Fietsveer`                               | O             |
-| `Baanverbinding`   | `Hoofdrijbaan`                            | O             |
-| `Baanverbinding`   | `Parallelbaan`                            | O             |
-| `Baanverbinding`   | `Rotondebaan`                             | O             |
-| `Baanverbinding`   | `Ruiterpadbaan`                           | O             |
-| `Baanverbinding`   | `Veerverbindingbaan`                      | O             |
-| `Baanverbinding`   | `Ventweg`                                 | O             |
+| `Baanverbinding`   | `Fietspadbaan`                            | V             |
+| `Baanverbinding`   | `Fietsveer`                               | V             |
+| `Baanverbinding`   | `Hoofdrijbaan`                            | V             |
+| `Baanverbinding`   | `Parallelbaan`                            | V             |
+| `Baanverbinding`   | `Rotondebaan`                             | V             |
+| `Baanverbinding`   | `Ruiterpadbaan`                           | V             |
+| `Baanverbinding`   | `Veerverbindingbaan`                      | V             |
+| `Baanverbinding`   | `Ventweg`                                 | V             |
 | `Baanverbinding`   | `Verbindingsbaan`                         | V             |
-| `Baanverbinding`   | `Verkeerspleinbaan`                       | O             |
-| `Baanverbinding`   | `Verzorgingsbaan`                         | O             |
-| `Baanverbinding`   | `Voetpadbaan`                             | O             |
-| `Baanverbinding`   | `Voetveer`                                | O             |
+| `Baanverbinding`   | `Verkeerspleinbaan`                       | V             |
+| `Baanverbinding`   | `Verzorgingsbaan`                         | V             |
+| `Baanverbinding`   | `Voetpadbaan`                             | V             |
+| `Baanverbinding`   | `Voetveer`                                | V             |
 | `Strookverbinding` |                                           | O             |
 | `Strookverbinding` | `Bufferstrook`                            | O             |
 | `Strookverbinding` | `Busstrook`                               | O             |
@@ -399,15 +401,15 @@ Legenda:
 | `Strookverbinding` | `Weefstrook`                              | O             |
 | `Strookverbinding` | `Wisselstrook`                            | O             |
 | `Wegknoop`         |                                           | V             |
-| `Wegknoop`         | `Eindknoop`                               | O             |
-| `Wegknoop`         | `Grensknoop`                              | O             |
-| `Wegknoop`         | `Koppelknoop`                             | O             |
-| `Wegknoop`         | `Kruising`                                | O             |
-| `Wegknoop`         | `Rotonde`                                 | O             |
-| `Wegknoop`         | `Verkeersplein`                           | O             |
+| `Wegknoop`         | `Eindknoop`                               | V             |
+| `Wegknoop`         | `Grensknoop`                              | V             |
+| `Wegknoop`         | `Koppelknoop`                             | V             |
+| `Wegknoop`         | `Kruising`                                | V             |
+| `Wegknoop`         | `Rotonde`                                 | V             |
+| `Wegknoop`         | `Verkeersplein`                           | V             |
 | `Baanknoop`        |                                           | V             |
 | `Strookknoop`      |                                           | O             |
-| `Hectometerpunt`   |                                           | O             |
+| `Hectometerpunt`   |                                           | V             |
 
 
 
@@ -429,16 +431,16 @@ Legenda:
 | ------------------------------- | ---------------------- | ------------- |
 | `Afscheiding`                   |                        | O             |
 | `Complex`                       |                        | V             |
-| `Complex`                       | `Begraafplaats`        | O             |
-| `Complex`                       | `Coupurecomplex`       | O             |
-| `Complex`                       | `Gemaalcomplex`        | O             |
-| `Complex`                       | `Havencomplex`         | O             |
-| `Complex`                       | `IndustrieelComplex`   | O             |
-| `Complex`                       | `Schoolterrein`        | O             |
-| `Complex`                       | `Sluiscomplex`         | O             |
-| `Complex`                       | `Stuwcomplex`          | O             |
-| `Complex`                       | `Zorgcomplex`          | O             |
-| `Complex`                       | `Zuiveringscomplex`    | O             |
+| `Complex`                       | `Begraafplaats`        | V             |
+| `Complex`                       | `Coupurecomplex`       | V             |
+| `Complex`                       | `Gemaalcomplex`        | V             |
+| `Complex`                       | `Havencomplex`         | V             |
+| `Complex`                       | `IndustrieelComplex`   | V             |
+| `Complex`                       | `Schoolterrein`        | V             |
+| `Complex`                       | `Sluiscomplex`         | V             |
+| `Complex`                       | `Stuwcomplex`          | V             |
+| `Complex`                       | `Zorgcomplex`          | V             |
+| `Complex`                       | `Zuiveringscomplex`    | V             |
 | `GebruikszoneOppervlaktewater`  |                        | O             |
 | `GebruikszoneOppervlaktewater`  | `Vaarwegzone`          | O             |
 | `GebruikszoneOppervlaktewater`  | `Visserijzone`         | O             |
@@ -448,9 +450,9 @@ Legenda:
 | `Waterkering`                   |                        | V             |
 | `Luchtvaartzone`                |                        | V             |
 | `Luchtvaartzone`                | `BaanVoorVliegverkeer` | V             |
-| `Luchtvaartzone`                | `Luchthaven`           | O             |
+| `Luchtvaartzone`                | `Luchthaven`           | V             |
 | `Oeverzone`                     |                        | V             |
-| `Recreatiezone`                 |                        | O             |
+| `Recreatiezone`                 |                        | V             |
 | `Recreatiezone`                 | `Bungalowpark`         | O             |
 | `Recreatiezone`                 | `Camping`              | O             |
 | `Recreatiezone`                 | `Park`                 | O             |
@@ -458,39 +460,39 @@ Legenda:
 | `Recreatiezone`                 | `Sportterrein`         | O             |
 | `Recreatiezone`                 | `Volkstuin`            | O             |
 | `Reducering`                    |                        | V             |
-| `Reducering`                    | `Fijnstofreducering`   | O             |
+| `Reducering`                    | `Fijnstofreducering`   | V             |
 | `Reducering`                    | `Geluidreducering`     | V             |
 | `Spoorzone`                     |                        | V             |
-| `Spoorzone`                     | `Emplacement`          | O             |
+| `Spoorzone`                     | `Emplacement`          | V             |
 | `Spoorzone`                     | `Overweg`              | V             |
 | `Spoorzone`                     | `Perron`               | V             |
 | `Spoorzone`                     | `Spoorbaan`            | V             |
 | `VerkeerskundigFunctioneleZone` |                        | V             |
-| `VerkeerskundigFunctioneleZone` | `Halteplaats`          | O             |
+| `VerkeerskundigFunctioneleZone` | `Halteplaats`          | V             |
 | `VerkeerskundigFunctioneleZone` | `Inrit`                | V             |
-| `VerkeerskundigFunctioneleZone` | `Knooppunt`            | O             |
-| `VerkeerskundigFunctioneleZone` | `Overstapplaats`       | O             |
+| `VerkeerskundigFunctioneleZone` | `Knooppunt`            | V             |
+| `VerkeerskundigFunctioneleZone` | `Overstapplaats`       | V             |
 | `VerkeerskundigFunctioneleZone` | `Parkeerplaats`        | V             |
 | `VerkeerskundigFunctioneleZone` | `Parkeervlak`          | V             |
-| `VerkeerskundigFunctioneleZone` | `Snellaadstation`      | O             |
-| `VerkeerskundigFunctioneleZone` | `Tankstation`          | O             |
-| `VerkeerskundigFunctioneleZone` | `Tolplaats`            | O             |
-| `VerkeerskundigFunctioneleZone` | `Verzorgingsplaats`    | O             |
+| `VerkeerskundigFunctioneleZone` | `Snellaadstation`      | V             |
+| `VerkeerskundigFunctioneleZone` | `Tankstation`          | V             |
+| `VerkeerskundigFunctioneleZone` | `Tolplaats`            | V             |
+| `VerkeerskundigFunctioneleZone` | `Verzorgingsplaats`    | V             |
 | `VerkeerskundigFunctioneleZone` | `Woonerf`              | V             |
-| `Waterbergingsgebied`           |                        | O             |
+| `Waterbergingsgebied`           |                        | V             |
 | `Wegzone`                       |                        | V             |
 | `Wegzone`                       | `Berm`                 | V             |
-| `Wegzone`                       | `Verkeersdrempel`      | O             |
+| `Wegzone`                       | `Verkeersdrempel`      | V             |
 | `Wegzone`                       | `Verkeerseiland`       | V             |
-| `Wegzone`                       | `Wildrooster`          | O             |
+| `Wegzone`                       | `Wildrooster`          | V             |
 
 ### Registratieve ruimten
 
 | Objecttype         | Type                    | Verplichtheid |
 | ------------------ | ----------------------- | ------------- |
 | `Woonplaats`       |                         | V             |
-| `Wijk`             |                         | O             |
-| `Buurt`            |                         | O             |
+| `Wijk`             |                         | V             |
+| `Buurt`            |                         | V             |
 | `Subbuurt`         |                         | O             |
 | `Subbuurtdeel`     |                         | O             |
 | `OpenbareRuimte`   |                         | V             |
@@ -498,40 +500,40 @@ Legenda:
 | `BenoemdePlaats`   |                         | V             |
 | `BenoemdePlaats`   | `Drijvend object`       | V             |
 | `BenoemdePlaats`   | `Mobiel object`         | V             |
-| `BenoemdePlaats`   | `Onbemensd tankstation` | O             |
+| `BenoemdePlaats`   | `Onbemensd tankstation` | V             |
 
 ### Geografische ruimten
 
 | Objecttype              | Type               | Verplichtheid |
 | ----------------------- | ------------------ | ------------- |
-| `Bebouwingskern`        |                    | O             |
-| `Bebouwingskern`        | `Buurtschap`       | O             |
-| `Bebouwingskern`        | `Deelkern`         | O             |
-| `Bebouwingskern`        | `Gehucht`          | O             |
-| `Bebouwingskern`        | `Industriekern`    | O             |
-| `Bebouwingskern`        | `Recreatiekern`    | O             |
-| `Bebouwingskern`        | `Stadsdeel`        | O             |
-| `Bebouwingskern`        | `Woonkern`         | O             |
-| `LandschappelijkGebied` |                    | O             |
-| `LandschappelijkGebied` | `Bosgebied`        | O             |
-| `LandschappelijkGebied` | `Cultuurlandschap` | O             |
-| `LandschappelijkGebied` | `Duingebied`       | O             |
-| `LandschappelijkGebied` | `Eiland`           | O             |
-| `LandschappelijkGebied` | `Heidegebied`      | O             |
-| `LandschappelijkGebied` | `Landgoed`         | O             |
-| `LandschappelijkGebied` | `Polder`           | O             |
-| `LandschappelijkGebied` | `Strand`           | O             |
-| `LandschappelijkGebied` | `Watergebied`      | O             |
-| `LandschappelijkGebied` | `Zandverstuiving`  | O             |
+| `Bebouwingskern`        |                    | V             |
+| `Bebouwingskern`        | `Buurtschap`       | V             |
+| `Bebouwingskern`        | `Deelkern`         | V             |
+| `Bebouwingskern`        | `Gehucht`          | V             |
+| `Bebouwingskern`        | `Industriekern`    | V             |
+| `Bebouwingskern`        | `Recreatiekern`    | V             |
+| `Bebouwingskern`        | `Stadsdeel`        | V             |
+| `Bebouwingskern`        | `Woonkern`         | V             |
+| `LandschappelijkGebied` |                    | V             |
+| `LandschappelijkGebied` | `Bosgebied`        | V             |
+| `LandschappelijkGebied` | `Cultuurlandschap` | V             |
+| `LandschappelijkGebied` | `Duingebied`       | V             |
+| `LandschappelijkGebied` | `Eiland`           | V             |
+| `LandschappelijkGebied` | `Heidegebied`      | V             |
+| `LandschappelijkGebied` | `Landgoed`         | V             |
+| `LandschappelijkGebied` | `Polder`           | V             |
+| `LandschappelijkGebied` | `Strand`           | V             |
+| `LandschappelijkGebied` | `Watergebied`      | V             |
+| `LandschappelijkGebied` | `Zandverstuiving`  | V             |
 | `Steilrand`             |                    | O             |
-| `OverigeReliefzone`     |                    | O             |
+| `OverigeReliefzone`     |                    | V             |
 | `OverigeReliefzone`     | `Berg`             | O             |
 | `OverigeReliefzone`     | `Dal`              | O             |
 | `OverigeReliefzone`     | `Grafheuvel`       | O             |
 | `OverigeReliefzone`     | `Groeve`           | O             |
 | `OverigeReliefzone`     | `HolleWeg`         | O             |
 | `OverigeReliefzone`     | `Terp`             | O             |
-| `Streek`                |                    | O             |
+| `Streek`                |                    | V             |
 
 ## Verplichtheid bij 2D- of 3D-registratie
 
