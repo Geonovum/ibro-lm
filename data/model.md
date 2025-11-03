@@ -40,7 +40,7 @@
 <tr>
 <th>Datum opname</th>
 <td>2025-09-09</td>
-</tr>
+</tr>36
 <tr>
 <th>Indicatie abstract object</th>
 <td>Ja</td>
@@ -3151,7 +3151,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_groen_codelijst_type_overige_begroeiing">TypeOverigeBegroeiing</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -3217,7 +3217,7 @@ Geometrische representatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -5708,7 +5708,7 @@ Subtypeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_gebruikzone">SubtypeGebruikzone</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -5876,7 +5876,7 @@ Object waarin dit object ligt.</td>
 </tr>
 <tr>
 <th>Indicatie afleidbaar</th>
-<td>Nee</td>
+<td>Ja</td>
 </tr>
 <tr>
 <th>Indicatie classificerend</th>
@@ -5933,7 +5933,7 @@ Object waarin dit object ligt.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -6218,7 +6218,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_pand">TypePand</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -6230,7 +6230,7 @@ Subtypeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_subtype_pand">SubtypePand</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -6401,7 +6401,7 @@ Indicatie dat het pand een open constructie heeft.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -6409,7 +6409,7 @@ Indicatie dat het pand een open constructie heeft.</td>
 </tr>
 <tr>
 <th>Indicatie afleidbaar</th>
-<td>Nee</td>
+<td>Ja</td>
 </tr>
 <tr>
 <th>Indicatie classificerend</th>
@@ -6466,7 +6466,7 @@ Indicatie dat het pand een open constructie heeft.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -6883,7 +6883,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_gebouwen_codelijst_type_panddeel">TypePanddeel</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -7043,7 +7043,7 @@ Object waar dit object onderdeel van uit maakt.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -9260,7 +9260,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_overbrugging">TypeOverbrugging</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -9272,7 +9272,7 @@ Subtypeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_subtype_overbrugging">SubtypeOverbrugging</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -9338,7 +9338,7 @@ Deze overbrugging is al dan niet beweegbaar is (kan open en dicht).</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -9346,7 +9346,7 @@ Deze overbrugging is al dan niet beweegbaar is (kan open en dicht).</td>
 </tr>
 <tr>
 <th>Indicatie afleidbaar</th>
-<td>Nee</td>
+<td>Ja</td>
 </tr>
 <tr>
 <th>Indicatie classificerend</th>
@@ -9403,7 +9403,7 @@ Deze overbrugging is al dan niet beweegbaar is (kan open en dicht).</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -9599,7 +9599,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_ondertunneling">TypeOndertunneling</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -9653,7 +9653,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -9958,7 +9958,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_kunstwerken_codelijst_type_waterstaatkundig_kunstwerk">TypeWaterstaatkundigKunstwerk</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -10012,7 +10012,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -13840,7 +13840,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_overige_constructies_codelijst_type_muur">TypeMuur</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -14065,7 +14065,7 @@ Functie die dit object vervult.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -17814,7 +17814,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegknoop">TypeWegknoop</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -17986,7 +17986,7 @@ De verbindingen die de knoop verlaten.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -18564,7 +18564,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_baanverbinding">TypeBaanverbinding</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -18671,7 +18671,7 @@ Object waar dit object onderdeel van uit maakt.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -19420,7 +19420,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_wegennetwerk_codelijst_type_wegverbinding">TypeWegverbinding</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -19551,7 +19551,7 @@ De eindknoop van de verbinding.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -21144,7 +21144,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_complex">TypeComplex</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -21275,7 +21275,7 @@ Naam van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -22157,7 +22157,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_luchtvaartzone">TypeLuchtvaartzone</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -22288,7 +22288,7 @@ Naam van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -23089,7 +23089,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_reducering">TypeReducering</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -23208,7 +23208,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -23343,7 +23343,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_spoorzone">TypeSpoorzone</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -23462,7 +23462,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -23597,7 +23597,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_verkeerskundig_functionele_zone">TypeVerkeerskundigFunctioneleZone</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 <tr>
 <td>
@@ -23728,7 +23728,7 @@ Naam van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -24109,7 +24109,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_functionele_ruimten_codelijst_type_wegzone">TypeWegzone</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -24228,7 +24228,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -28680,7 +28680,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_bebouwingskern">TypeBebouwingskern</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -28828,7 +28828,7 @@ Object waarin dit object ligt.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>
@@ -29035,7 +29035,7 @@ Typeclassificatie van een object.</td>
 <a class="link" href="#informatiemodel_imibro_logisch_domein_geografische_ruimten_codelijst_type_landschappelijk_gebied">TypeLandschappelijkGebied</a>
 </td>
 <td>
-0..1</td>
+1</td>
 </tr>
 </tbody>
 </table>
@@ -29154,7 +29154,7 @@ Typeclassificatie van een object.</td>
 </tr>
 <tr>
 <th>Kardinaliteit</th>
-<td>0..1</td>
+<td>1</td>
 </tr>
 <tr>
 <th>Authentiek</th>

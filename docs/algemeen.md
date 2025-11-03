@@ -32,7 +32,7 @@ Een domein attribuut heeft als datatype een URI. De URI verwijst naar de context
 
 Ieder object in de IBRO wordt getypeerd naar een <a data-cite="MIM12#objecttype">objecttype</a>. Daarnaast kan een object ook worden getypeerd naar een of meer [=classificaties=]. Een <dfn data-lt="classificaties">classificatie</dfn> is een manier om een object verder te specificeren binnen het kader van het objecttype. In het IBRO-LM zijn verschillende classificatiesoorten gedefinieerd, die elk een specifieke manier bieden om objecten te typeren. Momenteel zijn er maximaal twee niveau's van classificatie gedefinieerd in het model, aangeduid met de attribuutsoorten `type` en `subtype`.
 
-In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `Bouwdeel`. Wanneer een object een verplicht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
+In sommige gevallen is een `subtype` verplicht, bijvoorbeeld bij het objecttype `Pand`. In andere gevallen is een `subtype` optioneel, zoals bij het objecttype `OverigeConstructie`. Wanneer een object een verplicht `subtype` heeft is het `type` afleidbaar uit het `subtype`. In andere gevallen is het `type` niet afleidbaar uit het `subtype`.
 
 ## Levensfasen
 
