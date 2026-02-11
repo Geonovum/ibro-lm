@@ -40,7 +40,7 @@
 <tr>
 <th>Datum opname</th>
 <td>2025-09-09</td>
-</tr>36
+</tr>
 <tr>
 <th>Indicatie abstract object</th>
 <td>Ja</td>
@@ -300,7 +300,7 @@ De reguliere expressie voor de toegestane tekens is: [a-zA-Z|0-9|_|.|-|\/|:|]</t
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#geregistreerdMet</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#geregistreerdMet</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -24683,7 +24683,7 @@ Typeclassificatie van een object.</td>
 <tr>
 <th>Begrip</th>
 <td>
-<a href="http://begrippen.geostandaarden.nl/disgeo/id/begrip/gemeentegebied">http://begrippen.geostandaarden.nl/disgeo/id/begrip/gemeentegebied</a>
+<a href="http://begrippen.geostandaarden.nl/bg/id/begrip/gemeentegebied">http://begrippen.geostandaarden.nl/bg/id/begrip/gemeentegebied</a>
 </td>
 </tr>
 <tr>
@@ -30852,7 +30852,7 @@ De documentdatum is de datum waarop het brondocument is vastgesteld, op basis wa
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#Registratie</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#Registratie</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -31044,7 +31044,7 @@ Een verantwoordelijke partij is een actor die verantwoordelijk is voor het objec
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#versie</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#versie</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -31188,7 +31188,7 @@ Een verantwoordelijke partij is een actor die verantwoordelijk is voor het objec
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#beginGeldigheid</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#beginGeldigheid</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -31263,7 +31263,7 @@ Een verantwoordelijke partij is een actor die verantwoordelijk is voor het objec
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#eindGeldigheid</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#eindGeldigheid</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -31338,7 +31338,7 @@ Een verantwoordelijke partij is een actor die verantwoordelijk is voor het objec
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#tijdstipRegistratie</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#tijdstipRegistratie</td>
 </tr>
 <tr>
 <th>Naam</th>
@@ -31413,7 +31413,7 @@ Een verantwoordelijke partij is een actor die verantwoordelijk is voor het objec
 <colgroup style="width: 70%"></colgroup>
 <tr>
 <th>Identificatie</th>
-<td>http://modellen.geostandaarden.nl/def/nen3610-2022#eindRegistratie</td>
+<td>http://modellen.geostandaarden.nl/def/nen3610#eindRegistratie</td>
 </tr>
 <tr>
 <th>Naam</th>
