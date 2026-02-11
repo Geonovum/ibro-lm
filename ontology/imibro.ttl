@@ -425,7 +425,7 @@ ibro:Gebruikzone a owl:Class ;
 ibro:Gemeentegebied a owl:Class ;
   rdfs:label "Gemeentegebied" ;
   rdfs:comment "Afgebakend gedeelte van het grondgebied van Nederland, onder zeggenschap van een openbaar lichaam met diverse bestuurlijke taken, ingesteld op basis van artikel 123 en 124 van de Grondwet, artikel 2:1 Burgerlijk Wetboek en artikel 3 van de Wet algemene regels herindeling." ;
-  dct:subject <http://begrippen.geostandaarden.nl/disgeo/id/begrip/gemeentegebied> ;
+  dct:subject <http://begrippen.geostandaarden.nl/bg/id/begrip/gemeentegebied> ;
   mim:datumOpname "2025-09-09" ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "Grondwet en Gemeentewet" ;
@@ -3415,6 +3415,12 @@ ibro:AardPand_shape a sh:NodeShape ;
   mim:herkomst "IMIBRO" ;
   mim:herkomstDefinitie "IMIBRO" ;
   sh:property [
+    sh:path skos:definition ;
+  ] ;
+  sh:property [
+    sh:path skos:inScheme ;
+  ] ;
+  sh:property [
     sh:path skos:notation ;
   ] ;
   sh:property [
@@ -3423,12 +3429,6 @@ ibro:AardPand_shape a sh:NodeShape ;
   ] ;
   sh:property [
     sh:path rdfs:label ;
-  ] ;
-  sh:property [
-    sh:path skos:inScheme ;
-  ] ;
-  sh:property [
-    sh:path skos:definition ;
   ] ;
   sh:targetClass ibro:AardPand .
 
@@ -4628,20 +4628,20 @@ ibro:GebruiksaardToegangpunt_shape a sh:NodeShape ;
   mim:herkomst "IMIBRO" ;
   mim:herkomstDefinitie "EMSO" ;
   sh:property [
-    sh:hasValue ibro:GebruiksaardToegangpunt ;
-    sh:path rdf:type ;
+    sh:path skos:definition ;
   ] ;
   sh:property [
     sh:path skos:notation ;
   ] ;
   sh:property [
-    sh:path rdfs:label ;
-  ] ;
-  sh:property [
-    sh:path skos:definition ;
+    sh:hasValue ibro:GebruiksaardToegangpunt ;
+    sh:path rdf:type ;
   ] ;
   sh:property [
     sh:path skos:inScheme ;
+  ] ;
+  sh:property [
+    sh:path rdfs:label ;
   ] ;
   sh:targetClass ibro:GebruiksaardToegangpunt .
 
@@ -4837,7 +4837,7 @@ ibro:Gebruikzone_shape a sh:NodeShape ;
 ibro:Gemeentegebied_shape a sh:NodeShape ;
   rdfs:label "Gemeentegebied" ;
   rdfs:comment "Afgebakend gedeelte van het grondgebied van Nederland, onder zeggenschap van een openbaar lichaam met diverse bestuurlijke taken, ingesteld op basis van artikel 123 en 124 van de Grondwet, artikel 2:1 Burgerlijk Wetboek en artikel 3 van de Wet algemene regels herindeling." ;
-  dct:subject <http://begrippen.geostandaarden.nl/disgeo/id/begrip/gemeentegebied> ;
+  dct:subject <http://begrippen.geostandaarden.nl/bg/id/begrip/gemeentegebied> ;
   mim:datumOpname "2025-09-09" ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "Grondwet en Gemeentewet" ;
@@ -5280,7 +5280,7 @@ ibro:Lengte_shape a sh:NodeShape ;
   mim:herkomst "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   mim:herkomstDefinitie "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   mim:toelichting "Bijvoorbeeld de lengte van een kromme, de omtrek van een veelhoek als de lengte van de grens." ;
-  sh:datatype xsd:decimal .
+  sh:datatype xsd:string .
 
 ibro:Lift.geometrie_shape a sh:PropertyShape ;
   rdfs:label "geometrie" ;
@@ -7360,7 +7360,7 @@ ibro:Rijrichting_shape a sh:NodeShape ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "EMSO" ;
   sh:property [
-    sh:path rdfs:label ;
+    sh:path skos:notation ;
   ] ;
   sh:property [
     sh:path skos:inScheme ;
@@ -7369,7 +7369,7 @@ ibro:Rijrichting_shape a sh:NodeShape ;
     sh:path skos:definition ;
   ] ;
   sh:property [
-    sh:path skos:notation ;
+    sh:path rdfs:label ;
   ] ;
   sh:property [
     sh:hasValue ibro:Rijrichting ;
@@ -7949,14 +7949,14 @@ ibro:StatusRegistratie_shape a sh:NodeShape ;
     sh:path skos:inScheme ;
   ] ;
   sh:property [
+    sh:hasValue ibro:StatusRegistratie ;
+    sh:path rdf:type ;
+  ] ;
+  sh:property [
     sh:path rdfs:label ;
   ] ;
   sh:property [
     sh:path skos:definition ;
-  ] ;
-  sh:property [
-    sh:hasValue ibro:StatusRegistratie ;
-    sh:path rdf:type ;
   ] ;
   sh:property [
     sh:path skos:notation ;
@@ -8552,20 +8552,20 @@ ibro:Toegangssoort_shape a sh:NodeShape ;
   mim:herkomst "EMSO" ;
   mim:herkomstDefinitie "EMSO" ;
   sh:property [
-    sh:path skos:notation ;
-  ] ;
-  sh:property [
-    sh:path rdfs:label ;
-  ] ;
-  sh:property [
-    sh:path skos:definition ;
+    sh:path skos:inScheme ;
   ] ;
   sh:property [
     sh:hasValue ibro:Toegangssoort ;
     sh:path rdf:type ;
   ] ;
   sh:property [
-    sh:path skos:inScheme ;
+    sh:path skos:definition ;
+  ] ;
+  sh:property [
+    sh:path skos:notation ;
+  ] ;
+  sh:property [
+    sh:path rdfs:label ;
   ] ;
   sh:targetClass ibro:Toegangssoort .
 
@@ -9087,20 +9087,20 @@ ibro:Verbindingsrichting_shape a sh:NodeShape ;
   mim:herkomst "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   mim:herkomstDefinitie "D2.10.1 INSPIRE Data Specifications – Base Models – Generic Network Model" ;
   sh:property [
+    sh:path skos:definition ;
+  ] ;
+  sh:property [
     sh:hasValue ibro:Verbindingsrichting ;
     sh:path rdf:type ;
+  ] ;
+  sh:property [
+    sh:path skos:notation ;
   ] ;
   sh:property [
     sh:path rdfs:label ;
   ] ;
   sh:property [
     sh:path skos:inScheme ;
-  ] ;
-  sh:property [
-    sh:path skos:definition ;
-  ] ;
-  sh:property [
-    sh:path skos:notation ;
   ] ;
   sh:targetClass ibro:Verbindingsrichting .
 
