@@ -4,10 +4,10 @@ let respecConfig = {
   // TODO: title is verplicht! Neem hieronder de titel van het document op
   title: "Logisch Gegevensmodel Integrale Bronregistratie Objecten (IBRO-LM)",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  //specStatus: "wv",                   // Werkversie
+  specStatus: "wv",                   // Werkversie
   //specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
-  specStatus: "def",              // Vastgestelde versie
+  //specStatus: "def",              // Vastgestelde versie
   //specStatus: "basis",            // Basis Document
   //-- specType is verplicht bij alle andere dan BASIS ---------------------------------
   //specType: "NO",                 // Norm
@@ -35,12 +35,12 @@ let respecConfig = {
 
   //-- publishDate is verplicht -------------------------------------------------------
   //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
-  publishDate: "2026-02-11",
+  publishDate: "2026-02-12",
   //eventueel is het mogelijk een versienummer mee te geven, maar bij Geonovum werken we gewoonlijk alleen met datum als onderdeel van de permanente URI.
   publishVersion: "1.0.0",
   //previousVersion: "0.9.1",
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit! 
-  previousPublishDate: "2025-11-05",
+  previousPublishDate: "2026-02-11",
   previousMaturity: "VV",
   //-- TODO: de namen van de Editor(s) / Redacteur(en)---------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
